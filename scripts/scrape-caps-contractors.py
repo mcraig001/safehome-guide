@@ -33,7 +33,12 @@ supabase = create_client(
     os.environ['SUPABASE_SERVICE_ROLE_KEY']
 )
 
-CAPS_BASE_URL = "https://www.nahb.org/find-a-member"
+# NOTE: NAHB moved their member directory to members-only login in 2025.
+# The old /find-a-member URL is now a 404. The directory now lives at:
+# https://www.nahb.org/nahb-community/nahb-directories (login required)
+# Current approach: scrape via the credentials search page when logged in,
+# or use the seed data script (scripts/seed-caps-contractors.py) for initial data.
+CAPS_BASE_URL = "https://www.nahb.org/nahb-community/nahb-directories"
 SLACK_API_URL = "http://localhost:3002/api/post-to-slack"
 
 ALL_STATES = [
