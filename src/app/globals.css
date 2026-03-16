@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --green: #1B4332;
+  --amber: #D97706;
+  --bg: #FAFAF7;
+  --text: #1A1A1A;
+}
+
+@theme inline {
+  --color-green: #1B4332;
+  --color-green-light: #2D6A4F;
+  --color-amber: #D97706;
+  --color-amber-light: #F59E0B;
+  --color-bg: #FAFAF7;
+  --color-text: #1A1A1A;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
