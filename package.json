@@ -19,7 +19,10 @@
     "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "resend": "^6.9.3",
+    "schema-dts": "^1.1.5",
     "stripe": "^20.4.1"
   },
   "devDependencies": {
