@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* @ts-expect-error — Impact uses non-standard 'value' attribute instead of 'content' */}
         <meta name='impact-site-verification' value='add21af6-b994-48fb-a2d6-4b80439228f3' />
       </head>
       <body>
