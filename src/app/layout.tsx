@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <meta name='impact-site-verification' value='add21af6-b994-48fb-a2d6-4b80439228f3' />
+      </head>
       <body>
         <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
           <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
