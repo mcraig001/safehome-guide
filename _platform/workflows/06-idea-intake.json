@@ -1,0 +1,198 @@
+{
+  "name": "06 \u00b7 Idea Intake (#mike-ideas)",
+  "active": true,
+  "settings": { "executionOrder": "v1" },
+  "nodes": [
+    {
+      "id": "node-1",
+      "name": "Slack Trigger \u2014 #mike-ideas",
+      "type": "n8n-nodes-base.slackTrigger",
+      "position": [240, 300],
+      "parameters": {
+        "triggerOn": "message",
+        "channel": "mike-ideas",
+        "options": {}
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "node-2",
+      "name": "Filter \u2014 Ignore Bot Messages",
+      "type": "n8n-nodes-base.if",
+      "position": [460, 300],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.event.bot_id }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "node-3",
+      "name": "Score Idea with Claude",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [700, 200],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $env.ANTHROPIC_API_KEY }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"max_tokens\": 1024,\n  \"system\": \"You are Scout Research, the idea evaluation agent for an AI holding company. Score business ideas against a strict rubric. Respond ONLY with a valid JSON object.\\n\\nRUBRIC (100 points):\\n1. Speed to first revenue (25pts): <2 weeks=25, <1 month=20, <3 months=15, >3 months=5\\n2. Automation potential (25pts): >90%=25, >75%=20, >50%=15, <50%=5\\n3. Margin profile (25pts): >80%=25, >60%=20, >40%=15, <40%=5\\n4. Defensibility (25pts): Data moat=25, Network effect=20, Brand/SEO=15, None=5\\n\\nThreshold: 85+= PRIORITY, 70-84=APPROVED, <70=REJECTED\\n\\nReturn ONLY this JSON (no markdown):\\n{\\\"score\\\": 0, \\\"speed\\\": 0, \\\"automation\\\": 0, \\\"margin\\\": 0, \\\"defensibility\\\": 0, \\\"speed_reason\\\": \\\"\\\", \\\"automation_reason\\\": \\\"\\\", \\\"margin_reason\\\": \\\"\\\", \\\"defensibility_reason\\\": \\\"\\\", \\\"status\\\": \\\"PRIORITY|APPROVED|REJECTED\\\", \\\"recommended_stack\\\": \\\"\\\", \\\"est_revenue_timeline\\\": \\\"\\\", \\\"summary\\\": \\\"2-3 sentence description\\\"}\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Score this idea from #mike-ideas:\\n\\n{{ $json.event.text }}\\n\\nReturn only the JSON.\"\n    }\n  ]\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "typeVersion": 4
+    },
+    {
+      "id": "node-4",
+      "name": "Parse Score",
+      "type": "n8n-nodes-base.code",
+      "position": [940, 200],
+      "parameters": {
+        "jsCode": "const res = $input.first().json;\nconst rawText = res.content[0].text;\n\nlet scoreData;\ntry {\n  scoreData = JSON.parse(rawText);\n} catch(e) {\n  const match = rawText.match(/\\{[\\s\\S]*\\}/);\n  if (match) scoreData = JSON.parse(match[0]);\n  else throw new Error('Could not parse: ' + rawText);\n}\n\nconst orig = $('Slack Trigger \u2014 #mike-ideas').first().json;\n\nreturn [{\n  json: {\n    ...scoreData,\n    original_text: orig.event.text,\n    channel: orig.event.channel,\n    thread_ts: orig.event.ts,\n    submitted_by: orig.event.user\n  }\n}];"
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "node-5",
+      "name": "Route by Score",
+      "type": "n8n-nodes-base.switch",
+      "position": [1160, 200],
+      "parameters": {
+        "dataType": "number",
+        "value1": "={{ $json.score }}",
+        "rules": {
+          "rules": [
+            { "operation": "largerEqual", "value2": 85, "output": 0 },
+            { "operation": "largerEqual", "value2": 70, "output": 1 },
+            { "operation": "smaller",      "value2": 70, "output": 2 }
+          ]
+        }
+      },
+      "typeVersion": 3
+    },
+    {
+      "id": "node-6",
+      "name": "Post PRIORITY to Slack",
+      "type": "n8n-nodes-base.slack",
+      "position": [1400, 60],
+      "parameters": {
+        "operation": "post",
+        "select": "channel",
+        "channel": "={{ $('Parse Score').first().json.channel }}",
+        "text": "\ud83d\udd34 Scout Research: PRIORITY IDEA \u2014 Score {{ $json.score }}/100\n\n*Summary:* {{ $json.summary }}\n\n*Score Breakdown:*\n\u2022 Speed: {{ $json.speed }}/25 \u2014 {{ $json.speed_reason }}\n\u2022 Automation: {{ $json.automation }}/25 \u2014 {{ $json.automation_reason }}\n\u2022 Margin: {{ $json.margin }}/25 \u2014 {{ $json.margin_reason }}\n\u2022 Defensibility: {{ $json.defensibility }}/25 \u2014 {{ $json.defensibility_reason }}\n\n*Stack:* {{ $json.recommended_stack }}\n*Est. revenue:* {{ $json.est_revenue_timeline }}\n\n\u26a0\ufe0f Above 85 threshold. Flagging as PRIORITY.\n\u2705 Add to pipeline? Reply APPROVE or REJECT.",
+        "attachments": [],
+        "otherOptions": { "thread_ts": "={{ $('Parse Score').first().json.thread_ts }}" },
+        "options": {}
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "node-7",
+      "name": "Post APPROVED to Slack",
+      "type": "n8n-nodes-base.slack",
+      "position": [1400, 280],
+      "parameters": {
+        "operation": "post",
+        "select": "channel",
+        "channel": "={{ $('Parse Score').first().json.channel }}",
+        "text": "\ud83d\udfe2 Scout Research: APPROVED \u2014 Score {{ $('Parse Score').first().json.score }}/100\n\n*Summary:* {{ $('Parse Score').first().json.summary }}\n\n*Score Breakdown:*\n\u2022 Speed: {{ $('Parse Score').first().json.speed }}/25 \u2014 {{ $('Parse Score').first().json.speed_reason }}\n\u2022 Automation: {{ $('Parse Score').first().json.automation }}/25 \u2014 {{ $('Parse Score').first().json.automation_reason }}\n\u2022 Margin: {{ $('Parse Score').first().json.margin }}/25 \u2014 {{ $('Parse Score').first().json.margin_reason }}\n\u2022 Defensibility: {{ $('Parse Score').first().json.defensibility }}/25 \u2014 {{ $('Parse Score').first().json.defensibility_reason }}\n\n*Stack:* {{ $('Parse Score').first().json.recommended_stack }}\n*Est. revenue:* {{ $('Parse Score').first().json.est_revenue_timeline }}\n\nReply APPROVE to add to pipeline, REJECT to archive.",
+        "attachments": [],
+        "otherOptions": { "thread_ts": "={{ $('Parse Score').first().json.thread_ts }}" },
+        "options": {}
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "node-8",
+      "name": "Post REJECTED to Slack",
+      "type": "n8n-nodes-base.slack",
+      "position": [1400, 500],
+      "parameters": {
+        "operation": "post",
+        "select": "channel",
+        "channel": "={{ $('Parse Score').first().json.channel }}",
+        "text": "\u26ab Scout Research: Below threshold \u2014 Score {{ $('Parse Score').first().json.score }}/100\n\n*Summary:* {{ $('Parse Score').first().json.summary }}\n\n\u2022 Speed: {{ $('Parse Score').first().json.speed }}/25\n\u2022 Automation: {{ $('Parse Score').first().json.automation }}/25\n\u2022 Margin: {{ $('Parse Score').first().json.margin }}/25\n\u2022 Defensibility: {{ $('Parse Score').first().json.defensibility }}/25\n\nLogged. Below the 70/100 build threshold.",
+        "attachments": [],
+        "otherOptions": { "thread_ts": "={{ $('Parse Score').first().json.thread_ts }}" },
+        "options": {}
+      },
+      "typeVersion": 2
+    },
+    {
+      "id": "node-9",
+      "name": "Log to agent_log",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [1640, 280],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/agent_log",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey",        "value": "={{ $env.SUPABASE_SERVICE_ROLE_KEY }}" },
+            { "name": "Authorization", "value": "=Bearer {{ $env.SUPABASE_SERVICE_ROLE_KEY }}" },
+            { "name": "Content-Type",  "value": "application/json" },
+            { "name": "Prefer",        "value": "return=minimal" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"agent_name\": \"scout_research\",\n  \"venture\": \"platform\",\n  \"action\": \"idea_scored\",\n  \"model_used\": \"claude-haiku-4-5-20251001\",\n  \"result\": \"{{ $('Parse Score').first().json.status }}\",\n  \"metadata\": {\n    \"score\": {{ $('Parse Score').first().json.score }},\n    \"submitted_by\": \"{{ $('Parse Score').first().json.submitted_by }}\",\n    \"speed\": {{ $('Parse Score').first().json.speed }},\n    \"automation\": {{ $('Parse Score').first().json.automation }},\n    \"margin\": {{ $('Parse Score').first().json.margin }},\n    \"defensibility\": {{ $('Parse Score').first().json.defensibility }}\n  }\n}",
+        "options": {}
+      },
+      "typeVersion": 4
+    }
+  ],
+  "connections": {
+    "Slack Trigger \u2014 #mike-ideas": {
+      "main": [[{ "node": "Filter \u2014 Ignore Bot Messages", "type": "main", "index": 0 }]]
+    },
+    "Filter \u2014 Ignore Bot Messages": {
+      "main": [
+        [{ "node": "Score Idea with Claude", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Score Idea with Claude": {
+      "main": [[{ "node": "Parse Score", "type": "main", "index": 0 }]]
+    },
+    "Parse Score": {
+      "main": [[{ "node": "Route by Score", "type": "main", "index": 0 }]]
+    },
+    "Route by Score": {
+      "main": [
+        [{ "node": "Post PRIORITY to Slack", "type": "main", "index": 0 }],
+        [{ "node": "Post APPROVED to Slack",  "type": "main", "index": 0 }],
+        [{ "node": "Post REJECTED to Slack",  "type": "main", "index": 0 }]
+      ]
+    },
+    "Post PRIORITY to Slack": {
+      "main": [[{ "node": "Log to agent_log", "type": "main", "index": 0 }]]
+    },
+    "Post APPROVED to Slack": {
+      "main": [[{ "node": "Log to agent_log", "type": "main", "index": 0 }]]
+    },
+    "Post REJECTED to Slack": {
+      "main": [[{ "node": "Log to agent_log", "type": "main", "index": 0 }]]
+    }
+  }
+}
