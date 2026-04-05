@@ -214,6 +214,13 @@ const GUIDE_META: Record<string, {
     description: 'The truth about Medicare, Medicaid, and VA coverage for walk-in tubs — and which programs actually pay for bathroom modifications.',
     category: 'walk-in-tubs',
     compareSlug: 'best-walk-in-tubs',
+    keyTakeaways: [
+      'Standard Medicare (Parts A and B) does not cover walk-in tubs.',
+      'Some Medicare Advantage plans include a home safety benefit of $500–$2,500/year that may cover bathroom modifications.',
+      'VA HISA grants provide up to $6,800 for veterans with service-connected conditions — walk-in tubs often qualify.',
+      'Medicaid HCBS waivers fund walk-in tub installation in many states for income-eligible seniors.',
+      'Call your MA plan and ask specifically: "Does my plan have a home modification or home safety benefit?"',
+    ],
     intro: 'Standard Medicare does not cover walk-in tubs. But multiple programs — Medicare Advantage supplemental benefits, Medicaid waivers, and VA grants — may help cover bathroom modifications. Here\'s the complete guide to financial assistance for walk-in tubs.',
     faqs: [
       { question: 'Does Medicare cover walk-in tubs?', answer: 'Standard Medicare (Parts A and B) does not cover walk-in tubs. Like stairlifts, walk-in tubs are classified as home modifications rather than durable medical equipment under CMS guidelines.' },
@@ -514,6 +521,12 @@ const GUIDE_META: Record<string, {
     description: 'Can you install a stairlift on narrow stairs? Minimum clearance requirements, which brands fit best, and alternatives for very narrow staircases.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Most stairlifts require 28–30 inches of stair width. Below 25 inches, standard models generally cannot be installed.',
+      'Narrow-stair options: Acorn 130 (25-inch minimum), Bruno Elan (28-inch), Stannah 260 (25-inch).',
+      'Request an in-home assessment from 2–3 dealers before deciding — never pay a deposit without a confirmed measurement.',
+      'Below 25 inches, alternatives include specialty slim-rail models, staircase widening, or a vertical platform lift.',
+    ],
     intro: 'Most stairlifts require a minimum staircase width of 28–30 inches to install safely. Narrow Victorian staircases, older homes, and townhouses sometimes have staircases as narrow as 24–26 inches. This guide covers your options when your stairs are at or below the typical minimum.',
     faqs: [
       { question: 'What is the minimum staircase width for a stairlift?', answer: 'Most standard stairlift models require 28–30 inches of clear width. The Bruno Elan (28 inches minimum), Acorn 130 (25 inches minimum), and Harmar Pinnacle (28 inches minimum) are among the models with narrower clearance requirements. Some specialty narrow-stair models, including the Stannah 260, can fit in 25-inch staircases.' },
@@ -859,6 +872,13 @@ const GUIDE_META: Record<string, {
     description: 'Which Medicare Advantage plans cover home modifications? What\'s covered, dollar limits, and how to find a plan with home safety benefits in your area.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Standard Medicare A/B does NOT cover home modifications — but many Medicare Advantage plans do.',
+      'Look for "Home Safety Benefit," "Healthy Home Benefit," or supplemental benefits in your MA plan summary.',
+      'Typical MA home modification benefit: $500–$2,500/year. OTC allowances can add another $300–$1,500.',
+      'Use Medicare Plan Finder (medicare.gov/plan-compare) to find plans with home safety benefits in your ZIP code.',
+      'Plans with home modification benefits often require a home safety assessment first — ask your plan how to initiate.',
+    ],
     intro: 'Standard Medicare (Parts A and B) does not cover home modifications. But a growing number of Medicare Advantage (Part C) plans now include supplemental home safety or "Healthy Home" benefits that can pay for stairlifts, grab bars, walk-in tubs, and other modifications. Here\'s what\'s available and how to find plans in your area.',
     faqs: [
       { question: 'Do Medicare Advantage plans cover home modifications?', answer: 'Some do. As of 2024, CMS expanded Medicare Advantage flexibility, allowing more plans to offer "supplemental benefits" including home modifications. Not all MA plans offer this — but many now include a Home Safety Benefit, Healthy Home Benefit, or In-Home Safety Assessment that may cover grab bars, ramps, stairlifts, or smart safety devices. Coverage amounts typically range from $500 to $2,500 per year.' },
@@ -964,6 +984,13 @@ const GUIDE_META: Record<string, {
     description: 'The 6 bathroom modifications that prevent the most falls: grab bars, walk-in shower, non-slip flooring, raised toilet, hand-held showerhead, and night lighting.',
     category: 'bath-safety',
     compareSlug: 'best-bath-safety-products',
+    keyTakeaways: [
+      'Do grab bars first — $400–$900 installed and the highest fall-prevention ROI of any bathroom modification.',
+      'Order of priority: grab bars → non-slip surfaces → handheld showerhead → raised toilet → walk-in shower.',
+      'A basic safety package (grab bars + mat + showerhead + raised seat) costs $500–$1,500 total.',
+      'A zero-threshold roll-in shower is the gold standard for wheelchair users and eliminates all step-overs.',
+      'A comfort-height toilet ($200–$600) is especially impactful for anyone with arthritis, hip replacement, or weak legs.',
+    ],
     intro: 'The bathroom is where most in-home falls occur, and bathroom falls cause more serious injuries than falls elsewhere in the home. This guide prioritizes the 6 modifications that deliver the highest fall-prevention benefit per dollar spent — in the order you should do them.',
     faqs: [
       { question: 'What is the most important bathroom modification for fall prevention?', answer: 'Grab bars provide the most fall-prevention benefit per dollar. A professionally installed set of bars near the toilet and in the shower/tub costs $400–$900 and addresses the two highest-risk moments: transferring to/from the toilet and stepping in/out of the shower. Occupational therapists consistently rank grab bar installation as the first priority for aging-in-place bathroom modification.' },
