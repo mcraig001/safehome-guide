@@ -81,6 +81,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'va-home-modification-grants',
         'hospital-bed-rental-cost',
         'handheld-showerhead-guide',
+        'wheelchair-ramp-slope-guide',
+        'voice-assistant-for-seniors',
         'apple-watch-vs-medical-alert',
         'grab-bar-weight-capacity-guide',
         'walk-in-tub-installation-guide',
