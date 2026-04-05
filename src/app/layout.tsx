@@ -8,6 +8,24 @@ export const metadata: Metadata = {
     template: '%s | SafeAtHome Guide',
   },
   description: 'Independent reviews and ratings of stairlifts, walk-in tubs, grab bars, and home safety products for seniors and aging-in-place.',
+  metadataBase: new URL('https://www.safeathomeguides.com'),
+  openGraph: {
+    type: 'website',
+    siteName: 'SafeAtHome Guide',
+    title: 'SafeAtHome Guide — Aging-in-Place Home Safety',
+    description: 'Independent reviews of stairlifts, walk-in tubs, grab bars, and home safety products. SafeScore™ ratings and CAPS-certified contractor directory.',
+    url: 'https://www.safeathomeguides.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SafeAtHome Guide',
+    description: 'Independent reviews of stairlifts, walk-in tubs, and home safety products. SafeScore™ ratings.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
