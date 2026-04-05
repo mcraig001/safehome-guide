@@ -451,6 +451,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'non-slip-flooring-for-seniors',
+    title: 'Non-Slip Flooring for Seniors: Best Options & Installation Cost (2026)',
+    description: 'Best flooring for fall prevention: slip resistance ratings, LVP vs. tile vs. carpet, anti-slip coatings, and what each costs to install.',
+    category: 'Planning',
+    icon: '🏠',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
     slug: 'accessible-kitchen-modifications',
     title: 'Accessible Kitchen Modifications for Seniors (2026)',
     description: 'Kitchen modifications for aging in place: cabinet pulls, counter heights, non-slip flooring, pull-out shelves, and appliance choices.',

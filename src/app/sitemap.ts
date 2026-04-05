@@ -73,7 +73,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'aging-in-place-parkinsons',
         'home-safety-for-dementia',
         'accessible-kitchen-modifications',
-        'hip-replacement-home-modifications'].map(slug => ({
+        'hip-replacement-home-modifications',
+        'non-slip-flooring-for-seniors'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
