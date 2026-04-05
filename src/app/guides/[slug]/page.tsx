@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
-import { faqSchema } from '@/lib/schema';
+import { faqSchema, breadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -221,10 +221,16 @@ export default async function GuidePage({ params }: Props) {
     .limit(4);
 
   const schema = faqSchema(meta.faqs);
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: 'https://www.safeathomeguides.com' },
+    { name: 'Guides', url: 'https://www.safeathomeguides.com/guides' },
+    { name: meta.title, url: `https://www.safeathomeguides.com/guides/${slug}` },
+  ]);
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">

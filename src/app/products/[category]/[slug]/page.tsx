@@ -2,7 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { SafeScore } from '@/components/SafeScore';
 import { LeadForm } from '@/components/LeadForm';
 import { buildAffiliateUrl } from '@/lib/affiliate';
-import { productSchema } from '@/lib/schema';
+import { productSchema, breadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -36,10 +36,17 @@ export default async function ProductPage({ params }: Props) {
     : null;
 
   const schema = productSchema(product);
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: 'https://www.safeathomeguides.com' },
+    { name: 'Products', url: 'https://www.safeathomeguides.com/products' },
+    { name: category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), url: `https://www.safeathomeguides.com/products/${category}` },
+    { name: product.name, url: `https://www.safeathomeguides.com/products/${category}/${slug}` },
+  ]);
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
