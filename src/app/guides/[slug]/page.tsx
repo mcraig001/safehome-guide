@@ -344,6 +344,12 @@ const GUIDE_META: Record<string, {
     description: 'Stairlift or home elevator? Compare costs, installation requirements, and who each option is best suited for. Expert guidance to help you decide.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Stairlifts cost $2,000–$5,000 installed for straight stairs. Home elevators cost $20,000–$40,000+ with shaft construction.',
+      'Choose a stairlift if the user can walk but struggles with stairs. Choose an elevator if they use a wheelchair full-time.',
+      'Straight stairlifts install in a few hours with no construction — elevators typically require 1–3 days of work.',
+      'Pneumatic (vacuum) elevators are the exception: freestanding, no shaft needed, install in 1–2 days from $18,000.',
+    ],
     intro: 'Stairlifts and home elevators both solve the same core problem — moving safely between floors — but they do it differently and at very different price points. A stairlift ($2,000–$5,000 installed) travels along the staircase. A home elevator ($8,000–$35,000+) travels vertically in its own space. This guide explains when each solution is the right choice.',
     faqs: [
       { question: 'When is a stairlift better than an elevator?', answer: 'A stairlift is usually the better choice when: the user can walk but struggles with stairs, cost is a primary concern, the staircase is straight (much cheaper), and the user does not use a wheelchair. Stairlifts can be installed in most homes in a single day without construction.' },
@@ -365,6 +371,13 @@ const GUIDE_META: Record<string, {
     description: 'The most important bathroom safety modifications for seniors — grab bars, walk-in tubs, shower seats, non-slip surfaces, and costs. Written with occupational therapists.',
     category: 'grab-bars',
     compareSlug: 'best-grab-bars',
+    keyTakeaways: [
+      '80% of senior falls happen in the bathroom — it\'s the highest-priority room to address first.',
+      'Grab bars near the toilet and in the shower are the single most cost-effective safety modification at $300–$900 installed.',
+      'A basic safety package (grab bars + non-slip mat + shower chair) costs under $900 and covers most risk.',
+      'A zero-threshold roll-in shower is safer than a walk-in tub for most seniors — nothing to step over or sit inside while filling.',
+      'Medicare Advantage plans and VA HISA grants can fund bathroom modifications for eligible seniors.',
+    ],
     intro: 'The bathroom is the most dangerous room in the home for seniors: 80% of senior falls happen there. A properly modified bathroom can prevent most of these injuries at a cost of $300–$3,000 — far less than a single emergency room visit. This guide covers every modification, in priority order.',
     faqs: [
       { question: 'What are the most important bathroom safety modifications?', answer: 'In priority order by fall risk reduction: (1) grab bars near the toilet and in the shower, (2) a non-slip mat inside and outside the shower, (3) a shower bench or chair, (4) a raised toilet seat or comfort-height toilet, (5) improved lighting. These five changes address the vast majority of bathroom fall risks.' },
@@ -388,6 +401,13 @@ const GUIDE_META: Record<string, {
     description: 'Everything you need to know before buying a stairlift: straight vs. curved, weight limits, key features, top brands compared, and how to get quotes.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Straight stairlifts cost $2,000–$5,000. Curved (any turns or landings) require a custom rail: $8,000–$15,000+.',
+      'A swivel seat and fold-flat rail are the two features most worth paying for — both improve safety at dismount.',
+      'For users over 300 lbs, specifically request "heavy-duty" or "bariatric" models rated to 400–500 lbs.',
+      'Get 2–3 in-home quotes: prices vary significantly and installers will identify staircase-specific issues.',
+      'Bruno, Stannah, and Harmar are the most reliable brands with the strongest local service networks.',
+    ],
     intro: 'Choosing the right stairlift comes down to four factors: the shape of your staircase (straight vs. curved), the user\'s weight and mobility, the features that matter most (folding rail, remote, swivel seat), and your budget. This guide walks through every decision so you can buy with confidence.',
     faqs: [
       { question: 'What is the difference between a straight and curved stairlift?', answer: 'A straight stairlift uses a standard rail that fits most straight staircases and costs $2,000–$5,000 installed. A curved stairlift requires a custom-bent rail built specifically for your staircase — costs run $8,000–$15,000 or more. If your staircase has any turns, landings, or spiral sections, you need a curved model. Get at least two quotes for curved stairlifts.' },
@@ -409,6 +429,13 @@ const GUIDE_META: Record<string, {
     title: 'Aging-in-Place Tax Deductions: What Qualifies in 2026',
     description: 'Which aging-in-place home modifications are tax deductible? Medical expense deductions, capital improvements, and how to document your claim correctly.',
     category: 'grab-bars',
+    keyTakeaways: [
+      'Home modifications can qualify as medical expense deductions if total medical expenses exceed 7.5% of adjusted gross income.',
+      'Grab bars, stairlifts, wheelchair ramps, and walk-in tubs are generally fully deductible — they do not add home value.',
+      'Home elevators are only partially deductible: cost minus any increase in home value.',
+      'A written recommendation from a physician or occupational therapist is the strongest documentation you can have.',
+      'Expenses for a qualifying dependent parent\'s home modifications may also be deductible.',
+    ],
     intro: 'Home modifications for aging in place can qualify as tax-deductible medical expenses under IRS rules — but only under specific conditions. This guide explains what qualifies, how to calculate your deduction, and what documentation to keep.',
     faqs: [
       { question: 'Are home modifications tax deductible?', answer: 'Home modifications may be deductible as medical expenses if: (1) they are prescribed or recommended by a physician for a diagnosed condition, (2) they do not increase your home\'s fair market value, and (3) your total medical expenses exceed 7.5% of your adjusted gross income (the threshold for itemizing). Modifications that add home value — like building a new bathroom — are only partially deductible.' },
@@ -431,6 +458,13 @@ const GUIDE_META: Record<string, {
     description: 'Choosing a medical alert system for a senior who lives alone: what features matter most, fall detection accuracy, GPS range, and which systems have the fastest response times.',
     category: 'medical-alerts',
     compareSlug: 'best-medical-alerts',
+    keyTakeaways: [
+      'Fall detection is the most critical feature for seniors living alone — it calls for help automatically if the button can\'t be pressed.',
+      'Top providers connect to a live operator in 30–45 seconds. Always verify response time and whether operators are US-based.',
+      'If the senior leaves the house at all, choose a GPS mobile system ($35–$55/month) over a home-only system.',
+      'Use month-to-month billing only — avoid any provider requiring a 12-month contract upfront.',
+      'For seniors with cognitive decline, GPS + geofencing alerts to a family app are essential features.',
+    ],
     intro: 'For seniors living alone, a medical alert system is one of the most important safety investments available — it closes the gap between a fall happening and help arriving. But not all systems are equal. This guide focuses on what matters most for solo-living seniors: response time, fall detection reliability, battery life, and ease of use.',
     faqs: [
       { question: 'What is the most important feature for a senior living alone?', answer: 'Fall detection is the single most important feature for seniors living alone. It automatically calls for help if a fall is detected — even if the person is unconscious or cannot press the button. Not all fall detection is equal: Medical Guardian and Bay Alarm Medical both use clinical-grade algorithms with accuracy rates above 80%. Test the system regularly to make sure it is working.' },
@@ -452,6 +486,13 @@ const GUIDE_META: Record<string, {
     title: 'Walk-In Shower Conversion Cost: Tub to Shower (2026)',
     description: 'How much does it cost to convert a bathtub to a walk-in shower? Costs, timeline, and whether you need a CAPS contractor.',
     category: 'bath-safety',
+    keyTakeaways: [
+      'A basic prefab tub-to-shower conversion costs $1,500–$3,000. A custom zero-threshold roll-in shower costs $6,000–$15,000.',
+      'A zero-threshold (curbless) walk-in shower is safer than a walk-in tub for most seniors — nothing to step over.',
+      'Basic conversions take 1–2 days; custom tile work takes 3–5 days; full bathroom remodels take 1–2 weeks.',
+      'Adding a built-in bench and grab bars during conversion costs $500–$1,500 — much cheaper than retrofitting later.',
+      'Use a CAPS-certified contractor to ensure ADA-compliant slope drainage and proper blocking for grab bars.',
+    ],
     intro: 'Converting a standard bathtub to a walk-in or roll-in shower eliminates the step-over that causes most bathroom falls. Costs range from $1,500 for a basic tub-to-shower conversion to $8,000+ for a fully custom zero-threshold (roll-in) shower. Here\'s what determines the price and whether it\'s the right choice vs. a walk-in tub.',
     faqs: [
       { question: 'What is the difference between a walk-in shower and a roll-in shower?', answer: 'A walk-in shower typically has a small curb or low threshold (1–2 inches). A roll-in shower is completely curbless (zero threshold) — a wheelchair can roll directly in. Roll-in showers are required under ADA guidelines for accessible bathrooms. For aging in place, a zero-threshold shower is the safest option.' },
@@ -576,6 +617,13 @@ const GUIDE_META: Record<string, {
     title: 'Aging in Place vs. Assisted Living: Full Cost Comparison (2026)',
     description: 'How much does aging in place cost compared to assisted living? Home modifications, in-home care, and senior living costs compared side by side.',
     category: 'grab-bars',
+    keyTakeaways: [
+      'National median assisted living cost: $4,500–$7,000/month ($54,000–$84,000/year).',
+      'Aging in place with part-time aide (10 hrs/week) costs $20,000–$35,000/year in year 1 — roughly half of assisted living.',
+      'When in-home care exceeds 30–40 hours/week, assisted living often becomes cost-competitive.',
+      'Year 1 home modification costs ($2,000–$15,000) are a one-time expense, not recurring like assisted living.',
+      'A geriatric care manager ($150–$250/hr) can assess needs and identify benefits — worth the $300–$500 initial assessment fee.',
+    ],
     intro: 'Assisted living costs $4,500–$7,000 per month nationally. Aging in place — with home modifications and some in-home care — often costs significantly less, especially in the early years. This guide compares the full costs of each option and helps families make a financially informed decision.',
     faqs: [
       { question: 'Is aging in place cheaper than assisted living?', answer: 'For most seniors in the early stages of care needs, aging in place is significantly less expensive than assisted living. The national median assisted living cost is $4,500/month ($54,000/year). Basic aging-in-place modifications ($2,000–$10,000 one-time) plus part-time in-home aide costs ($15–$25/hour) can run $15,000–$25,000/year for moderate care needs — roughly half the cost of assisted living.' },
@@ -658,6 +706,12 @@ const GUIDE_META: Record<string, {
     description: 'Walk-in tub or walk-in shower — which is better for seniors? Fall risk, cost, installation, and which option occupational therapists recommend.',
     category: 'walk-in-tubs',
     compareSlug: 'best-walk-in-tubs',
+    keyTakeaways: [
+      'Occupational therapists generally recommend a zero-threshold walk-in shower first — nothing to step over and no waiting inside while filling.',
+      'Walk-in tubs are better when hydrotherapy is a priority or when the user cannot safely stand for showering.',
+      'A basic tub-to-shower conversion costs $1,500–$3,500. A walk-in tub installation typically costs $3,500–$10,000.',
+      'Both options require grab bars and a handheld showerhead to be maximally safe — factor these into your budget.',
+    ],
     intro: 'Walk-in tubs and walk-in showers both eliminate the dangerous step-over of a standard tub — but they work differently, cost differently, and suit different users. This guide helps you choose the right option based on fall history, mobility level, and whether hydrotherapy is a priority.',
     faqs: [
       { question: 'Is a walk-in tub or walk-in shower safer?', answer: 'For most seniors, a properly designed walk-in shower is safer than a walk-in tub. Walk-in showers (especially zero-threshold designs) allow you to enter and exit standing up, with grab bars for support, and no waiting inside while the tub drains. Walk-in tubs require sitting inside during both fill and drain phases, which adds time in a wet environment. Occupational therapists typically recommend walk-in showers first.' },
@@ -678,6 +732,13 @@ const GUIDE_META: Record<string, {
     description: 'Which stairlift brands have the most complaints? What warning signs to look for, and which brands consistently deliver reliable, well-supported products.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'The biggest red flag: a sales rep pushing for a same-day decision. Reputable dealers don\'t use artificial urgency.',
+      'Always verify local service technicians before buying — poor after-sales service is the #1 complaint category.',
+      'Stick to authorized dealers of Bruno, Harmar, Acorn, or Stannah to ensure parts and service availability.',
+      'Refurbished stairlifts can save 30–50% — but only straight rails from authorized dealers, never curved or off-brand.',
+      'Check BBB rating, Google Reviews, state contractor license, and physical address before signing anything.',
+    ],
     intro: 'The stairlift market has reliable brands — and brands that generate high complaint volumes, poor service follow-through, or deceptive sales practices. This guide identifies specific warning signs and covers which brands have the most consistent track record of problems. If a sales rep is pressuring you to sign today, that\'s your first warning sign.',
     faqs: [
       { question: 'Which stairlift brands have the most complaints?', answer: 'Based on BBB complaint data and consumer reviews, the brands generating the most complaints are typically those sold through high-pressure in-home sales rather than through dealer networks. Common complaints include: overpriced installations, poor post-sale service, difficulty getting warranty service honored, and refusal to service units purchased elsewhere. Brands with very limited local service networks are particularly problematic when something goes wrong.' },
@@ -698,6 +759,13 @@ const GUIDE_META: Record<string, {
     description: 'Complete home safety checklist for elderly adults — bathroom, bedroom, kitchen, entryway, and stairs. Printable checklist with costs for each modification.',
     category: 'grab-bars',
     compareSlug: 'best-grab-bars',
+    keyTakeaways: [
+      'The bathroom is the most dangerous room — 80% of senior in-home falls happen there. Start here.',
+      'The five highest-impact changes: grab bars, removing throw rugs, improved lighting, handrails on both sides of stairs, non-slip surfaces.',
+      'A basic safety package (grab bars + nightlights + non-slip mats) costs $500–$2,500 for most homes.',
+      'A licensed occupational therapist home assessment ($150–$300) is one of the highest-ROI safety investments you can make.',
+      'Area Agencies on Aging offer free home safety assessments for adults 60+ — call 1-800-677-1116 to find local programs.',
+    ],
     intro: 'Falls are the leading cause of injury-related death for adults 65 and older. Most falls happen at home. This checklist covers every room, organized by risk level, so you can prioritize the most important modifications first. Use it yourself or with an occupational therapist for a full home assessment.',
     faqs: [
       { question: 'What are the most important home safety modifications for elderly adults?', answer: 'The five highest-impact modifications — in order of fall-prevention effect per dollar — are: (1) Grab bars in bathroom (shower and toilet), (2) Removal of throw rugs and tripping hazards, (3) Improved lighting including night lights and motion sensors, (4) Handrails on both sides of all staircases, and (5) Non-slip surfaces on floors, stairs, and tub/shower floor. These five changes address the most common fall scenarios.' },
@@ -720,6 +788,12 @@ const GUIDE_META: Record<string, {
     description: 'What happens during stairlift installation? How long does it take, what does the installer do, and what to prepare. Complete guide to the process.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'A straight stairlift installs in 2–4 hours. Curved stairlifts with custom rails take a full day.',
+      'The rail attaches to stair treads, not the wall — no structural modifications to the home are needed.',
+      'Most installations don\'t require a building permit, but check local rules; HOAs may require separate approval.',
+      'Clear the staircase, ensure a 120V outlet is accessible nearby, and have someone home to supervise the install.',
+    ],
     intro: 'Most homeowners don\'t know what to expect when a stairlift gets installed. Understanding the process reduces anxiety, helps you prepare, and lets you ask the right questions. This guide covers the full installation process — from the in-home quote to the final test ride — for straight stairlifts.',
     faqs: [
       { question: 'How long does stairlift installation take?', answer: 'A straight stairlift installation typically takes 2–4 hours. The technician must: (1) prepare the rail sections, (2) mount rail brackets to the stair treads (not the wall), (3) assemble and attach the rail, (4) mount the lift unit, (5) wire the power supply, (6) program limits and test the operation. Curved stairlifts with custom rails take a full day.' },
@@ -761,6 +835,12 @@ const GUIDE_META: Record<string, {
     description: 'Life Alert vs Medical Guardian compared — monthly cost, fall detection, GPS coverage, contracts, and which is best for seniors living alone.',
     category: 'medical-alerts',
     compareSlug: 'best-medical-alerts',
+    keyTakeaways: [
+      'Life Alert requires a 3-year contract (~$49–$59/month) with cancellation fees. Medical Guardian is month-to-month from $29.95/month.',
+      'Medical Guardian offers GPS mobile coverage. Life Alert is primarily home-based.',
+      'Both offer fall detection as an add-on (~$10/month) with similar accuracy rates.',
+      'For flexibility and value, Medical Guardian is the better pick for most seniors. Life Alert\'s main advantage is brand familiarity.',
+    ],
     intro: 'Life Alert and Medical Guardian are two of the most-searched medical alert brands — but they serve different needs at different price points. This guide compares them on monthly cost, fall detection accuracy, contract terms, response time, and overall value. No sponsored placement, no affiliate bias.',
     faqs: [
       { question: 'Is Life Alert or Medical Guardian better?', answer: 'It depends on your needs. Life Alert has strong brand recognition and a responsive monitoring center but requires a 3-year contract and charges cancellation fees. Medical Guardian offers more hardware options (including GPS mobile), shorter contract options, and comparable response times. For seniors who want month-to-month flexibility, Medical Guardian is typically the better choice.' },
@@ -782,6 +862,13 @@ const GUIDE_META: Record<string, {
     description: 'Can you get a free stairlift? Yes — through VA grants, Medicaid waivers, state programs, and nonprofits. Complete guide to every financial assistance program.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Standard Medicare does not cover stairlifts — but multiple other programs do for qualifying individuals.',
+      'VA SAH grants cover up to $109,986 for veterans with service-connected mobility disabilities.',
+      'USDA Section 504 grants cover up to $10,000 for low-income rural homeowners.',
+      'Medicaid HCBS waivers fund stairlifts in most states for income-qualifying seniors at risk of nursing home placement.',
+      'Rebuilding Together is the largest nonprofit providing free home modifications including stairlifts for low-income homeowners.',
+    ],
     intro: 'Stairlifts are not "free" through Medicare, but multiple programs can cover the full cost for qualifying seniors and veterans. The key is knowing which programs exist and how to apply. This guide covers every option — federal grants, Medicaid, VA programs, state programs, and nonprofits.',
     faqs: [
       { question: 'Can you get a free stairlift from the government?', answer: 'Yes, in some circumstances. Veterans with service-connected disabilities can receive stairlifts at no cost through VA Specially Adapted Housing (SAH) grants. Low-income seniors in rural areas may qualify for full coverage under the USDA Section 504 grant program (up to $10,000). Medicaid HCBS waivers in many states cover stairlifts for income-qualifying seniors who would otherwise need nursing home placement.' },
@@ -804,6 +891,13 @@ const GUIDE_META: Record<string, {
     description: 'Which medical alert systems have the most accurate fall detection? Bay Alarm, Medical Guardian, and Life Alert compared on detection accuracy, response time, and monthly cost.',
     category: 'medical-alerts',
     compareSlug: 'best-medical-alerts',
+    keyTakeaways: [
+      'Best-in-class fall detection (Bay Alarm Medical, Medical Guardian) achieves ~80–85% accuracy — no system catches every fall.',
+      'Fall detection is typically a $5–$10/month add-on; total cost runs $25–$45/month with monitoring.',
+      'Wrist-worn devices detect falls more reliably than pendant-only models.',
+      'For seniors who go outside, choose GPS-enabled fall detection — home-only systems won\'t work in parking lots or at a friend\'s house.',
+      'Fall detection supplements caregiving — don\'t rely on it alone. Regular check-ins remain essential.',
+    ],
     intro: 'Fall detection is the most important feature in a medical alert system for seniors living alone. But not all fall detection is equal — accuracy rates vary from 65% to 85%, and a missed fall can be life-threatening. This guide covers the systems with the most accurate fall detection, tested and reviewed.',
     faqs: [
       { question: 'How accurate is automatic fall detection?', answer: 'Current consumer-grade fall detection algorithms detect 65–85% of falls. The best systems on the market (Bay Alarm Medical, Medical Guardian) achieve around 80–85% in clinical-style testing. No system detects 100% of falls — they work best as a supplement to the manual help button, not a replacement. Users should still press the button when possible.' },
