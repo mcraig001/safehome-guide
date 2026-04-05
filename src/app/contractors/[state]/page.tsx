@@ -175,10 +175,10 @@ export default async function StateContractorPage({ params }: Props) {
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                { href: '/guides/how-to-choose-a-stairlift', label: 'How to Choose a Stairlift' },
-                { href: '/guides/grab-bar-installation-guide', label: 'Grab Bar Installation Guide' },
-                { href: '/guides/bathroom-safety-modifications-for-seniors', label: 'Bathroom Safety Modifications' },
+                { href: '/guides/aging-in-place-planning-guide', label: 'How to Plan for Aging in Place' },
                 { href: '/guides/home-modification-grants-for-seniors', label: 'Grants for Home Modifications' },
+                { href: '/guides/fall-prevention-for-seniors', label: 'Fall Prevention Guide' },
+                { href: '/guides/aging-in-place-vs-assisted-living-cost', label: 'Aging in Place vs. Assisted Living' },
               ].map(link => (
                 <Link
                   key={link.href}

@@ -80,9 +80,11 @@ function getRecommendations(answers: Record<string, number | string>): Rec[] {
   }
 
   if ((answers.falls as number) >= 2) {
+    recs.push({ label: 'Fall Prevention Guide', description: 'Evidence-based steps to prevent falls at home.', href: '/guides/fall-prevention-for-seniors', icon: '🛡️' });
     recs.push({ label: 'Medical Alert Systems', description: 'Get help automatically if a fall happens.', href: '/products/medical-alerts', icon: '🚨' });
     recs.push({ label: 'Medical Alert Guide', description: 'Choosing the right system for a senior living alone.', href: '/guides/best-medical-alert-for-seniors-living-alone', icon: '📋' });
   } else if ((answers.falls as number) === 1) {
+    recs.push({ label: 'Fall Prevention Guide', description: 'Room-by-room fall prevention checklist.', href: '/guides/fall-prevention-for-seniors', icon: '🛡️' });
     recs.push({ label: 'Medical Alert Systems', description: 'Compare fall detection and GPS monitoring options.', href: '/products/medical-alerts', icon: '🚨' });
   }
 
