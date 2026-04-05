@@ -101,6 +101,7 @@ const GUIDE_META: Record<string, {
   intro: string;
   faqs: { question: string; answer: string }[];
   costBreakdown?: { item: string; low: number; high: number }[];
+  hideTotal?: boolean;
   compareSlug?: string;
 }> = {
   'stairlift-cost-guide': {
@@ -174,6 +175,7 @@ const GUIDE_META: Record<string, {
       { question: 'Are there other financial assistance programs for stairlifts?', answer: 'Yes — several. The USDA Section 504 Rural Repair and Rehabilitation Program provides grants up to $10,000 to very low-income homeowners. Many Area Agencies on Aging run local modification programs. Some states have dedicated senior home repair programs. The National Council on Aging\'s BenefitsCheckUp tool can identify programs in your area.' },
       { question: 'Are stairlifts tax deductible?', answer: 'Stairlifts may be partially deductible as a medical expense if your total medical expenses exceed 7.5% of your adjusted gross income. The deductible amount is the cost minus any increase in home value the lift provides (typically $0 for a stairlift). Consult a tax professional.' },
     ],
+    hideTotal: true,
     costBreakdown: [
       { item: 'Medicare coverage', low: 0, high: 0 },
       { item: 'Medicare Advantage (varies by plan)', low: 0, high: 1500 },
@@ -195,6 +197,7 @@ const GUIDE_META: Record<string, {
       { question: 'Can the VA pay for a walk-in tub?', answer: 'Yes. Veterans with service-connected disabilities may qualify for VA Specially Adapted Housing (SAH) or SHA grants that cover bathroom modifications. Additionally, the VA\'s Home Improvements and Structural Alterations (HISA) grant provides up to $6,800 for veterans with service-connected conditions and up to $2,000 for non-service-connected conditions.' },
       { question: 'Are there nonprofit programs that help pay for walk-in tubs?', answer: 'Several national nonprofits fund home modifications: Rebuilding Together (free modifications for low-income homeowners), Habitat for Humanity Home Repair, and local Community Action Agencies. Many states also have specific senior home repair programs — search "[your state] senior home modification grant."' },
     ],
+    hideTotal: true,
     costBreakdown: [
       { item: 'Medicare Part A/B coverage', low: 0, high: 0 },
       { item: 'Medicare Advantage benefit', low: 0, high: 2500 },
@@ -278,6 +281,7 @@ const GUIDE_META: Record<string, {
       { question: 'Are home modification grants taxable income?', answer: 'Generally, home modification grants from government programs are not taxable income. However, if the modification increases your home\'s value, a portion of a grant might theoretically be taxable — but in practice, ramps, grab bars, and stairlifts typically do not increase appraised home value. Consult a tax professional for your specific situation.' },
       { question: 'What nonprofits provide free home modifications?', answer: 'Rebuilding Together (rebuildingtogether.org) is the largest national nonprofit providing free home repairs and modifications for low-income homeowners. Habitat for Humanity Home Repair programs exist in many communities. Many local Community Action Agencies also have home modification programs. Search "[your city] free home modification program" or contact your local AAA.' },
     ],
+    hideTotal: true,
     costBreakdown: [
       { item: 'USDA Section 504 grant (max)', low: 0, high: 10000 },
       { item: 'VA HISA grant (service-connected)', low: 0, high: 6800 },
@@ -615,6 +619,7 @@ const GUIDE_META: Record<string, {
       { question: 'Are there nonprofit programs that provide free stairlifts?', answer: 'Rebuilding Together is the largest nonprofit providing free home modifications, including stairlifts, for low-income homeowners. Habitat for Humanity Home Repair programs also serve some markets. Local chapters vary in what they cover — contact your local chapter directly. Some faith-based organizations (Catholic Charities, Lutheran Social Services) also run home modification programs.' },
       { question: 'What income limits apply to free stairlift programs?', answer: 'Income limits vary by program. The USDA Section 504 grant requires income at or below 50% of the area median income. Medicaid requires income below state-specific limits (typically 100–138% of the federal poverty level). VA grants have no income limits — only service-connected disability requirements. Rebuilding Together typically serves homeowners at or below 80% of area median income.' },
     ],
+    hideTotal: true,
     costBreakdown: [
       { item: 'VA SAH grant (up to)', low: 0, high: 109986 },
       { item: 'VA HISA grant (up to)', low: 0, high: 6800 },
@@ -732,6 +737,14 @@ export default async function GuidePage({ params }: Props) {
       { name: 'Check permit requirements', text: 'Permanent attached ramps typically require a building permit. Freestanding modular ramps generally do not. Contact your local building department before beginning permanent construction.' },
       { name: 'Install or hire contractor', text: 'Portable ramps require no installation. Modular systems come with detailed instructions and can be DIY assembled. Permanent ramps should be built by a licensed contractor, ideally CAPS-certified.' },
     ],
+    'aging-in-place-bathroom-modifications': [
+      { name: 'Install grab bars', text: 'Start with grab bars — they are the highest-impact, lowest-cost modification. Install a horizontal bar inside the shower (33–36 inches high), a vertical bar at the shower entry, and a 42-inch horizontal bar next to the toilet. Budget $400–$900 for a professional 3-bar installation.' },
+      { name: 'Add non-slip surfaces', text: 'Apply non-slip strips or mats to the tub floor, shower floor, and bathroom floor in front of the toilet. Non-slip bath mats with suction cups cost $15–$40. Adhesive non-slip strips for tile cost $10–$25. This step prevents most slip-and-fall accidents.' },
+      { name: 'Install a hand-held showerhead', text: 'Replace the fixed showerhead with an adjustable-height hand-held model on a slide bar. This allows seated bathing and is easier to use for anyone with limited mobility. Hand-held showerheads cost $30–$150 and take 15 minutes to install — no plumber needed.' },
+      { name: 'Raise the toilet seat or replace with comfort-height model', text: 'Install a raised toilet seat attachment ($30–$80, no tools required) or replace the toilet with a comfort-height model (17–19 inches vs. standard 15 inches). This is especially important for anyone with knee pain, hip replacement, or lower-body weakness.' },
+      { name: 'Convert or modify the shower/tub', text: 'If shower access is difficult, consider a tub-to-walk-in-shower conversion ($1,500–$5,000) or a walk-in tub ($3,500–$10,000). For wheelchair users, a zero-threshold roll-in shower provides the safest access ($5,000–$15,000).' },
+      { name: 'Add night lighting and contrast', text: 'Install motion-activated night lights in the bathroom and hallway leading to it. Add contrasting colors near grab bars, toilet, and shower edges to improve visibility for older adults with reduced visual acuity.' },
+    ],
   };
 
   const howToSchemaData = HOW_TO_STEPS[slug] ? howToSchema({
@@ -815,15 +828,17 @@ export default async function GuidePage({ params }: Props) {
                         <td className="py-3 px-4 text-right font-mono" style={{ color: '#1B4332' }}>${row.high.toLocaleString()}</td>
                       </tr>
                     ))}
-                    <tr style={{ backgroundColor: '#f0fdf4' }}>
-                      <td className="py-3 px-4 font-semibold text-gray-800">Total (estimated)</td>
-                      <td className="py-3 px-4 text-right font-mono font-semibold" style={{ color: '#1B4332' }}>
-                        ${meta.costBreakdown.reduce((s, r) => s + r.low, 0).toLocaleString()}
-                      </td>
-                      <td className="py-3 px-4 text-right font-mono font-semibold" style={{ color: '#1B4332' }}>
-                        ${meta.costBreakdown.reduce((s, r) => s + r.high, 0).toLocaleString()}
-                      </td>
-                    </tr>
+                    {!meta.hideTotal && (
+                      <tr style={{ backgroundColor: '#f0fdf4' }}>
+                        <td className="py-3 px-4 font-semibold text-gray-800">Total (estimated)</td>
+                        <td className="py-3 px-4 text-right font-mono font-semibold" style={{ color: '#1B4332' }}>
+                          ${meta.costBreakdown.reduce((s, r) => s + r.low, 0).toLocaleString()}
+                        </td>
+                        <td className="py-3 px-4 text-right font-mono font-semibold" style={{ color: '#1B4332' }}>
+                          ${meta.costBreakdown.reduce((s, r) => s + r.high, 0).toLocaleString()}
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>
