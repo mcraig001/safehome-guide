@@ -900,6 +900,73 @@ const GUIDE_META: Record<string, {
       { item: 'Full rail replacement', low: 500, high: 2000 },
     ],
   },
+  'vertical-platform-lift-cost': {
+    title: 'Vertical Platform Lift Cost Guide: Prices & What to Expect (2026)',
+    description: 'Vertical platform lift costs explained: purchase price, installation, permit requirements, and how VPLs compare to stairlifts and home elevators.',
+    category: 'home-elevators',
+    compareSlug: 'best-stairlifts',
+    intro: 'A vertical platform lift (VPL) is the most practical way for a wheelchair user to navigate a single floor rise without the construction cost of a full residential elevator. VPLs are open or semi-enclosed platforms that travel straight up — ideal for porch-to-entry rises, sunken living rooms, or single-step barriers. This guide covers every cost factor and how VPLs compare to the alternatives.',
+    faqs: [
+      { question: 'How much does a vertical platform lift cost?', answer: 'A vertical platform lift (VPL) typically costs $3,500–$8,500 installed for rises up to 8 feet. Outdoor models with weatherproof features run $4,500–$10,000. Indoor commercial-grade models and taller lifts cost more. Total installed cost (including electrical work and permit fees) is typically $4,500–$12,000 for most residential applications.' },
+      { question: 'What is the difference between a vertical platform lift and a home elevator?', answer: 'A VPL is an open or semi-enclosed platform — it does not have a cab or enclosure like an elevator. VPLs are lower cost ($4,000–$10,000), require no dedicated shaft, and install quickly (1–2 days). Full residential elevators are enclosed, more aesthetically finished, and cost $15,000–$35,000+. For wheelchair users needing to navigate a single porch step or small rise, a VPL is almost always the better value.' },
+      { question: 'Does a vertical platform lift require a permit?', answer: 'In most states, VPLs require a building permit and periodic inspection under elevator or accessibility codes. Requirements vary by state — your installer should handle permit applications. Outdoor attached VPLs typically require a building permit. Interior VPLs may require an elevator permit. Budget $100–$500 for permit fees.' },
+      { question: 'Can a vertical platform lift be used outdoors?', answer: 'Yes — outdoor VPLs are available with weather-resistant aluminum construction, stainless steel hardware, and non-slip platform surfaces. They handle standard residential porch rises (typically 12–48 inches) and are a common replacement for wooden porch ramps where space is limited. Outdoor models require proper drainage planning around the base.' },
+      { question: 'Does Medicare cover vertical platform lifts?', answer: 'Standard Medicare Parts A and B do not cover VPLs. VA grants (SAH/SHA) can fund VPL installation for qualifying veterans — VPLs are specifically listed as eligible modifications under these programs. Medicaid HCBS waivers in some states cover VPLs. Some Medicare Advantage plans include home modification benefits that may apply.' },
+    ],
+    costBreakdown: [
+      { item: 'Indoor VPL (up to 6 ft rise)', low: 3500, high: 7000 },
+      { item: 'Outdoor VPL (weather-resistant)', low: 4500, high: 10000 },
+      { item: 'Installation (labor)', low: 500, high: 2000 },
+      { item: 'Electrical connection (if needed)', low: 200, high: 800 },
+      { item: 'Permit fees', low: 100, high: 500 },
+      { item: 'Annual maintenance', low: 150, high: 400 },
+    ],
+  },
+  'home-health-aide-cost': {
+    title: 'Home Health Aide Cost Guide: What to Expect in 2026',
+    description: 'How much does a home health aide cost in 2026? Hourly rates by state, agency vs. private hire, what Medicare covers, and how to find a vetted aide.',
+    category: 'grab-bars',
+    hideTotal: true,
+    intro: 'A home health aide is often the difference between aging in place and moving to a care facility. As physical or cognitive needs grow, in-home help allows seniors to remain in their own homes safely. Understanding the real cost — and how to fund it — is essential for family planning. This guide covers hourly rates, agency vs. private hire, Medicare coverage, and what families typically pay.',
+    faqs: [
+      { question: 'How much does a home health aide cost per hour?', answer: 'The national median home health aide rate is $27–$30/hour as of 2026, per the Genworth Cost of Care Survey. Agency rates run $28–$40/hour (the agency fee covers payroll, taxes, insurance, and backup coverage). Private hire (finding an aide directly) costs $18–$28/hour but requires you to handle taxes, workers\' comp, and backup coverage yourself. Rates vary significantly by state — the Northeast and West Coast run $35–$50/hour through agencies.' },
+      { question: 'What is the difference between a home health aide and a personal care aide?', answer: 'A home health aide (HHA) is certified to provide skilled care: assistance with medication management, vital sign monitoring, wound care under nursing supervision, and personal care (bathing, dressing, transfers). A personal care aide (PCA) or home care aide provides non-medical support: companionship, meal prep, light housekeeping, transportation, and personal care. HHAs cost more but can handle greater medical complexity. Most families start with PCA services.' },
+      { question: 'Does Medicare cover home health aides?', answer: 'Medicare Part A covers skilled home health aide services — but only when ordered by a physician, tied to a skilled nursing or therapy need, and provided by a Medicare-certified home health agency. Coverage is for intermittent skilled care (not 24/7 custodial care). Non-medical personal care aides are not covered by standard Medicare. Medicaid covers custodial home care for income-eligible individuals under HCBS waiver programs.' },
+      { question: 'How many hours of home care does a senior typically need?', answer: 'It depends heavily on functional level. A senior who needs help with bathing and dressing only may need 2–4 hours per day (14–28 hours/week). Someone who needs companionship, meal prep, and medication reminders might need 8–12 hours per day. 24/7 live-in care (when a care facility may become more cost-effective) runs $250–$350/day through an agency.' },
+      { question: 'How do I find a vetted home health aide?', answer: 'Options: (1) Home care agency — the agency vets, hires, insures, and manages the aide; you pay the agency rate. (2) Referral agency — screens and refers candidates; you hire directly. (3) CareLinx, Care.com, or similar platforms — direct private hire with background check services. (4) Your local Area Agency on Aging — may provide subsidized home care for income-qualified seniors. Always run a criminal background check and verify references regardless of source.' },
+      { question: 'Is it cheaper to use an agency or hire a private home health aide?', answer: 'Private hire costs 30–50% less per hour, but comes with significant responsibilities: you become the employer, responsible for payroll taxes, workers\' compensation insurance, backup coverage if the aide is sick, and hiring/firing decisions. For most families, the 30% premium of an agency is worth the management simplification and guaranteed backup coverage.' },
+    ],
+    costBreakdown: [
+      { item: 'Personal care aide (agency, per hour)', low: 25, high: 40 },
+      { item: 'Home health aide (agency, per hour)', low: 30, high: 50 },
+      { item: 'Private hire aide (per hour)', low: 18, high: 28 },
+      { item: '20 hrs/week annual (agency PCA)', low: 26000, high: 41600 },
+      { item: 'Live-in care (per day, agency)', low: 250, high: 400 },
+      { item: 'Live-in care (annual)', low: 91250, high: 146000 },
+    ],
+  },
+  'grab-bar-types-guide': {
+    title: 'Types of Grab Bars: A Complete Buyer\'s Guide (2026)',
+    description: 'Every type of grab bar explained: permanent, suction cup, folding, floor-mounted, and decorative. How to choose the right grab bar for each location.',
+    category: 'grab-bars',
+    compareSlug: 'best-grab-bars',
+    intro: 'Not all grab bars are the same. There are permanent wall-mounted bars, suction cup bars, foldable bars, floor-to-ceiling poles, and designer bars that blend with bathroom décor. The right choice depends on the location, the user\'s needs, whether installation into studs is possible, and budget. This guide explains every type of grab bar and when to use each one.',
+    faqs: [
+      { question: 'What types of grab bars are available?', answer: 'The main types: (1) Permanent wall-mounted bars — the safest option, anchored to studs or with rated anchors; (2) Suction cup grab bars — portable but NOT recommended as a primary safety bar; (3) Fold-down / folding bars — pivot out of the way when not in use, good for shower benches and toilet use; (4) Floor-to-ceiling poles — pressure-mounted, require no drilling, support up to 300 lbs; (5) Clamp-on tub bars — attach to tub edge without drilling, moderate support.' },
+      { question: 'Are suction cup grab bars safe?', answer: 'Suction cup grab bars should not be relied upon as a primary safety device. While modern suction cups can hold 200+ lbs in ideal conditions, suction can fail suddenly, especially on textured or mineral-stained tile. They are useful as supplemental grip points or for travel, but should never replace a properly installed wall-mounted grab bar in a fall-risk bathroom.' },
+      { question: 'What length grab bar do I need?', answer: 'For the shower long wall (horizontal bar): 24–42 inches is standard. Longer bars (36–42 inches) provide more support area. For the toilet (horizontal bar): 42 inches is ADA standard on the wall side. For vertical bars (shower entry, toilet assist): 12–16 inches is typical. For bathtub edges: 24–32 inches horizontal bars are common.' },
+      { question: 'Can grab bars match my bathroom finish?', answer: 'Yes. Grab bars are available in all standard plumbing finishes: chrome, polished nickel, brushed nickel, oil-rubbed bronze, matte black, and white. Decorative bars from Moen, Delta, Kohler, and Gatco are designed to blend with fixtures. Designer grab bars exist for styles from contemporary to traditional — safety and aesthetics are no longer in conflict.' },
+      { question: 'What is a fold-down grab bar?', answer: 'A fold-down (flip-up) grab bar is mounted on a wall but pivots horizontally to fold flat against the wall when not in use. Common for use beside toilets (where a fixed bar would prevent lateral access) and beside shower benches (where the bar would block entry without folding). They must be installed in studs and rated for the same 250+ lb standard as fixed bars. Popular for homes where the bathroom is used by both ambulatory and mobility-impaired users.' },
+    ],
+    costBreakdown: [
+      { item: 'Basic stainless bar (18–24 inch)', low: 15, high: 45 },
+      { item: 'Designer bar (Moen, Delta, Kohler)', low: 40, high: 150 },
+      { item: 'Fold-down / swing-out bar', low: 60, high: 200 },
+      { item: 'Floor-to-ceiling safety pole', low: 80, high: 200 },
+      { item: 'Suction cup bar (supplemental only)', low: 20, high: 60 },
+      { item: 'Professional installation (per bar)', low: 75, high: 200 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -1187,7 +1254,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 38 guides →
+              View all 41 guides →
             </Link>
           </div>
         </aside>

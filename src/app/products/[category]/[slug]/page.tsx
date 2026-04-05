@@ -108,9 +108,9 @@ export default async function ProductPage({ params }: Props) {
     'medical-alerts': { slug: 'medical-alert-cost-guide', label: 'Medical Alert Cost Guide' },
     'wheelchair-ramps': { slug: 'wheelchair-ramp-cost-guide', label: 'Wheelchair Ramp Cost Guide' },
     'home-elevators': { slug: 'home-elevator-cost-guide', label: 'Home Elevator Cost Guide' },
-    'bath-safety': { slug: 'aging-in-place-bathroom-modifications', label: 'Bathroom Safety Modifications Guide' },
-    'mobility-aids': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
-    'smart-home-safety': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
+    'bath-safety': { slug: 'best-shower-chair-for-seniors', label: 'Bath Safety Buyer\'s Guide' },
+    'mobility-aids': { slug: 'rollator-walker-guide', label: 'Rollator Walker Guide' },
+    'smart-home-safety': { slug: 'home-safety-checklist-for-elderly', label: 'Home Safety Checklist' },
     'door-access': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
   };
   const guideInfo = GUIDE_SLUGS[category];

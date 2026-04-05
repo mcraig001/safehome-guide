@@ -351,6 +351,33 @@ const guides = [
     readTime: '4 min read',
     type: 'cost',
   },
+  {
+    slug: 'vertical-platform-lift-cost',
+    title: 'Vertical Platform Lift Cost Guide: Prices & What to Expect (2026)',
+    description: 'VPL purchase price, installation costs, permit requirements, and how platform lifts compare to stairlifts and home elevators.',
+    category: 'Home Elevators',
+    icon: '⬆️',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'home-health-aide-cost',
+    title: 'Home Health Aide Cost Guide: What to Expect in 2026',
+    description: 'Hourly rates by state, agency vs. private hire, what Medicare covers, and how to find a vetted aide.',
+    category: 'Planning',
+    icon: '🤝',
+    readTime: '6 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'grab-bar-types-guide',
+    title: 'Types of Grab Bars: A Complete Buyer\'s Guide (2026)',
+    description: 'Every type of grab bar explained: permanent, suction cup, folding, floor-mounted, and decorative. How to choose the right one.',
+    category: 'Grab Bars',
+    icon: '🔩',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

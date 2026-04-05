@@ -43,6 +43,9 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'best-shower-chair-for-seniors': { title: 'Best Shower Chairs and Benches for Seniors 2026', category: 'Bath Safety' },
   'rollator-walker-guide': { title: 'How to Choose the Best Rollator Walker (2026)', category: 'Mobility Aids' },
   'stairlift-repair-cost': { title: 'Stairlift Repair Cost Guide 2026', category: 'Stairlifts' },
+  'vertical-platform-lift-cost': { title: 'Vertical Platform Lift Cost Guide 2026', category: 'Home Elevators' },
+  'home-health-aide-cost': { title: 'Home Health Aide Cost Guide 2026', category: 'Planning' },
+  'grab-bar-types-guide': { title: 'Types of Grab Bars: Buyer\'s Guide 2026', category: 'Grab Bars' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {
