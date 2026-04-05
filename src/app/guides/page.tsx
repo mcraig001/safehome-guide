@@ -171,6 +171,33 @@ const guides = [
     readTime: '4 min read',
     type: 'cost',
   },
+  {
+    slug: 'bruno-vs-acorn-stairlift',
+    title: 'Bruno vs. Acorn Stairlift: Full Comparison (2026)',
+    description: 'Bruno or Acorn? Head-to-head comparison of price, weight capacity, warranty, and service network to help you choose.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'stairlift-rental-vs-buy',
+    title: 'Stairlift Rental vs. Buy: Which Makes Sense?',
+    description: 'Rentals cost $150–$400/month but buying is cheaper after 12 months. When each option makes financial sense.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '4 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'stairlift-weight-limit',
+    title: 'Stairlift Weight Limits: Heavy-Duty Options Explained',
+    description: 'Standard stairlifts support 250–300 lbs. Heavy-duty models go up to 600 lbs. Brand-by-brand weight limit breakdown.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '4 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

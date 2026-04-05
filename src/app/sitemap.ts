@@ -35,7 +35,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'bathroom-safety-modifications-for-seniors','how-to-choose-a-stairlift',
         'aging-in-place-tax-deductions','best-medical-alert-for-seniors-living-alone',
         'walk-in-shower-conversion-cost','stairlift-for-narrow-stairs',
-        'outdoor-stairlift-cost'].map(slug => ({
+        'outdoor-stairlift-cost',
+        'bruno-vs-acorn-stairlift',
+        'stairlift-rental-vs-buy',
+        'stairlift-weight-limit'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
