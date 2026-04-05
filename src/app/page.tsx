@@ -119,6 +119,41 @@ export default async function HomePage() {
         </section>
       )}
 
+      {/* Popular Guides */}
+      <section className="py-16 px-4 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: '#1A1A1A' }}>Cost Guides & Buyer&apos;s Guides</h2>
+              <p className="text-gray-500 mt-1">No fluff — just what things cost and how to choose.</p>
+            </div>
+            <Link href="/guides" className="hidden md:block font-semibold text-sm hover:underline" style={{ color: '#1B4332' }}>
+              View all guides →
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { slug: 'stairlift-cost-guide', title: 'How Much Does a Stairlift Cost?', icon: '🪜', tag: 'Cost Guide' },
+              { slug: 'does-medicare-cover-stairlifts', title: 'Does Medicare Cover Stairlifts?', icon: '🏥', tag: 'Insurance' },
+              { slug: 'home-modification-grants-for-seniors', title: 'Home Modification Grants for Seniors', icon: '💰', tag: 'Insurance' },
+            ].map(g => (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className="group bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md hover:border-green-200 transition-all"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <span className="text-xl">{g.icon}</span>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: '#D97706' }}>{g.tag}</span>
+                </div>
+                <h3 className="font-serif font-semibold text-gray-900 group-hover:text-green-800 transition-colors">{g.title}</h3>
+                <p className="text-xs text-green-800 mt-2 font-medium">Read guide →</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter signup */}
       <section className="py-12 px-4">
         <div className="max-w-2xl mx-auto">
