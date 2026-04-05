@@ -62,11 +62,15 @@ const CATEGORY_FAQS: Record<string, { question: string; answer: string }[]> = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const { data: p } = await supabase.from('sh_products').select('name, description, brand').eq('slug', slug).single();
+  const { data: p } = await supabase.from('sh_products').select('name, description, brand, category').eq('slug', slug).single();
   if (!p) return {};
+  const title = `${p.name} Review — ${p.brand}`;
+  const description = p.description?.slice(0, 160);
   return {
-    title: `${p.name} Review — ${p.brand}`,
-    description: p.description?.slice(0, 160),
+    title,
+    description,
+    openGraph: { title, description: description ?? undefined },
+    twitter: { title, description: description ?? undefined },
   };
 }
 
