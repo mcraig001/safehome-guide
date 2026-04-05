@@ -39,6 +39,10 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'american-standard-vs-safe-step-walk-in-tub': { title: 'American Standard vs. Safe Step Walk-In Tub', category: 'Walk-In Tubs' },
   'senior-bathroom-remodel-cost': { title: 'Senior Bathroom Remodel Cost Guide', category: 'Bath Safety' },
   'aging-in-place-vs-assisted-living-cost': { title: 'Aging in Place vs. Assisted Living Cost 2026', category: 'Planning' },
+  'fall-prevention-for-seniors': { title: 'Fall Prevention for Seniors: Home Safety Guide 2026', category: 'Planning' },
+  'best-shower-chair-for-seniors': { title: 'Best Shower Chairs and Benches for Seniors 2026', category: 'Bath Safety' },
+  'rollator-walker-guide': { title: 'How to Choose the Best Rollator Walker (2026)', category: 'Mobility Aids' },
+  'stairlift-repair-cost': { title: 'Stairlift Repair Cost Guide 2026', category: 'Stairlifts' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {

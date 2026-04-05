@@ -315,6 +315,42 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'fall-prevention-for-seniors',
+    title: 'Fall Prevention for Seniors: A Complete Home Safety Guide (2026)',
+    description: 'Room-by-room checklist, fall risk factors, home modification costs, and when to call an occupational therapist. Evidence-based guidance.',
+    category: 'Planning',
+    icon: '🛡️',
+    readTime: '7 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'best-shower-chair-for-seniors',
+    title: 'Best Shower Chairs and Benches for Seniors (2026)',
+    description: 'Freestanding vs. wall-mounted, transfer benches, weight limits, and what occupational therapists recommend.',
+    category: 'Bath Safety',
+    icon: '🪑',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'rollator-walker-guide',
+    title: 'Rollator Walker Guide: How to Choose the Best Rollator (2026)',
+    description: 'Wheel size, height adjustment, weight capacity, and the difference between rollators and standard walkers — from physical therapists.',
+    category: 'Mobility Aids',
+    icon: '🦽',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'stairlift-repair-cost',
+    title: 'Stairlift Repair Cost Guide: What to Expect in 2026',
+    description: 'Common stairlift repairs, diagnostic fees, motor replacement costs, and whether to repair or replace an aging stairlift.',
+    category: 'Stairlifts',
+    icon: '🔧',
+    readTime: '4 min read',
+    type: 'cost',
+  },
 ];
 
 const typeColors: Record<string, string> = {

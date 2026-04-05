@@ -41,6 +41,11 @@ const COMPARISON_META: Record<string, {
     guideSlug: 'walk-in-tub-cost-guide',
     intro: 'Walk-in tubs vary widely in quality, drain speed, and features. We scored the top brands on safety, ease of entry, hydrotherapy options, and value.',
     verdict: 'Prioritize fast-drain technology (under 2 minutes) and a low step-over threshold (under 3 inches). Hydrotherapy jets add cost but are worth it if joint pain is a factor.',
+    faqs: [
+      { question: 'What is the best walk-in tub?', answer: 'American Standard and Safe Step are consistently top-rated for build quality and service network. For hydrotherapy, Kohler and Ella offer strong jet systems. The best tub depends on whether you want soaking, air jets, or water jets, and your bathroom\'s plumbing setup.' },
+      { question: 'How long do you have to sit in a walk-in tub while it drains?', answer: 'Standard walk-in tubs drain in 3–6 minutes after you\'re done bathing. Fast-drain models drain in under 90 seconds. Because you must stay inside while water drains, fast-drain technology is one of the most important features to look for — it prevents chilling.' },
+      { question: 'Is a walk-in tub worth the money?', answer: 'Walk-in tubs are worth it for seniors with significant mobility limitations, arthritis, or fall risk from traditional tub entry. They\'re less valuable if the primary concern is fall risk in the shower — a roll-in shower conversion is often cheaper and more accessible than a walk-in tub.' },
+    ],
   },
   'best-grab-bars': {
     title: 'Best Grab Bars of 2026: Safety, Style, and Installation',
@@ -72,6 +77,11 @@ const COMPARISON_META: Record<string, {
     category: 'mobility-aids',
     intro: 'Rollator walkers vary significantly in weight, wheel size, and stability. We scored the top models on safety, maneuverability, comfort, and value — whether you need it mostly indoors or for outdoor use.',
     verdict: 'For outdoor use, choose a rollator with 8-inch wheels for better terrain handling. For indoor use, a compact lightweight model under 15 lbs is easier to maneuver in tight spaces. Always check weight capacity and seat height before buying.',
+    faqs: [
+      { question: 'What is the difference between a rollator and a walker?', answer: 'A standard walker has no wheels and requires lifting with each step — best for maximum stability. A rollator has 3 or 4 wheels, hand brakes, and a seat, making it easier to use continuously but slightly less stable than a standard walker. Rollators are better for longer distances and outdoor use.' },
+      { question: 'What size rollator do I need?', answer: 'Handle height should allow a 15–20° elbow bend when standing upright. Most rollators are adjustable from 32–38 inches handle height. Heavy-duty rollators (for users over 300 lbs) have wider frames and reinforced seats. Measure doorway widths if you\'ll use it indoors — standard models are 22–25 inches wide.' },
+      { question: 'Can a rollator walker be used outdoors?', answer: 'Yes, but look for models with 7–8 inch wheels (vs. standard 5–6 inch) for better outdoor terrain handling. All-terrain rollators with larger wheels handle grass, gravel, and uneven sidewalks more safely. Ensure the brake cable is weather-resistant if used frequently outdoors.' },
+    ],
   },
   'best-bath-safety-products': {
     title: 'Best Bath Safety Products of 2026: Shower Chairs, Benches & More',
@@ -79,6 +89,11 @@ const COMPARISON_META: Record<string, {
     category: 'bath-safety',
     intro: 'Bath safety products range from simple non-slip mats to wall-mounted shower benches and fully equipped transfer systems. We compared the top options on safety, stability, installation complexity, and value.',
     verdict: 'For most seniors, start with a handheld showerhead ($30–$50) and non-slip mat — then add a shower chair or bench if seated bathing is needed. Wall-mounted benches are more stable but require installation.',
+    faqs: [
+      { question: 'What bath safety products are most important for seniors?', answer: 'The highest-impact items in order: (1) grab bars — most falls happen at the point of entry/exit; (2) non-slip mat or adhesive strips on the shower floor; (3) handheld showerhead to bathe seated; (4) shower chair or bench for fatigue or balance issues. A transfer bench is needed if stepping over a tub wall is unsafe.' },
+      { question: 'What is the difference between a shower chair and a transfer bench?', answer: 'A shower chair sits inside the shower/tub for seated bathing. A transfer bench straddles the tub wall — you slide across from outside the tub, eliminating the need to step over the ledge. Transfer benches are essential for seniors who cannot safely step over a tub edge.' },
+      { question: 'Do shower chairs need to be installed?', answer: 'Most shower chairs and benches are freestanding — no installation required. Wall-mounted fold-down seats require screwing into wall studs and offer more floor space when folded up. Freestanding chairs are the fastest safety upgrade, while wall-mounted seats are more permanent and stable.' },
+    ],
   },
   'best-wheelchair-ramps': {
     title: 'Best Wheelchair Ramps of 2026: Portable vs. Permanent',
@@ -87,6 +102,11 @@ const COMPARISON_META: Record<string, {
     guideSlug: 'wheelchair-ramp-cost-guide',
     intro: 'Wheelchair ramp options range from $50 threshold ramps to $4,000 permanent modular systems. The right choice depends on rise height, whether the need is temporary or permanent, and whether the ramp needs to be portable. We compared the top options.',
     verdict: 'For small threshold rises (under 3 inches), a rubber threshold ramp is sufficient. For step entries up to 24 inches, a suitcase-style portable ramp works. For permanent step entries of any height, a modular aluminum system is the most durable solution.',
+    faqs: [
+      { question: 'What length wheelchair ramp do I need?', answer: 'ADA recommends a 1:12 slope — 1 inch of rise requires 12 inches of ramp length. A 6-inch door step needs a 6-foot ramp; a 24-inch porch needs a 24-foot ramp (or switchback design). For portable folding ramps, a 1:8 slope is often acceptable for manual wheelchairs and scooters.' },
+      { question: 'Are portable wheelchair ramps as safe as permanent ramps?', answer: 'Quality portable ramps with raised edges and non-slip surfaces are safe for most users. For heavy power wheelchairs (over 300 lbs combined user + chair weight), a permanently anchored modular or wooden ramp provides more stability and peace of mind.' },
+      { question: 'How much does a wheelchair ramp cost?', answer: 'Threshold ramps (under 3 inches): $30–$90. Portable folding ramps (1–8 ft): $100–$400. Modular aluminum systems (professional install): $1,500–$4,000. Permanent wooden ramps (contractor-built): $1,200–$3,000 depending on length and complexity.' },
+    ],
   },
   'best-smart-home-safety-devices': {
     title: 'Best Smart Home Safety Devices for Seniors (2026)',
@@ -94,6 +114,11 @@ const COMPARISON_META: Record<string, {
     category: 'smart-home-safety',
     intro: 'Smart home safety devices help seniors live independently longer by adding automated alerts, remote monitoring, and voice-controlled access to help. We compared the top devices on reliability, ease of use, and safety impact.',
     verdict: 'For most homes, start with a Wi-Fi smoke and CO detector and a video doorbell — these two devices address the most common safety gaps at under $200 combined. A voice assistant (Alexa/Echo Show) is the next most impactful addition for daily safety.',
+    faqs: [
+      { question: 'What smart home devices are most useful for seniors?', answer: 'The highest-impact devices: (1) smart smoke/CO detector with remote alerts for caregivers; (2) video doorbell so seniors can see visitors without getting up; (3) voice assistant (Amazon Echo Show) for hands-free calls, reminders, and media; (4) smart door lock for keyless entry. All four together cost under $500.' },
+      { question: 'Can smart home devices help seniors live independently longer?', answer: 'Yes — smart home devices reduce fall risk (motion sensor night lights, automated lighting) and enable remote monitoring by family. Studies show that activity monitoring systems can detect health changes 2–3 weeks before a crisis event. Voice assistants also reduce isolation, which is associated with faster cognitive decline.' },
+      { question: 'Do smart home devices work without wifi?', answer: 'Most smart home safety devices require Wi-Fi. If reliable internet is unavailable, consider cellular-connected options: cellular medical alert systems, 4G video doorbells, and cellular smoke detectors work without broadband. Wi-Fi extenders can expand coverage in larger homes.' },
+    ],
   },
   'best-smart-door-locks': {
     title: 'Best Smart Door Locks for Seniors & Aging in Place (2026)',
@@ -101,6 +126,11 @@ const COMPARISON_META: Record<string, {
     category: 'door-access',
     intro: 'Smart locks and keypad deadbolts eliminate the need to fumble with keys — particularly valuable for seniors with arthritis or cognitive decline. We compared the top models on ease of use, security, and caregiver-friendly features.',
     verdict: 'For most seniors, a Grade 1 keypad deadbolt with auto-lock is the right choice — it eliminates keys while maintaining security. Add a smart lock with an app if a family caregiver needs remote monitoring or access management.',
+    faqs: [
+      { question: 'Are smart locks safe for seniors with dementia?', answer: 'With proper setup, yes. Choose a lock with auto-lock (automatically locks after a set time) to prevent wandering. Caregiver apps allow remote monitoring and locking. PIN codes can be set as simple as needed. Some systems also alert caregivers when the door opens — useful for memory care situations.' },
+      { question: 'Can I install a smart lock myself?', answer: 'Most smart locks replace your existing deadbolt using standard door prep (2-1/8 inch bore hole). Installation takes 15–30 minutes with a screwdriver. Schlage, Kwikset, and Yale all offer DIY-friendly installs with detailed instructions. If your door frame is damaged or non-standard, a locksmith can assist.' },
+      { question: 'What is the most secure smart lock for a front door?', answer: 'Look for ANSI/BHMA Grade 1 certification — the highest residential security rating. Schlage Encode and Schlage Connect are Grade 1 and among the most pick-resistant locks on the market. Avoid Grade 3 locks (often found in budget models) for main entry doors.' },
+    ],
   },
 };
 

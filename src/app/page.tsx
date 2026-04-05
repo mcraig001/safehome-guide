@@ -169,7 +169,7 @@ export default async function HomePage() {
               <p className="text-gray-500 mt-1">No fluff — just what things cost and how to choose.</p>
             </div>
             <Link href="/guides" className="hidden md:block font-semibold text-sm hover:underline" style={{ color: '#1B4332' }}>
-              View all 34 guides →
+              View all 38 guides →
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-5">

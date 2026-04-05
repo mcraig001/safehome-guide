@@ -174,6 +174,35 @@ const CATEGORY_FAQS: Record<string, { question: string; answer: string }[]> = {
     { question: 'What is the best medical alert system?', answer: 'For seniors at home, Bay Alarm Medical and Medical Guardian have strong track records on response time and fall detection. For GPS coverage, Medical Guardian MGMove and Lively Mobile Plus are top-rated.' },
     { question: 'How accurate is automatic fall detection?', answer: 'Medical alert fall detection is accurate for 65–85% of falls. No system catches every fall — always wear the manual help button as well.' },
   ],
+  'wheelchair-ramps': [
+    { question: 'How steep can a wheelchair ramp be?', answer: 'ADA guidelines require a maximum 1:12 slope (1 inch rise per 12 inches of length) for public accessibility. For residential use, 1:8 is often acceptable for manual wheelchairs. Power wheelchairs and scooters perform best on 1:12 or gentler slopes.' },
+    { question: 'What material is best for a wheelchair ramp?', answer: 'Aluminum modular ramps are the most popular for permanent residential use — they\'re lightweight, rust-proof, and require no maintenance. Wood ramps are lower cost but need staining/sealing annually. Rubber threshold ramps handle small rises under 3 inches at low cost.' },
+    { question: 'Does Medicare cover wheelchair ramps?', answer: 'Standard Medicare Parts A and B do not cover wheelchair ramps. VA grants (SAH/SHA), Medicaid HCBS waivers, and nonprofit programs like Rebuilding Together provide ramp funding for qualifying individuals.' },
+    { question: 'How wide does a wheelchair ramp need to be?', answer: 'ADA minimum is 36 inches clear width. For power wheelchairs or scooters, 42–48 inches is more practical. Add handrails on both sides for ramps over 6 inches of rise.' },
+  ],
+  'bath-safety': [
+    { question: 'What is the most important bath safety upgrade for seniors?', answer: 'Grab bars are the highest-impact bath safety upgrade — properly installed bars near the toilet, tub, and shower entry prevent the most common household fall locations. Non-slip mats and a handheld showerhead are close seconds.' },
+    { question: 'How much does a walk-in shower conversion cost?', answer: 'Converting a tub to a walk-in shower costs $1,500–$5,000 on average. Simple liner systems can be installed in 1–2 days for $1,500–$3,000. Full tile custom conversions cost $4,000–$8,000+. This is often more practical than a walk-in tub for seniors who primarily shower.' },
+    { question: 'What is a transfer bench?', answer: 'A transfer bench straddles the side of a bathtub — you sit on the outer portion and slide across into the tub, eliminating the need to step over the tub wall. It\'s one of the most practical bath safety devices for seniors who cannot safely step over a tub edge but aren\'t ready for a full walk-in tub or shower conversion.' },
+  ],
+  'home-elevators': [
+    { question: 'How much does a home elevator cost?', answer: 'Residential elevators cost $15,000–$35,000 installed depending on drive type and floors served. Pneumatic (vacuum tube) elevators cost $20,000–$35,000. Cable-drive elevators are $15,000–$25,000. Annual maintenance runs $300–$800/year.' },
+    { question: 'How long does home elevator installation take?', answer: 'Most residential elevator installations take 2–5 days. Pneumatic elevators install faster (1–3 days) as they don\'t require a machine room. Traditional cable elevators require a shaft if one isn\'t pre-built.' },
+    { question: 'What is the difference between a home elevator and a stairlift?', answer: 'A home elevator carries users inside a cab, can serve multiple floors, and accommodates wheelchairs. A stairlift carries a seated user along a rail mounted to the stairs. Home elevators cost 3–5x more but offer greater accessibility, especially for wheelchair users. Stairlifts are the better value for most ambulatory seniors.' },
+  ],
+  'mobility-aids': [
+    { question: 'What is the difference between a walker and a rollator?', answer: 'A standard walker has no wheels — you lift it with each step for maximum stability. A rollator has 3–4 wheels plus hand brakes and a built-in seat — better for longer distances but slightly less stable. Two-wheel walkers (front wheels only) are a middle ground. Physical therapists can recommend the right type based on your balance and strength.' },
+    { question: 'Does Medicare cover mobility aids?', answer: 'Medicare Part B covers manual wheelchairs, transport chairs, and standard walkers (front-wheeled or pickup) as Durable Medical Equipment (DME) when prescribed by a doctor and deemed medically necessary. Power wheelchairs and scooters require additional documentation showing inability to use a manual chair.' },
+    { question: 'What is the safest walker for seniors?', answer: 'For maximum stability, a standard pickup walker with rubber tips provides the most support. For users who need to walk longer distances, a 4-wheel rollator with hand brakes is safer than a pickup walker (no tip-over risk when sitting). Choose a model with a seat height matching your knee height when standing.' },
+  ],
+  'smart-home-safety': [
+    { question: 'What smart home devices help seniors stay safe?', answer: 'The highest-impact devices: smart smoke/CO detectors with remote alerts, video doorbells for safe visitor screening, voice assistants (Amazon Echo) for hands-free calls and reminders, and motion-activated night lights to reduce fall risk. Activity monitoring systems can alert caregivers to unusual patterns.' },
+    { question: 'Do smart home devices work without a smartphone?', answer: 'Many smart home devices can be set up and managed by a family caregiver using their smartphone — the senior at home doesn\'t need a smartphone. Voice assistants (Amazon Echo, Google Nest Hub) are operated entirely by voice with no app required. Choose devices with simple interfaces appropriate for the user.' },
+  ],
+  'door-access': [
+    { question: 'What door hardware is easiest for seniors with arthritis?', answer: 'Lever-style door handles require significantly less grip strength than round knobs — a simple and low-cost upgrade. Keypad deadbolts eliminate the need to insert and turn a key. Smart locks with auto-lock eliminate the need to remember to lock the door at all.' },
+    { question: 'Are keypad door locks safe for seniors?', answer: 'Yes — keypad locks are a Grade 1 or Grade 2 security option that eliminates keys (which can be lost or stolen). Look for ANSI/BHMA Grade 1 certification for the highest residential security. Set a simple but unique PIN. Add auto-lock functionality so the door locks automatically after entry.' },
+  ],
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

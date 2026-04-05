@@ -813,6 +813,93 @@ const GUIDE_META: Record<string, {
       { item: 'Annual maintenance', low: 200, high: 500 },
     ],
   },
+  'fall-prevention-for-seniors': {
+    title: 'Fall Prevention for Seniors: A Complete Home Safety Guide (2026)',
+    description: 'How to prevent falls at home for seniors. Room-by-room checklist, fall risk factors, home modification costs, and when to call an occupational therapist.',
+    category: 'grab-bars',
+    compareSlug: 'best-bath-safety-products',
+    intro: 'Falls are the leading cause of injury death among adults 65 and older — over 36,000 Americans die from falls each year, and millions more visit emergency rooms. Most home falls are preventable with the right modifications and habits. This guide covers every evidence-based step you can take to reduce fall risk at home.',
+    faqs: [
+      { question: 'What are the most common causes of falls in seniors?', answer: 'The top causes: (1) Environmental hazards (loose rugs, poor lighting, cluttered pathways), (2) Muscle weakness and balance decline, (3) Medication side effects (particularly blood pressure, sleep, and anti-anxiety medications), (4) Vision impairment, (5) Rushing — many falls happen when hurrying to the bathroom at night. A geriatric physician can conduct a formal fall risk assessment.' },
+      { question: 'What home modifications prevent the most falls?', answer: 'In priority order: (1) Grab bars in the bathroom (most falls happen during tub/shower entry/exit and toilet use), (2) Non-slip surfaces in shower and bathroom, (3) Improved lighting — especially motion-activated night lights from bedroom to bathroom, (4) Removal of loose rugs, (5) Stair handrails that extend the full stair length. An occupational therapist can conduct a formal home fall assessment.' },
+      { question: 'Does Medicare cover fall prevention programs?', answer: 'Medicare Part B covers a one-time "Welcome to Medicare" preventive visit that includes fall risk assessment. The STEADI (Stopping Elderly Accidents, Deaths & Injuries) program and SilverSneakers fitness programs are covered under many Medicare Advantage plans. Some Medicaid programs fund home modification assessments by occupational therapists.' },
+      { question: 'What exercises prevent falls in seniors?', answer: 'Evidence-based fall-prevention exercises include Tai Chi (strongest evidence), balance training, lower-body strength exercises, and walking programs. The Otago Exercise Programme is a widely studied home-based fall prevention program. Even 2–3 hours of targeted balance/strength exercise per week reduces fall risk by 23% in meta-analyses.' },
+      { question: 'When should I call an occupational therapist for fall prevention?', answer: 'Call an OT if: (1) There has already been a fall or near-fall, (2) You notice the senior gripping furniture or walls for support, (3) They are hesitating on stairs or avoiding the shower, (4) A physician has flagged fall risk. Medicare Part B covers occupational therapy when medically necessary. An OT home visit typically runs $100–$200 out of pocket.' },
+    ],
+    costBreakdown: [
+      { item: 'Grab bar installation (per bar)', low: 75, high: 200 },
+      { item: 'Non-slip bath mat / adhesive strips', low: 10, high: 50 },
+      { item: 'Motion-activated night lights (set of 4)', low: 20, high: 80 },
+      { item: 'Stair handrail upgrade', low: 150, high: 600 },
+      { item: 'Occupational therapist home assessment', low: 100, high: 300 },
+      { item: 'Medical alert system (annual)', low: 240, high: 660 },
+    ],
+  },
+  'best-shower-chair-for-seniors': {
+    title: 'Best Shower Chairs and Benches for Seniors (2026)',
+    description: 'How to choose the best shower chair or bench for seniors. Freestanding vs. wall-mounted, transfer benches, weight limits, and what occupational therapists recommend.',
+    category: 'bath-safety',
+    compareSlug: 'best-bath-safety-products',
+    intro: 'A shower chair or bench is one of the simplest, most effective bath safety upgrades for seniors. But not all are the same — the right choice depends on the type of shower or tub, the user\'s mobility, and whether they can step over the tub edge. This guide covers the main types, what to look for, and what occupational therapists recommend.',
+    faqs: [
+      { question: 'What is the difference between a shower chair and a shower bench?', answer: 'A shower chair is typically a freestanding 4-legged seat for use inside a shower stall. A shower bench is usually longer (18–24 inches), may be freestanding or wall-mounted, and provides more support area. For smaller shower stalls, a shower chair fits; for larger walk-in showers, a bench offers more stability.' },
+      { question: 'Do I need a shower chair or a transfer bench?', answer: 'If you can step into the shower safely, a shower chair or bench works. If stepping over a bathtub edge is unsafe, you need a transfer bench — it straddles the tub wall so you can slide in from a sitting position outside the tub. OTs recommend transfer benches as one of the most critical interventions for fall prevention in the bathroom.' },
+      { question: 'What weight capacity do shower chairs need to support?', answer: 'Standard shower chairs support 250–300 lbs. Bariatric models are rated 400–600 lbs and have wider seats and reinforced frames. Always match the weight capacity to the user and choose a chair rated at least 50 lbs over their actual weight for a safety margin.' },
+      { question: 'Are wall-mounted shower benches better than freestanding?', answer: 'Wall-mounted fold-down benches are more stable (when properly anchored to studs) and save floor space when folded. Freestanding chairs require no installation and can be moved. For long-term use, a wall-mounted bench installed by a contractor is more stable. For temporary use or rental situations, a quality freestanding chair is more practical.' },
+      { question: 'What should I look for in a shower chair for an elderly person?', answer: 'Key features: (1) Non-slip rubber-tipped legs, (2) Drainage holes in the seat to prevent sitting in water, (3) Adjustable height legs (14–21 inches range covers most users), (4) Weight capacity exceeding user weight by at least 50 lbs, (5) Armrests for support when sitting down and standing up. A handheld showerhead is an essential companion to any shower chair.' },
+    ],
+    costBreakdown: [
+      { item: 'Freestanding shower chair (basic)', low: 25, high: 80 },
+      { item: 'Freestanding shower bench', low: 40, high: 120 },
+      { item: 'Transfer bench', low: 50, high: 150 },
+      { item: 'Wall-mounted fold-down seat', low: 80, high: 250 },
+      { item: 'Wall-mounted installation (labor)', low: 75, high: 200 },
+      { item: 'Handheld showerhead (companion item)', low: 30, high: 100 },
+    ],
+  },
+  'rollator-walker-guide': {
+    title: 'Rollator Walker Guide: How to Choose the Best Rollator (2026)',
+    description: 'How to choose a rollator walker for seniors. Wheel size, height adjustment, weight capacity, and the difference between rollators and standard walkers — from physical therapists.',
+    category: 'grab-bars',
+    compareSlug: 'best-rollator-walkers',
+    intro: 'Rollator walkers offer independence and mobility for seniors who need more support than a cane but don\'t need the maximum stability of a standard walker. Choosing the wrong rollator — wrong wheel size, height, or weight capacity — can actually increase fall risk. This guide covers everything you need to choose the right rollator, based on physical therapy recommendations.',
+    faqs: [
+      { question: 'What is a rollator walker?', answer: 'A rollator is a wheeled walking frame with 3 or 4 wheels, hand brakes, and a built-in seat. Unlike a standard walker (which you lift with each step), a rollator rolls continuously, making it easier to use over longer distances. Most rollators fold for transport and storage. They are best for users who need stability support but have adequate hand and wrist strength to operate the brakes.' },
+      { question: 'What size rollator do I need?', answer: 'Handle height should be at your wrist crease when standing upright with arms relaxed — typically 30–38 inches depending on height. Most rollators have adjustable height in this range. Seat height is important if the user will sit: the seat should be at or slightly below knee height. Standard rollators are 22–25 inches wide — confirm it fits through your narrowest doorways.' },
+      { question: 'What wheel size is best for a rollator?', answer: '6-inch wheels: best for indoor use on flat surfaces. 8-inch wheels: significantly better for outdoor use on grass, gravel, and uneven sidewalks. 10-inch wheels (all-terrain rollators): handle rough outdoor terrain but are heavier and larger. Choose based on primary use — if the user goes outdoors regularly, 8-inch wheels are the minimum recommendation.' },
+      { question: 'Is a rollator or standard walker safer?', answer: 'A standard walker (no wheels) provides more stability for users with significant balance impairment or post-surgical weakness. A rollator is safer for users who need to walk longer distances or who fatigue easily (they can sit). A physical therapist can assess which is appropriate — using a rollator when you actually need a standard walker increases fall risk.' },
+      { question: 'Does Medicare cover rollator walkers?', answer: 'Medicare Part B covers standard front-wheel walkers as Durable Medical Equipment (DME) with a doctor\'s prescription and a medical necessity determination. Rollator walkers (4-wheel) are covered under HCPCS code K0800. Purchase through a Medicare-enrolled DME supplier to receive the Medicare price and minimize out-of-pocket cost.' },
+    ],
+    costBreakdown: [
+      { item: 'Basic rollator (4-wheel, 6-inch wheels)', low: 50, high: 120 },
+      { item: 'Standard rollator (8-inch wheels)', low: 100, high: 200 },
+      { item: 'Lightweight rollator (under 15 lbs)', low: 120, high: 250 },
+      { item: 'Bariatric rollator (over 300 lb capacity)', low: 150, high: 350 },
+      { item: 'All-terrain rollator', low: 150, high: 400 },
+    ],
+  },
+  'stairlift-repair-cost': {
+    title: 'Stairlift Repair Cost Guide: What to Expect in 2026',
+    description: 'Common stairlift repairs and their costs. Diagnostic fees, motor replacement, rail issues, and whether to repair or replace an aging stairlift.',
+    category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
+    intro: 'Stairlifts are mechanical devices — motors, rails, batteries, and sensors all eventually need service or replacement. Understanding common repair costs helps you decide whether to repair an existing unit or replace it. This guide covers the most common stairlift repairs, typical costs, and how to find a qualified technician.',
+    faqs: [
+      { question: 'How much does stairlift repair cost?', answer: 'Minor repairs (sensor adjustment, lubrication): $100–$200. Battery replacement: $150–$300. Motor or gearbox service: $300–$700. Full motor replacement: $800–$1,500. Control board replacement: $500–$1,200. Diagnostic service call: $75–$150. Most repairs fall in the $150–$500 range for units under 10 years old.' },
+      { question: 'What are the most common stairlift problems?', answer: 'The most common issues: (1) Stairlift won\'t run — often a safety key left in the wrong position or a remote not charging; (2) Jerky or slow movement — usually needs rail lubrication; (3) Won\'t complete a full trip — may be a sensor issue on the rail; (4) Won\'t charge — battery or charging contact issue; (5) Remote not working — remote battery or signal issue. Many problems can be diagnosed by the user using the owner\'s manual.' },
+      { question: 'How long do stairlifts last?', answer: 'Well-maintained stairlifts typically last 10–15 years. The motor and gearbox are the major components most likely to need replacement after 10+ years of regular use. Annual lubrication and periodic professional service extend lifespan significantly. Units used by heavier users or on steeper stairs may have shorter service lives.' },
+      { question: 'Should I repair or replace an old stairlift?', answer: 'If the unit is under 10 years old and the repair cost is under $800, repair is almost always the better value. If the unit is over 10–12 years old and requires major repairs ($800+), replacement is worth considering — new units come with warranties, improved safety features, and updated technology. If the unit is from a brand that has discontinued service (like Acorn in the US), replacement may be your only option.' },
+      { question: 'How do I find a stairlift repair technician?', answer: 'For units still under manufacturer warranty, call the brand\'s service line. For out-of-warranty units, contact a local stairlift dealer — most service multiple brands. NAHB-certified aging-in-place contractors often have stairlift service relationships. Avoid any technician who insists on replacement without attempting diagnosis.' },
+    ],
+    costBreakdown: [
+      { item: 'Diagnostic service call', low: 75, high: 150 },
+      { item: 'Annual maintenance / lubrication', low: 100, high: 200 },
+      { item: 'Battery replacement', low: 150, high: 350 },
+      { item: 'Control board replacement', low: 400, high: 1200 },
+      { item: 'Motor/gearbox replacement', low: 700, high: 1500 },
+      { item: 'Full rail replacement', low: 500, high: 2000 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -866,6 +953,14 @@ export default async function GuidePage({ params }: Props) {
       { name: 'Raise the toilet seat or replace with comfort-height model', text: 'Install a raised toilet seat attachment ($30–$80, no tools required) or replace the toilet with a comfort-height model (17–19 inches vs. standard 15 inches). This is especially important for anyone with knee pain, hip replacement, or lower-body weakness.' },
       { name: 'Convert or modify the shower/tub', text: 'If shower access is difficult, consider a tub-to-walk-in-shower conversion ($1,500–$5,000) or a walk-in tub ($3,500–$10,000). For wheelchair users, a zero-threshold roll-in shower provides the safest access ($5,000–$15,000).' },
       { name: 'Add night lighting and contrast', text: 'Install motion-activated night lights in the bathroom and hallway leading to it. Add contrasting colors near grab bars, toilet, and shower edges to improve visibility for older adults with reduced visual acuity.' },
+    ],
+    'fall-prevention-for-seniors': [
+      { name: 'Assess fall risk factors', text: 'Start with a fall risk assessment. Common factors: medications with dizziness side effects, vision changes, muscle weakness, home hazards. Ask the primary physician to review medications and conduct a formal fall risk screen at the next visit.' },
+      { name: 'Remove environmental hazards', text: 'Walk every room and remove: loose throw rugs (especially in high-traffic paths), electrical cords across walkways, clutter on floors and stairs, items stored on stairs. Secure all remaining rugs with double-sided carpet tape or non-slip backing.' },
+      { name: 'Improve lighting throughout the home', text: 'Install motion-activated night lights in every hallway, bathroom, and bedroom. Increase bulb wattage in stairwells. Add under-cabinet lighting in the kitchen. Motion-triggered lights from bedroom to bathroom address the highest-risk nighttime scenario — getting up to use the bathroom in the dark.' },
+      { name: 'Upgrade the bathroom', text: 'The bathroom is the highest-risk room for falls. Install grab bars next to the toilet and in the shower/tub. Add non-slip adhesive strips to shower and tub floors. Consider a handheld showerhead and shower chair to allow seated bathing.' },
+      { name: 'Improve stair safety', text: 'Ensure handrails extend the full length of all stairs, on both sides. Repair any loose or missing stair nosings. Add bright non-slip stair treads. If stairs are no longer safely manageable, evaluate a stairlift.' },
+      { name: 'Exercise and medical follow-up', text: 'Begin a regular balance and strength exercise program — Tai Chi and the Otago Exercise Programme have the strongest evidence for fall prevention. Schedule an annual vision exam and update corrective lenses. Review all medications with a physician for fall-risk side effects at least annually.' },
     ],
     'stairlift-installation-guide': [
       { name: 'Schedule in-home measurement', text: 'Contact 2–3 authorized dealers for in-home quotes. An accurate rail must be built to your staircase\'s exact dimensions — this requires a physical measurement. Get quotes from multiple installers since pricing varies significantly.' },
@@ -1092,7 +1187,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 34 guides →
+              View all 38 guides →
             </Link>
           </div>
         </aside>
