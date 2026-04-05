@@ -94,9 +94,19 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Summary verdict box */}
+          {product.description && (
+            <div className="rounded-xl border-l-4 p-5 mb-6" style={{ backgroundColor: '#f0fdf4', borderColor: '#1B4332' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: '#1B4332' }}>SafeAtHome Guide&apos;s Take</p>
+              <p className="text-gray-700 leading-relaxed">{product.description}</p>
+            </div>
+          )}
+
           {product.long_description && (
             <div className="prose max-w-none mb-8">
-              <p className="text-gray-700 leading-relaxed">{product.long_description}</p>
+              {product.long_description.split('\n\n').map((para: string, i: number) => (
+                <p key={i} className="text-gray-700 leading-relaxed mb-4">{para}</p>
+              ))}
             </div>
           )}
 
