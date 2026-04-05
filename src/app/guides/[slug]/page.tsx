@@ -1539,6 +1539,36 @@ const GUIDE_META: Record<string, {
       { item: 'Motion-activated night lights (set)', low: 20, high: 60 },
     ],
   },
+  'cane-vs-walker-guide': {
+    title: 'Cane vs. Walker: How to Choose the Right Mobility Aid (2026)',
+    description: 'Should you use a cane or a walker? When each is appropriate, how to use them correctly, and what Medicare covers. Guidance from physical therapists.',
+    category: 'mobility-aids',
+    compareSlug: 'best-rollator-walkers',
+    keyTakeaways: [
+      'Canes provide balance support for one-sided weakness. Walkers (including rollators) provide support for generalized weakness or balance problems.',
+      'Using the wrong mobility aid is dangerous — a walker gives false security if you actually need a cane, and a cane is insufficient if you need a walker.',
+      'A physical therapist assessment is the best way to determine which is appropriate.',
+      'Medicare Part B covers canes and walkers as DME with a physician prescription.',
+      'Quad canes (4-point) provide more stability than single-point canes for uneven surfaces.',
+    ],
+    intro: 'Choosing between a cane and a walker is a clinical decision that depends on the type and degree of mobility limitation — not just personal preference. Using the wrong device can increase fall risk. This guide explains when each is appropriate, how to use them correctly, and how to get the right fit.',
+    faqs: [
+      { question: 'What is the difference between a cane and a walker?', answer: 'A cane provides single-sided stability — ideal for one-sided weakness (e.g., after a stroke or hip surgery on one side). It\'s held opposite the weak side. A walker provides bilateral support — both hands bear weight, providing more stability for generalized weakness or balance problems. A rollator walker (4-wheel) also provides a seat for rest breaks. If weakness is primarily one-sided, a cane may be sufficient. If weakness or balance problems affect both sides, a walker is appropriate.' },
+      { question: 'When is a cane not enough?', answer: 'A cane is no longer sufficient when: (1) you need both hands to lower yourself into or rise from chairs; (2) you frequently grab furniture or walls for support; (3) you\'ve had multiple falls or near-falls; (4) you have significant weakness in both legs or severe balance problems; (5) a physical therapist recommends upgrading. Continuing to use a cane when a walker is needed is a leading cause of preventable falls.' },
+      { question: 'What is the correct height for a cane or walker?', answer: 'The handle should be at the crease of your wrist when standing upright with arms relaxed at your sides — giving a 15–20° elbow bend when gripping. This is true for both canes and walkers. An incorrect height (too high requires hunching; too low forces awkward shoulder position) reduces effectiveness and increases fall risk. Most canes and walkers are adjustable in 1-inch increments.' },
+      { question: 'Does Medicare cover canes and walkers?', answer: 'Medicare Part B covers canes (single and quad) and walkers (including standard walkers and rollators) as Durable Medical Equipment with a doctor\'s prescription and documented medical necessity. Purchase through a Medicare-enrolled DME supplier. Standard walkers (no wheels) are covered. Rollators (4-wheel) are covered under code K0800 or K0801. You pay 20% after the Part B deductible.' },
+      { question: 'What is a quad cane and when is it used?', answer: 'A quad cane has a 4-point base instead of a single tip, providing more stability than a standard cane — especially on uneven surfaces or for users with more significant weakness. It stands upright on its own (no leaning against a wall required). Quad canes are heavier and slightly slower to use than single-tip canes. They are recommended for users who feel a single cane is barely sufficient, or who frequently walk on uneven outdoor surfaces.' },
+      { question: 'Should I use a cane on stairs?', answer: 'Use the handrail on stairs whenever possible — this is safer than a cane on stairs. If using a cane on stairs: hold the cane in the hand opposite the handrail (or on the unaffected side). Going up: lead with the stronger leg, then bring the cane and weaker leg up. Going down: lead with the cane and weaker leg, then bring the stronger leg down. If stairs feel unsafe with a mobility aid, consult a physical therapist about stair training or consider a stairlift.' },
+      { question: 'How do I choose between a standard walker and a rollator?', answer: 'Standard walkers (no wheels or only front wheels) provide maximum stability — best for users with significant weakness or post-surgical recovery where maximum support is needed. The trade-off: they must be lifted with each step, which is tiring. Rollators (4-wheel with brakes and seat) are easier to use continuously and for longer distances — but slightly less stable than a standard walker. A physical therapist can determine which provides the right balance of support and usability for your specific condition.' },
+    ],
+    costBreakdown: [
+      { item: 'Standard single-tip cane', low: 15, high: 40 },
+      { item: 'Quad cane (4-point)', low: 25, high: 65 },
+      { item: 'Standard walker (no wheels)', low: 30, high: 80 },
+      { item: 'Two-wheel walker (front wheels only)', low: 40, high: 100 },
+      { item: 'Rollator (4-wheel with seat)', low: 80, high: 250 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

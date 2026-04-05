@@ -450,6 +450,15 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'cane-vs-walker-guide',
+    title: 'Cane vs. Walker: How to Choose the Right Mobility Aid (2026)',
+    description: 'When a cane is enough — and when you need a walker. Physical therapist guidance on fit, correct use, and what Medicare covers.',
+    category: 'Mobility Aids',
+    icon: '🦯',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {
