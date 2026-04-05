@@ -100,7 +100,21 @@ export default async function ProductPage({ params }: Props) {
     .order('safe_score', { ascending: false })
     .limit(3);
 
-  // Determine compare slug
+  // Determine guide and compare slugs
+  const GUIDE_SLUGS: Record<string, { slug: string; label: string }> = {
+    stairlifts: { slug: 'stairlift-cost-guide', label: 'Stairlift Cost Guide' },
+    'walk-in-tubs': { slug: 'walk-in-tub-cost-guide', label: 'Walk-In Tub Cost Guide' },
+    'grab-bars': { slug: 'grab-bar-installation-guide', label: 'Grab Bar Installation Guide' },
+    'medical-alerts': { slug: 'medical-alert-cost-guide', label: 'Medical Alert Cost Guide' },
+    'wheelchair-ramps': { slug: 'wheelchair-ramp-cost-guide', label: 'Wheelchair Ramp Cost Guide' },
+    'home-elevators': { slug: 'home-elevator-cost-guide', label: 'Home Elevator Cost Guide' },
+    'bath-safety': { slug: 'aging-in-place-bathroom-modifications', label: 'Bathroom Safety Modifications Guide' },
+    'mobility-aids': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
+    'smart-home-safety': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
+    'door-access': { slug: 'aging-in-place-home-modifications-checklist', label: 'Aging-in-Place Checklist' },
+  };
+  const guideInfo = GUIDE_SLUGS[category];
+
   const COMPARE_SLUGS: Record<string, string> = {
     stairlifts: 'best-stairlifts',
     'walk-in-tubs': 'best-walk-in-tubs',
@@ -283,6 +297,22 @@ export default async function ProductPage({ params }: Props) {
                 <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1B4332' }}>Compare</p>
                 <p className="text-sm font-semibold text-gray-800 group-hover:text-green-800 transition-colors leading-tight">
                   Compare top {category.replace(/-/g, ' ')} products side by side →
+                </p>
+              </div>
+            </Link>
+          )}
+
+          {/* Guide link */}
+          {guideInfo && (
+            <Link
+              href={`/guides/${guideInfo.slug}`}
+              className="flex items-center justify-between p-5 rounded-xl border border-gray-100 group transition-colors hover:border-green-300"
+              style={{ backgroundColor: '#FAFAF7' }}
+            >
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1 text-gray-400">Cost Guide</p>
+                <p className="text-sm font-semibold text-gray-800 group-hover:text-green-800 transition-colors leading-tight">
+                  {guideInfo.label} →
                 </p>
               </div>
             </Link>

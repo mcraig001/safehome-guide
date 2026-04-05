@@ -903,21 +903,31 @@ export default async function GuidePage({ params }: Props) {
 
           {/* Related guides */}
           <div className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
-            <h3 className="font-semibold text-gray-800 mb-3">More Cost Guides</h3>
+            <h3 className="font-semibold text-gray-800 mb-3">Related Guides</h3>
             <div className="space-y-2">
-              {Object.entries(GUIDE_META)
-                .filter(([s]) => s !== slug)
-                .map(([s, g]) => (
-                  <Link
-                    key={s}
-                    href={`/guides/${s}`}
-                    className="block text-sm hover:underline"
-                    style={{ color: '#1B4332' }}
-                  >
-                    {g.title}
-                  </Link>
-                ))}
+              {[
+                // Same-category guides first
+                ...Object.entries(GUIDE_META)
+                  .filter(([s, g]) => s !== slug && g.category === meta.category)
+                  .slice(0, 4),
+                // Then cross-category top guides
+                ...Object.entries(GUIDE_META)
+                  .filter(([s, g]) => s !== slug && g.category !== meta.category)
+                  .slice(0, 3),
+              ].slice(0, 6).map(([s, g]) => (
+                <Link
+                  key={s}
+                  href={`/guides/${s}`}
+                  className="block text-sm hover:underline leading-snug"
+                  style={{ color: '#1B4332' }}
+                >
+                  {g.title}
+                </Link>
+              ))}
             </div>
+            <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
+              View all 27 guides →
+            </Link>
           </div>
         </aside>
       </div>

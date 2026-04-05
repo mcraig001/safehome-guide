@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { ChevronRight, BarChart2 } from 'lucide-react';
 import { ShareButtons } from '@/components/ShareButtons';
+import { faqSchema, breadcrumbSchema } from '@/lib/schema';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -17,18 +18,27 @@ const COMPARISON_META: Record<string, {
   category: string;
   intro: string;
   verdict: string;
+  guideSlug?: string;
+  faqs?: { question: string; answer: string }[];
 }> = {
   'best-stairlifts': {
     title: 'Best Stairlifts of 2026: Compared and Ranked',
     description: 'Side-by-side stairlift comparison: prices, safety scores, weight limits, and warranty. Find the best model for your home.',
     category: 'stairlifts',
+    guideSlug: 'stairlift-cost-guide',
     intro: 'We tested and scored every major stairlift brand on safety, ease of use, installation quality, and value. Here\'s how they stack up.',
     verdict: 'For most straight staircases, a mid-range model in the $3,000–$4,500 range offers the best balance of reliability and features. Curved staircases require custom rails — get at least two quotes before deciding.',
+    faqs: [
+      { question: 'What is the best stairlift brand?', answer: 'Bruno is consistently rated highest for build quality and service network in North America. Acorn is strong in the UK market. For value, Harmar and AmeriGlide offer competitive pricing with solid warranties. The best brand depends on your specific staircase shape and local service coverage.' },
+      { question: 'How much does the best stairlift cost?', answer: 'Top-rated straight stairlifts typically cost $3,000–$5,000 installed. Curved stairlifts (for staircases with turns or landings) cost $8,000–$15,000 due to custom rail fabrication. Refurbished models from reputable dealers start at $1,500.' },
+      { question: 'What warranty should a good stairlift have?', answer: 'Look for a minimum 2-year parts warranty with available service contracts. Bruno offers a lifetime warranty on the track. Acorn offers 1–2 years standard with extended service plans available. Warranties covering the motor, battery, and electronics for at least 2 years are the baseline for quality models.' },
+    ],
   },
   'best-walk-in-tubs': {
     title: 'Best Walk-In Tubs of 2026: Compared',
     description: 'Top walk-in tubs compared side by side. Prices, features, drain times, and expert ratings to help you choose.',
     category: 'walk-in-tubs',
+    guideSlug: 'walk-in-tub-cost-guide',
     intro: 'Walk-in tubs vary widely in quality, drain speed, and features. We scored the top brands on safety, ease of entry, hydrotherapy options, and value.',
     verdict: 'Prioritize fast-drain technology (under 2 minutes) and a low step-over threshold (under 3 inches). Hydrotherapy jets add cost but are worth it if joint pain is a factor.',
   },
@@ -36,15 +46,25 @@ const COMPARISON_META: Record<string, {
     title: 'Best Grab Bars of 2026: Safety, Style, and Installation',
     description: 'Top grab bars compared — weight ratings, finishes, and which ones are easiest to install correctly.',
     category: 'grab-bars',
+    guideSlug: 'grab-bar-installation-guide',
     intro: 'Not all grab bars are equal. Weight rating, surface texture, and mounting hardware all affect safety. We compared the top models for home use.',
     verdict: 'For most bathrooms, a 32-inch stainless steel bar with a textured grip surface is the right choice. Match the finish to your fixtures for a cleaner look.',
+    faqs: [
+      { question: 'What grab bar weight rating do I need?', answer: 'ADA requires a minimum 250 lb rating. Quality bars are rated 500 lbs. The installation anchor matters as much as the bar itself — bars must be anchored to wall studs or with specialty toggle anchors, never into drywall alone.' },
+      { question: 'How many grab bars does a bathroom need?', answer: 'A minimum safe bathroom setup includes: one horizontal bar on the shower/tub long wall (33–36 inches high), one vertical bar at the shower entry, and one 42-inch bar next to the toilet. An occupational therapist can provide a personalized placement assessment.' },
+    ],
   },
   'best-medical-alerts': {
     title: 'Best Medical Alert Systems of 2026',
     description: 'Medical alert systems compared on response time, monthly cost, GPS coverage, and fall detection accuracy.',
     category: 'medical-alerts',
+    guideSlug: 'medical-alert-cost-guide',
     intro: 'Medical alert systems can call for help when a fall or emergency happens. We evaluated response time, false alarm rate, GPS range, and monthly subscription cost.',
     verdict: 'If your loved one goes outdoors, choose a GPS-enabled system. For primarily home use, a base station + pendant combination is more affordable and reliable.',
+    faqs: [
+      { question: 'What is the best medical alert system for seniors?', answer: 'The best system depends on lifestyle. For seniors who go out regularly, Bay Alarm Medical and Medical Guardian offer strong GPS + fall detection options. For primarily home-based seniors, a base station + pendant combination (like those from Philips Lifeline or LifeStation) is more affordable and reliable. Avoid long-term contracts.' },
+      { question: 'How much does a medical alert system cost per month?', answer: 'Basic home-only systems run $19–$30/month. GPS mobile systems run $30–$50/month. Fall detection add-ons are typically $5–$10/month extra. Most providers offer month-to-month billing — avoid any provider requiring a 12-month upfront commitment.' },
+    ],
   },
   'best-rollator-walkers': {
     title: 'Best Rollator Walkers of 2026: Compared and Ranked',
@@ -64,6 +84,7 @@ const COMPARISON_META: Record<string, {
     title: 'Best Wheelchair Ramps of 2026: Portable vs. Permanent',
     description: 'Top wheelchair ramps compared — portable folding, modular aluminum, and threshold ramps. Rated on weight capacity, portability, and value.',
     category: 'wheelchair-ramps',
+    guideSlug: 'wheelchair-ramp-cost-guide',
     intro: 'Wheelchair ramp options range from $50 threshold ramps to $4,000 permanent modular systems. The right choice depends on rise height, whether the need is temporary or permanent, and whether the ramp needs to be portable. We compared the top options.',
     verdict: 'For small threshold rises (under 3 inches), a rubber threshold ramp is sufficient. For step entries up to 24 inches, a suitcase-style portable ramp works. For permanent step entries of any height, a modular aluminum system is the most durable solution.',
   },
@@ -113,8 +134,18 @@ export default async function ComparePage({ params }: Props) {
     .filter(([s]) => s !== slug)
     .slice(0, 4);
 
+  const faqSchemaData = meta.faqs && meta.faqs.length > 0 ? faqSchema(meta.faqs) : null;
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: 'https://www.safeathomeguides.com' },
+    { name: 'Compare', url: 'https://www.safeathomeguides.com/compare' },
+    { name: meta.title, url: `https://www.safeathomeguides.com/compare/${slug}` },
+  ]);
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      {faqSchemaData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />}
+
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
@@ -191,6 +222,23 @@ export default async function ComparePage({ params }: Props) {
         </div>
       )}
 
+      {/* FAQ section */}
+      {meta.faqs && meta.faqs.length > 0 && (
+        <section className="mb-10">
+          <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {meta.faqs.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
+                <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Get quotes + related */}
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
@@ -237,10 +285,25 @@ export default async function ComparePage({ params }: Props) {
           )}
         </div>
 
-        <aside>
+        <aside className="space-y-5">
           <Suspense>
             <LeadForm category={meta.category} headline="Get Free Quotes" />
           </Suspense>
+
+          {meta.guideSlug && (
+            <Link
+              href={`/guides/${meta.guideSlug}`}
+              className="flex items-center justify-between p-5 rounded-xl border border-gray-100 group transition-colors hover:border-green-300"
+              style={{ backgroundColor: '#FAFAF7' }}
+            >
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1 text-gray-400">Cost Guide</p>
+                <p className="text-sm font-semibold text-gray-800 group-hover:text-green-800 transition-colors leading-tight">
+                  {meta.category.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())} Cost Guide →
+                </p>
+              </div>
+            </Link>
+          )}
         </aside>
       </div>
     </main>
