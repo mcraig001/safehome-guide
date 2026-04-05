@@ -43,7 +43,7 @@ export default async function CityContractorPage({ params }: Props) {
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', url: 'https://www.safeathomeguides.com' },
     { name: 'Contractors', url: 'https://www.safeathomeguides.com/contractors' },
-    { name: `${stateUpper} Contractors`, url: `https://www.safeathomeguides.com/contractors?state=${state}` },
+    { name: `${stateUpper} Contractors`, url: `https://www.safeathomeguides.com/contractors/${state}` },
     { name: `${cityName}, ${stateUpper}`, url: `https://www.safeathomeguides.com/contractors/${state}/${city}` },
   ]);
 
@@ -60,7 +60,7 @@ export default async function CityContractorPage({ params }: Props) {
         <ChevronRight size={14} />
         <Link href="/contractors" className="hover:text-gray-600 transition-colors">Contractors</Link>
         <ChevronRight size={14} />
-        <Link href={`/contractors?state=${state}`} className="hover:text-gray-600 transition-colors">{stateName}</Link>
+        <Link href={`/contractors/${state}`} className="hover:text-gray-600 transition-colors">{stateName}</Link>
         <ChevronRight size={14} />
         <span className="text-gray-600">{cityName}</span>
       </nav>

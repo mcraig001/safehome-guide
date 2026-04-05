@@ -225,6 +225,33 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'free-stairlift-for-seniors',
+    title: 'How to Get a Free Stairlift: Every Program That Can Help',
+    description: 'VA grants, Medicaid waivers, USDA programs, and nonprofits that can cover the full cost of a stairlift for qualifying seniors.',
+    category: 'Stairlifts',
+    icon: '💰',
+    readTime: '5 min read',
+    type: 'insurance',
+  },
+  {
+    slug: 'best-fall-detection-medical-alert',
+    title: 'Best Medical Alert Systems With Fall Detection (2026)',
+    description: 'Fall detection accuracy rates, response times, and monthly costs for the top systems — so you can choose the one that actually works.',
+    category: 'Medical Alerts',
+    icon: '🚨',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'aging-in-place-bathroom-modifications',
+    title: 'Aging-in-Place Bathroom Modifications: What to Do First',
+    description: 'The 6 bathroom modifications that prevent the most falls — in priority order. What each costs and where to start.',
+    category: 'Bath Safety',
+    icon: '🚿',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

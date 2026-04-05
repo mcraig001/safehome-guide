@@ -26,6 +26,12 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'bruno-vs-acorn-stairlift': { title: 'Bruno vs. Acorn Stairlift: Full Comparison', category: 'Stairlifts' },
   'stairlift-rental-vs-buy': { title: 'Stairlift Rental vs. Buy: Which Makes Sense?', category: 'Stairlifts' },
   'stairlift-weight-limit': { title: 'Stairlift Weight Limits: Heavy-Duty Options', category: 'Stairlifts' },
+  'free-stairlift-for-seniors': { title: 'How to Get a Free Stairlift for Seniors', category: 'Stairlifts' },
+  'best-fall-detection-medical-alert': { title: 'Best Medical Alerts With Fall Detection 2026', category: 'Medical Alerts' },
+  'aging-in-place-bathroom-modifications': { title: 'Aging-in-Place Bathroom Modifications', category: 'Bath Safety' },
+  'american-standard-vs-safe-step-walk-in-tub': { title: 'American Standard vs. Safe Step Walk-In Tub', category: 'Walk-In Tubs' },
+  'senior-bathroom-remodel-cost': { title: 'Senior Bathroom Remodel Cost Guide', category: 'Bath Safety' },
+  'aging-in-place-vs-assisted-living-cost': { title: 'Aging in Place vs. Assisted Living Cost 2026', category: 'Planning' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {
