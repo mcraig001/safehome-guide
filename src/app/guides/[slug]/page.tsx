@@ -585,6 +585,26 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'stairlift-brands-to-avoid': {
+    title: 'Stairlift Brands to Avoid — And What to Buy Instead',
+    description: 'Which stairlift brands have the most complaints? What warning signs to look for, and which brands consistently deliver reliable, well-supported products.',
+    category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
+    intro: 'The stairlift market has reliable brands — and brands that generate high complaint volumes, poor service follow-through, or deceptive sales practices. This guide identifies specific warning signs and covers which brands have the most consistent track record of problems. If a sales rep is pressuring you to sign today, that\'s your first warning sign.',
+    faqs: [
+      { question: 'Which stairlift brands have the most complaints?', answer: 'Based on BBB complaint data and consumer reviews, the brands generating the most complaints are typically those sold through high-pressure in-home sales rather than through dealer networks. Common complaints include: overpriced installations, poor post-sale service, difficulty getting warranty service honored, and refusal to service units purchased elsewhere. Brands with very limited local service networks are particularly problematic when something goes wrong.' },
+      { question: 'What are the warning signs of a bad stairlift company?', answer: 'Red flags: (1) Requiring a decision "today only" — legitimate dealers don\'t use artificial urgency. (2) Refusing to provide a written quote — all reputable installers will quote in writing. (3) No local service technicians — ask: "Who will service this if it breaks down?" (4) No customer references — ask for 2–3 local references. (5) Non-refundable deposit before measurement — reputable companies don\'t take your money until they have a signed contract with a full quote.' },
+      { question: 'Are refurbished stairlifts from small dealers risky?', answer: 'Used or refurbished stairlifts can be good value if sourced from an authorized dealer of a major brand. The risk with unknown dealers: no parts availability, no service support, and no warranty. Stick to refurbished units from authorized dealers of Bruno, Harmar, Acorn, or Stannah — these brands have parts available and local service networks. Avoid any "off-brand" refurbished units where you can\'t verify parts availability.' },
+      { question: 'How do I know if a stairlift company is reputable?', answer: 'Check: (1) BBB rating and complaint history at bbb.org, (2) Google Reviews with responses (reputable companies respond to negative reviews), (3) Whether they are an authorized dealer for a major brand (Bruno, Acorn, Stannah, Harmar), (4) State contractor license verification, (5) Physical business address (not just a phone number). Ask how long they have been in business and how many local installs they complete per year.' },
+      { question: 'What stairlift brands are most reliable?', answer: 'Bruno (US-made, lifetime track warranty, excellent service network), Harmar (strong heavy-duty options, responsive US-based service), and Acorn (global installation volume, multiple US service centers) have the most consistent positive track records. Stannah is reliable but UK-focused with less US service coverage. For value, AmeriGlide and Handicare have reasonable quality at lower price points, though service networks are thinner in some regions.' },
+    ],
+    costBreakdown: [
+      { item: 'Reliable brand (straight, installed)', low: 2500, high: 5000 },
+      { item: 'Refurbished from authorized dealer', low: 1200, high: 2500 },
+      { item: 'Premium brand with service contract', low: 3500, high: 6500 },
+      { item: 'Curved stairlift (reliable brand)', low: 9000, high: 15000 },
+    ],
+  },
   'home-safety-checklist-for-elderly': {
     title: 'Home Safety Checklist for Elderly: Room-by-Room Guide (2026)',
     description: 'Complete home safety checklist for elderly adults — bathroom, bedroom, kitchen, entryway, and stairs. Printable checklist with costs for each modification.',
@@ -1033,7 +1053,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 31 guides →
+              View all 32 guides →
             </Link>
           </div>
         </aside>

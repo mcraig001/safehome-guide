@@ -226,6 +226,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'stairlift-brands-to-avoid',
+    title: 'Stairlift Brands to Avoid — And What to Buy Instead',
+    description: 'Warning signs of bad stairlift companies, brands with high complaint volumes, and how to find a trustworthy dealer near you.',
+    category: 'Stairlifts',
+    icon: '⚠️',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
     slug: 'home-safety-checklist-for-elderly',
     title: 'Home Safety Checklist for Elderly: Room-by-Room Guide (2026)',
     description: 'Printable home safety checklist for elderly adults. Bathroom, stairs, bedroom, and entry — what to check and what modifications to prioritize.',
