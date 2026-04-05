@@ -45,6 +45,13 @@ const COMPARISON_META: Record<string, {
     intro: 'Medical alert systems can call for help when a fall or emergency happens. We evaluated response time, false alarm rate, GPS range, and monthly subscription cost.',
     verdict: 'If your loved one goes outdoors, choose a GPS-enabled system. For primarily home use, a base station + pendant combination is more affordable and reliable.',
   },
+  'best-rollator-walkers': {
+    title: 'Best Rollator Walkers of 2026: Compared and Ranked',
+    description: 'Top rollator walkers compared on weight, wheel size, seat comfort, and ease of folding. Find the best rollator for indoor or outdoor use.',
+    category: 'mobility-aids',
+    intro: 'Rollator walkers vary significantly in weight, wheel size, and stability. We scored the top models on safety, maneuverability, comfort, and value — whether you need it mostly indoors or for outdoor use.',
+    verdict: 'For outdoor use, choose a rollator with 8-inch wheels for better terrain handling. For indoor use, a compact lightweight model under 15 lbs is easier to maneuver in tight spaces. Always check weight capacity and seat height before buying.',
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
