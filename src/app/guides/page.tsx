@@ -90,6 +90,24 @@ const guides = [
     readTime: '5 min read',
     type: 'cost',
   },
+  {
+    slug: 'home-modification-grants-for-seniors',
+    title: 'Home Modification Grants for Seniors: Every Program',
+    description: 'USDA Section 504, VA grants, Medicaid HCBS waivers, Area Agency on Aging programs, and nonprofits — every funding source for aging-in-place modifications.',
+    category: 'Planning',
+    icon: '💰',
+    readTime: '6 min read',
+    type: 'insurance',
+  },
+  {
+    slug: 'stairlift-vs-home-elevator',
+    title: 'Stairlift vs. Home Elevator: Which Is Right for You?',
+    description: 'Cost comparison, installation requirements, and who each option is best for. Expert guide to choosing between a stairlift and a home elevator.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {
