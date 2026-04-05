@@ -6,7 +6,80 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
-import { BookOpen, DollarSign, ChevronRight } from 'lucide-react';
+import { BookOpen, DollarSign, ChevronRight, CheckCircle } from 'lucide-react';
+
+const WHAT_TO_LOOK_FOR: Record<string, { tip: string; detail: string }[]> = {
+  stairlifts: [
+    { tip: 'Straight vs. curved rail', detail: 'Straight rails fit standard staircases and cost $2,000–$5,000. Any bend or landing requires a custom curved rail, adding $6,000–$10,000.' },
+    { tip: 'Weight capacity', detail: 'Standard models handle 250–300 lbs. Confirm the rated capacity before ordering — heavy-duty models exist at a 20–40% premium.' },
+    { tip: 'Battery backup', detail: 'Ensure the model runs on rechargeable batteries so it works during power outages. Most quality models do; confirm before buying.' },
+    { tip: 'Folded width', detail: 'When folded, the seat and arms should leave 22+ inches of clear stair width for other household members.' },
+    { tip: 'Warranty and service network', detail: 'Look for 2+ year parts warranty and a local authorized service technician. National brands (Bruno, Acorn, Harmar) have wider service networks.' },
+  ],
+  'walk-in-tubs': [
+    { tip: 'Fast-drain technology', detail: 'Standard tubs drain in 3–5 minutes; you must sit inside during the entire drain. Fast-drain models complete in under 2 minutes — a meaningful quality-of-life difference.' },
+    { tip: 'Step-over threshold height', detail: 'Lower is safer. Look for thresholds under 3 inches. The best models have a 1.5–2 inch threshold.' },
+    { tip: 'Door seal and hinge direction', detail: 'Inward-opening doors are more watertight but require you to sit inside while filling. Outward-opening doors allow entry before filling — safer for some users.' },
+    { tip: 'Hydrotherapy options', detail: 'Air jets are gentler and more hygienic (no standing water in the pipes). Water jets provide more pressure for joint pain relief. Combination systems cost more but offer both.' },
+    { tip: 'Installation requirements', detail: 'Confirm whether your electrical panel can handle the amperage requirements (often 20A or 30A dedicated circuit). Factor in the electrical cost.' },
+  ],
+  'grab-bars': [
+    { tip: 'Weight rating', detail: 'ADA minimum is 250 lbs. Better-quality bars are rated 500 lbs. The installation anchoring matters as much as the bar itself.' },
+    { tip: 'Grip texture', detail: 'Look for knurled or textured gripping surfaces — smooth bars are slippery when wet. Avoid decorative bars with purely smooth finishes for safety-critical locations.' },
+    { tip: 'Finish matching', detail: 'Bars are available in chrome, brushed nickel, oil-rubbed bronze, and white. Matching your existing fixtures improves aesthetics and resale value.' },
+    { tip: 'Angled vs. horizontal vs. vertical', detail: 'Horizontal bars support lateral movement. Vertical bars assist with standing up. Angled (diagonal) bars serve both functions. Placement determines which orientation is most useful.' },
+    { tip: 'Flange cover vs. exposed screws', detail: 'Bars with flip-down flange covers allow studs to be located after positioning, then hide the screws — easier installation and cleaner look.' },
+  ],
+  'medical-alerts': [
+    { tip: 'Home-only vs. GPS mobile', detail: 'Home-only systems use a base station + cellular. GPS mobile systems go everywhere. If your loved one drives or goes out regularly, GPS is essential.' },
+    { tip: 'Fall detection accuracy', detail: 'Ask providers for their fall detection accuracy rate. Clinical-grade algorithms detect 75–85% of falls. Avoid any provider that cannot give you this number.' },
+    { tip: 'Response time', detail: 'Top providers connect to a live operator in 30–45 seconds. Ask specifically for average response time and whether operators are US-based.' },
+    { tip: 'Battery life', detail: 'Home pendants typically last 2–5 years. GPS mobile devices need daily or every-other-day charging — factor this into daily routine before committing.' },
+    { tip: 'Contract terms', detail: 'Choose month-to-month plans. Avoid any provider requiring a 12-month commitment upfront. Ask about equipment return policy before canceling.' },
+  ],
+  'wheelchair-ramps': [
+    { tip: 'Slope ratio (rise:run)', detail: 'ADA standard is 1:12 (1 inch of rise per foot of length). A 6-inch step needs a 6-foot ramp minimum. Gentler slopes (1:16 or 1:20) are safer and easier to self-propel.' },
+    { tip: 'Portable vs. modular vs. permanent', detail: 'Portable for occasional use ($100–$400). Modular aluminum for semi-permanent installation without permits ($1,200–$3,500). Permanent wood/concrete for long-term ($2,000–$10,000).' },
+    { tip: 'Weight capacity', detail: 'Combine the user\'s weight, wheelchair weight, and caregiver weight if applicable. Most residential ramps are rated 800 lbs; power wheelchairs can weigh 200+ lbs.' },
+    { tip: 'Edge protection', detail: 'Raised edges (2+ inch curbs) on both sides of the ramp prevent wheels from rolling off. This is a non-negotiable safety feature for wheelchair users.' },
+    { tip: 'Surface traction', detail: 'Look for non-slip surfaces — aluminum tread plate, rubber coating, or grit tape. Smooth aluminum becomes dangerously slippery when wet.' },
+  ],
+  'home-elevators': [
+    { tip: 'Shaft vs. no shaft', detail: 'Pneumatic/vacuum elevators require no shaft — just a ceiling cutout. Traditional cable and hydraulic elevators need a dedicated shaft, adding construction cost.' },
+    { tip: 'Cab size and wheelchair access', detail: 'Standard residential cabs (36×48 inches) fit most power wheelchairs. Confirm the interior dimensions against your specific wheelchair before specifying.' },
+    { tip: 'Drive system', detail: 'Hydraulic: quiet, smooth, proven reliability. Cable/traction: faster, better for 3+ floors. Pneumatic: no shaft, stylish, but more expensive per floor traveled.' },
+    { tip: 'Annual maintenance requirements', detail: 'Budget $200–$500/year for mandatory professional service. Many states require licensed elevator inspectors regardless of residential use.' },
+    { tip: 'Home resale value impact', detail: 'A residential elevator typically adds $15,000–$25,000 to a home\'s appraised value — partially offsetting installation costs for homes where it is a logical fit.' },
+  ],
+  'bath-safety': [
+    { tip: 'Shower chair vs. transfer bench', detail: 'Shower chair sits entirely inside — for users who can step into the shower. Transfer bench straddles the tub wall — for users who cannot step over at all.' },
+    { tip: 'Weight capacity', detail: 'Most standard bath benches support 250–300 lbs. Bariatric models support 400–600 lbs. Check the rating before purchasing.' },
+    { tip: 'Non-slip feet', detail: 'Rubber-tipped feet prevent sliding on wet tile. Suction-cup feet add security on smooth surfaces. Look for both on any product placed in a wet zone.' },
+    { tip: 'Seat height adjustability', detail: 'Adjustable legs (typically 14–19 inches) accommodate different user heights and tub/shower configurations. Fixed-height seats may not work for all users.' },
+    { tip: 'Drainage holes in seat', detail: 'Perforated or slatted seat surfaces drain quickly, reducing sitting in standing water. Solid seats are easier to clean but stay wet longer.' },
+  ],
+  'smart-home-safety': [
+    { tip: 'Voice assistant compatibility', detail: 'Look for devices that work with both Alexa and Google Assistant, not just one ecosystem. Older adults may switch devices; broad compatibility future-proofs the setup.' },
+    { tip: 'App simplicity', detail: 'The family caregiver will use the app daily. Look for clean, clearly labeled interfaces — avoid products with complex multi-tab apps designed for tech enthusiasts.' },
+    { tip: 'Offline fallback', detail: 'Smart smoke detectors and locks should function without internet. Wi-Fi outages are common; safety devices cannot depend on connectivity.' },
+    { tip: 'Privacy and data', detail: 'Indoor cameras and voice assistants record audio/video. Understand the privacy policy and whether data is stored in the cloud. Some families use local-only setups.' },
+    { tip: 'Professional monitoring option', detail: 'For seniors living alone, systems with professional monitoring (someone calls when an alarm triggers) are significantly safer than self-monitored-only setups.' },
+  ],
+  'mobility-aids': [
+    { tip: 'Walker vs. rollator', detail: 'Standard walker = maximum stability (you lift it), ideal post-surgery. Rollator = wheels + seat + brakes, easier long-distance but requires more balance. Match to the user\'s balance level.' },
+    { tip: 'Wheel size', detail: '6-inch wheels work well indoors. 8-inch wheels handle outdoor terrain (cracks, grass, gravel) much better. If outdoor use is needed, size up.' },
+    { tip: 'Seat and backrest', detail: 'If the user will rest during walks, the seat height, cushioning, and back support matter. Measure comfortable seated height before buying — adjustable height seats are best.' },
+    { tip: 'Folded size and weight', detail: 'Rollators need to fit in a car trunk or be light enough to lift. Most fold to ~12 inches wide. Lightweight models (under 15 lbs) are much easier for seniors to self-manage.' },
+    { tip: 'Brake type', detail: 'Loop brakes (squeeze to roll, release to lock) are safest — the brakes engage if the user loses their grip, preventing runaway. Push-down brakes require deliberate action to lock.' },
+  ],
+  'door-access': [
+    { tip: 'Keypad vs. smart lock', detail: 'A basic keypad deadbolt eliminates keys at low cost ($80–$150). Smart locks add Bluetooth/Wi-Fi for app access, remote unlocking, and activity logs — worth it if a caregiver needs remote access.' },
+    { tip: 'ANSI security grade', detail: 'Grade 1 = commercial-grade security (strongest). Grade 2 = residential high-security. Grade 3 = basic. For exterior doors, specify Grade 1 only.' },
+    { tip: 'Auto-lock feature', detail: 'Auto-lock re-locks the door after a set time (30 sec to 5 min). Critical for users with cognitive decline who may forget to lock up.' },
+    { tip: 'Lever vs. knob', detail: 'ADA-compliant lever handles are dramatically easier for people with arthritis or limited grip strength. Replace any remaining knob-style handles when upgrading to keypad locks.' },
+    { tip: 'Battery life and low-battery alert', detail: 'Most smart locks run 6–12 months on AA batteries. Confirm the lock sends a low-battery notification via app before it dies — a dead lock that\'s also a deadbolt is a problem.' },
+  ],
+};
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -450,9 +523,12 @@ export default async function GuidePage({ params }: Props) {
 
       <div className="grid md:grid-cols-3 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-3">
-            <BookOpen size={16} style={{ color: '#1B4332' }} />
-            <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>{getGuideTypeLabel(slug)}</span>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-2">
+              <BookOpen size={16} style={{ color: '#1B4332' }} />
+              <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>{getGuideTypeLabel(slug)}</span>
+            </div>
+            <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">Updated March 2026</span>
           </div>
 
           <h1 className="font-serif text-4xl font-bold mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
@@ -498,6 +574,26 @@ export default async function GuidePage({ params }: Props) {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </section>
+          )}
+
+          {/* What to Look For */}
+          {WHAT_TO_LOOK_FOR[meta.category] && (
+            <section className="mb-10">
+              <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
+                What to Look For
+              </h2>
+              <div className="space-y-3">
+                {WHAT_TO_LOOK_FOR[meta.category].map((item) => (
+                  <div key={item.tip} className="flex gap-3 p-4 rounded-xl border border-gray-100 bg-white">
+                    <CheckCircle size={18} className="shrink-0 mt-0.5" style={{ color: '#1B4332' }} />
+                    <div>
+                      <span className="font-semibold text-gray-900">{item.tip}: </span>
+                      <span className="text-gray-700 text-sm leading-relaxed">{item.detail}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
           )}

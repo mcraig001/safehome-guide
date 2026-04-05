@@ -35,6 +35,15 @@ const COMPARE_ROWS: { key: string; label: string; type: 'price' | 'score' | 'spe
   { key: 'warranty_years', label: 'Warranty', type: 'spec' },
 ];
 
+// "Best for" labels by rank position
+const BEST_FOR_LABELS = [
+  'Best Overall',
+  'Best Value',
+  'Runner-Up',
+  'Also Consider',
+  'Budget Pick',
+];
+
 function priceStr(p: Product) {
   if (p.price_min && p.price_max) return `$${p.price_min.toLocaleString()} – $${p.price_max.toLocaleString()}`;
   if (p.price_min) return `From $${p.price_min.toLocaleString()}`;
@@ -57,8 +66,18 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
         <thead>
           <tr style={{ backgroundColor: '#1B4332' }}>
             <th className="text-left py-3 px-4 text-white font-semibold w-32">Feature</th>
-            {products.map(p => (
+            {products.map((p, idx) => (
               <th key={p.slug} className="py-3 px-4 text-center text-white font-semibold">
+                {idx === 0 && (
+                  <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-1" style={{ backgroundColor: '#D97706', color: '#fff' }}>
+                    ★ Best Overall
+                  </div>
+                )}
+                {idx > 0 && BEST_FOR_LABELS[idx] && (
+                  <div className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-1 opacity-75" style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: '#fff' }}>
+                    {BEST_FOR_LABELS[idx]}
+                  </div>
+                )}
                 <div className="text-xs font-normal opacity-75 mb-0.5">{p.brand}</div>
                 <div className="font-semibold leading-tight">{p.name}</div>
               </th>
