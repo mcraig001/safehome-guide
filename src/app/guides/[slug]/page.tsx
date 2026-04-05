@@ -496,6 +496,27 @@ const GUIDE_META: Record<string, {
       { item: 'Break-even point (rent vs. new buy)', low: 8, high: 14 },
     ],
   },
+  'american-standard-vs-safe-step-walk-in-tub': {
+    title: 'American Standard vs. Safe Step Walk-In Tub: Comparison (2026)',
+    description: 'American Standard vs. Safe Step walk-in tubs compared side by side: price, drain speed, warranty, features, and customer service. Which is right for you?',
+    category: 'walk-in-tubs',
+    compareSlug: 'best-walk-in-tubs',
+    intro: 'American Standard and Safe Step are the two most-marketed walk-in tub brands in North America. Both run TV commercials targeting seniors, and both use aggressive sales tactics. This guide cuts through the marketing to give you an honest, side-by-side comparison of price, drain technology, warranty, and what real customers report after purchase.',
+    faqs: [
+      { question: 'Which is more expensive: American Standard or Safe Step?', answer: 'Both brands are in the premium segment. American Standard walk-in tubs typically run $4,000–$8,000 for the unit plus $1,000–$2,000 installation. Safe Step tubs are comparable in price. Both brands are known for high-pressure in-home sales tactics — always get at least 2 competing quotes before signing.' },
+      { question: 'Which brand has better drain speed?', answer: 'Safe Step markets its "Fast Drain" system as draining in 2 minutes or less. American Standard\'s standard drain is 3–5 minutes with an optional fast-drain upgrade. Drain speed matters because you must stay inside the tub during draining — verify the specific model\'s drain time before purchasing.' },
+      { question: 'Do American Standard or Safe Step tubs have lifetime warranties?', answer: 'Both brands advertise "lifetime" warranties, but the fine print matters. American Standard\'s lifetime warranty covers the door seal and structural components. Safe Step covers the tub shell. Both have shorter warranty periods (1–5 years) for mechanical components like jets, heaters, and motors. Read the full warranty document before purchase.' },
+      { question: 'What do real customers say about each brand?', answer: 'Both brands have mixed reviews. Common complaints: high-pressure sales tactics, variable installation quality by contractor, difficulty reaching customer service. Common praise: improved daily independence, reduced fall risk, hydrotherapy benefits for arthritis. Neither brand has a clearly dominant satisfaction rating — local installation quality may matter more than the brand itself.' },
+      { question: 'Are there better alternatives to American Standard and Safe Step?', answer: "Yes. Ella's Bubbles and Kohler walk-in tubs offer strong build quality with less aggressive sales practices. Ella's Bubbles is sold through plumbers and dealers (not direct TV sales), often at lower prices. Consider getting quotes from 3–4 brands before deciding." },
+    ],
+    costBreakdown: [
+      { item: 'American Standard tub (unit only)', low: 4000, high: 8000 },
+      { item: 'Safe Step tub (unit only)', low: 4000, high: 8500 },
+      { item: "Ella's Bubbles alternative", low: 2000, high: 5000 },
+      { item: 'Professional installation', low: 1000, high: 3000 },
+      { item: 'Electrical upgrade (if needed)', low: 200, high: 600 },
+    ],
+  },
   'stairlift-weight-limit': {
     title: 'Stairlift Weight Limits: What You Need to Know (2026)',
     description: 'Stairlift weight limits by brand and model. How to find a heavy-duty stairlift for users over 300 lbs — and what to ask before you buy.',

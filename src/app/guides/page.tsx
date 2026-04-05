@@ -198,6 +198,15 @@ const guides = [
     readTime: '4 min read',
     type: 'planning',
   },
+  {
+    slug: 'american-standard-vs-safe-step-walk-in-tub',
+    title: 'American Standard vs. Safe Step Walk-In Tub (2026)',
+    description: 'Two of the biggest brands compared on price, drain speed, warranty, and customer reviews. Unbiased guide.',
+    category: 'Walk-In Tubs',
+    icon: '🛁',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

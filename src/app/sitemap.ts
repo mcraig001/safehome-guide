@@ -38,7 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'outdoor-stairlift-cost',
         'bruno-vs-acorn-stairlift',
         'stairlift-rental-vs-buy',
-        'stairlift-weight-limit'].map(slug => ({
+        'stairlift-weight-limit',
+        'american-standard-vs-safe-step-walk-in-tub'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

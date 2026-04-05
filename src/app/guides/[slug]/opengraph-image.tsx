@@ -23,6 +23,9 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'walk-in-shower-conversion-cost': { title: 'Walk-In Shower Conversion Cost Guide', category: 'Bath Safety' },
   'stairlift-for-narrow-stairs': { title: 'Stairlift for Narrow Stairs', category: 'Stairlifts' },
   'outdoor-stairlift-cost': { title: 'Outdoor Stairlift Cost Guide 2026', category: 'Stairlifts' },
+  'bruno-vs-acorn-stairlift': { title: 'Bruno vs. Acorn Stairlift: Full Comparison', category: 'Stairlifts' },
+  'stairlift-rental-vs-buy': { title: 'Stairlift Rental vs. Buy: Which Makes Sense?', category: 'Stairlifts' },
+  'stairlift-weight-limit': { title: 'Stairlift Weight Limits: Heavy-Duty Options', category: 'Stairlifts' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {
