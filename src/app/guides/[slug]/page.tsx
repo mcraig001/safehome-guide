@@ -135,6 +135,66 @@ const GUIDE_META: Record<string, {
       { item: 'Full home CAPS assessment', low: 200, high: 500 },
     ],
   },
+  'medical-alert-cost-guide': {
+    title: 'Medical Alert System Cost Guide: What to Expect in 2026',
+    description: 'Medical alert system costs explained: monthly fees, equipment costs, GPS upgrades, and fall detection. Compare top brands.',
+    category: 'medical-alerts',
+    intro: 'Medical alert systems cost $0–$200 upfront for equipment and $20–$55 per month for monitoring. The right system depends on how active your loved one is, whether they leave the home, and whether fall detection is a priority. Here\'s everything that affects the price.',
+    faqs: [
+      { question: 'Is there a long-term contract for medical alert systems?', answer: 'Most top providers (Medical Guardian, Bay Alarm, Philips Lifeline) are month-to-month with no long-term contract required. A few offer slight discounts for annual prepayment. Avoid any provider requiring a 2+ year commitment.' },
+      { question: 'What is fall detection and how accurate is it?', answer: 'Fall detection uses accelerometers and algorithms to automatically call for help if a fall is detected — without the user pressing a button. Accuracy varies by brand: most detect 70–85% of falls with some false positives. Fall detection typically adds $5–$10/month to the base subscription.' },
+      { question: 'Does Medicare pay for medical alert systems?', answer: 'Standard Medicare does not cover personal emergency response systems (PERS). Some Medicare Advantage plans include PERS as a supplemental benefit — call your plan\'s member services and ask specifically about "personal emergency response" or "PERS" coverage.' },
+      { question: 'What is GPS medical alert and why does it cost more?', answer: 'GPS-enabled systems work outside the home using cellular networks — the user can call for help from anywhere. These cost $10–$20/month more than home-only systems. GPS is essential for users who are still active and leave the house regularly.' },
+      { question: 'How do I choose between home-only and mobile systems?', answer: 'Home-only systems (base station + button) are more affordable and reliable for users who primarily stay home. Mobile/GPS systems are right for anyone who drives, shops, or visits grandchildren. Consider: if a fall happened outdoors or away from home, would they have a way to call for help?' },
+    ],
+    costBreakdown: [
+      { item: 'Equipment (purchase or free with plan)', low: 0, high: 200 },
+      { item: 'Home system (monthly)', low: 20, high: 35 },
+      { item: 'GPS mobile system (monthly)', low: 35, high: 55 },
+      { item: 'Fall detection add-on (monthly)', low: 5, high: 10 },
+      { item: 'Annual cost (typical home system)', low: 240, high: 420 },
+    ],
+  },
+  'wheelchair-ramp-cost-guide': {
+    title: 'Wheelchair Ramp Cost Guide: Portable vs. Permanent (2026)',
+    description: 'How much does a wheelchair ramp cost? Portable ramps start at $100. Permanent modular ramps cost $1,200–$4,000 installed. Everything affecting the price explained.',
+    category: 'wheelchair-ramps',
+    intro: 'Wheelchair ramp costs range from $100 for a small threshold ramp to $4,000+ for a permanent modular system. The biggest cost factors are the rise height (how many inches or steps must be spanned), material, and whether the ramp is portable or permanent. ADA guidelines recommend a 1:12 slope (one inch of rise per foot of ramp).',
+    faqs: [
+      { question: 'How long does a wheelchair ramp need to be?', answer: 'ADA guidelines recommend a 1:12 slope: for every 1 inch of rise, you need 12 inches (1 foot) of ramp. A 6-inch threshold needs a 6-foot ramp. A 3-step entry (approximately 21 inches of rise) needs a 21-foot ramp — which is why multi-step entries often use switchback ramp designs.' },
+      { question: 'Do I need a permit for a wheelchair ramp?', answer: 'Permanent attached ramps typically require a building permit. Requirements vary by municipality — some exempt ramps under a certain length or size. Portable and freestanding modular ramps generally do not require permits. Always check with your local building department before starting construction.' },
+      { question: 'Can a wheelchair ramp be removed or moved?', answer: 'Portable folding ramps are designed for relocation. Modular aluminum ramp systems are also generally removable and can be reconfigured or reinstalled at a new home. Concrete ramps are permanent. Modularity is a key advantage for renters or families who may move.' },
+      { question: 'What is the best ramp material for outdoor use?', answer: 'Aluminum is the most popular material for outdoor wheelchair ramps: it\'s lightweight, non-corrosive, and low-maintenance. Pressure-treated wood is less expensive but requires periodic staining and maintenance. Concrete is the most durable but also the most permanent and expensive.' },
+      { question: 'Are wheelchair ramps covered by insurance or programs?', answer: 'Medicaid HCBS waivers in many states cover wheelchair ramps as home modifications. The VA HISA grant (up to $6,800) covers access ramps for qualifying veterans. Some area agencies on aging offer free ramp installation for income-qualified seniors. Contact your local Area Agency on Aging.' },
+    ],
+    costBreakdown: [
+      { item: 'Threshold ramp (1–4 inch rise)', low: 50, high: 150 },
+      { item: 'Portable folding ramp (4–8 ft)', low: 150, high: 400 },
+      { item: 'Modular aluminum system (installed)', low: 1200, high: 3500 },
+      { item: 'Wood ramp (contractor-built)', low: 800, high: 2500 },
+      { item: 'Concrete ramp (contractor-built)', low: 1500, high: 4000 },
+    ],
+  },
+  'home-elevator-cost-guide': {
+    title: 'Home Elevator Cost Guide: What to Expect in 2026',
+    description: 'How much does a home elevator cost? Vertical platform lifts start at $3,000. Full residential elevators cost $15,000–$35,000 installed. Cost breakdown for every option.',
+    category: 'home-elevators',
+    intro: 'Home mobility solutions range from $3,000 for a residential vertical platform lift to $35,000+ for a pneumatic or hydraulic home elevator. The right choice depends on the height you need to travel, the size of the user (including wheelchair use), aesthetics, and whether existing construction can accommodate a shaft. This guide covers every option.',
+    faqs: [
+      { question: 'What is the difference between a home elevator and a vertical platform lift?', answer: 'A residential elevator is an enclosed cab that travels in a shaft — it resembles a commercial elevator and is typically ADA-compliant for wheelchair users. A vertical platform lift (VPL) is an open or semi-enclosed platform that travels vertically — less expensive, requires less construction, but not enclosed. VPLs are common for 1–2 floor rises; full elevators for multi-story homes.' },
+      { question: 'Does a home elevator require a shaft?', answer: 'Traditional elevators require a shaft, which means construction or a room sacrifice. Pneumatic vacuum elevators (like the Savaria Vuelift) are freestanding and do not require a traditional shaft — they anchor to floor and ceiling with a ceiling cutout. These are the most practical for retrofits.' },
+      { question: 'Can I get a tax deduction for a home elevator?', answer: 'If a home elevator is installed for medical reasons (doctor documentation recommended), the cost may be partially deductible as a medical expense. The deductible amount is the installation cost minus any increase in home value. Consult a tax professional.' },
+      { question: 'How long does home elevator installation take?', answer: 'A vertical platform lift takes 1–2 days. A pneumatic elevator takes 2–3 days. A traditional cable-driven or hydraulic elevator in an existing shaft takes 3–5 days. New shaft construction (if required) adds weeks to the timeline.' },
+      { question: 'What ongoing maintenance does a home elevator require?', answer: 'Most residential elevators require annual professional maintenance ($200–$500/year) to inspect cables, hydraulics, safety systems, and door mechanisms. Some states require licensed elevator inspectors. Factor annual service costs into your total cost of ownership.' },
+    ],
+    costBreakdown: [
+      { item: 'Vertical platform lift (VPL)', low: 3000, high: 8000 },
+      { item: 'Pneumatic elevator (no shaft required)', low: 18000, high: 35000 },
+      { item: 'Traditional hydraulic elevator', low: 15000, high: 30000 },
+      { item: 'Shaft construction (if required)', low: 5000, high: 20000 },
+      { item: 'Annual maintenance', low: 200, high: 500 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

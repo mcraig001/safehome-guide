@@ -62,6 +62,33 @@ const guides = [
     readTime: '8 min read',
     type: 'planning',
   },
+  {
+    slug: 'medical-alert-cost-guide',
+    title: 'Medical Alert System Cost Guide 2026',
+    description: 'Monthly fees, GPS upgrades, fall detection add-ons, and how to compare brands without overpaying.',
+    category: 'Medical Alerts',
+    icon: '🚨',
+    readTime: '4 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'wheelchair-ramp-cost-guide',
+    title: 'Wheelchair Ramp Cost Guide: Portable vs. Permanent',
+    description: 'Portable ramps start at $100. Permanent modular systems cost $1,200–$3,500 installed. Everything that drives the price.',
+    category: 'Wheelchair Ramps',
+    icon: '♿',
+    readTime: '4 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'home-elevator-cost-guide',
+    title: 'Home Elevator Cost Guide: Every Option Compared',
+    description: 'Vertical platform lifts vs. pneumatic elevators vs. traditional hydraulic — costs, construction requirements, and which is right for your home.',
+    category: 'Home Elevators',
+    icon: '🛗',
+    readTime: '5 min read',
+    type: 'cost',
+  },
 ];
 
 const typeColors: Record<string, string> = {

@@ -27,7 +27,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Guide pages
     ...['stairlift-cost-guide','walk-in-tub-cost-guide','grab-bar-installation-guide',
         'does-medicare-cover-stairlifts','does-medicare-cover-walk-in-tubs',
-        'aging-in-place-home-modifications-checklist'].map(slug => ({
+        'aging-in-place-home-modifications-checklist',
+        'medical-alert-cost-guide','wheelchair-ramp-cost-guide','home-elevator-cost-guide'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
