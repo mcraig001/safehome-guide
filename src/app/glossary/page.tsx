@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
+import { glossarySchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Aging-in-Place Glossary: Terms & Definitions',
-  description: 'Plain-English definitions of 30+ aging-in-place, home modification, and home safety terms. CAPS, ADA, HCBS, SafeScore, stairlift, walk-in tub, and more.',
+  description: 'Plain-English definitions of 36 aging-in-place, home modification, and home safety terms. CAPS, ADA, HCBS, occupational therapist, rollator, zero-threshold shower, and more.',
   openGraph: {
     title: 'Aging-in-Place Glossary: Terms & Definitions',
     description: 'Plain-English definitions of aging-in-place and home modification terms.',
@@ -153,6 +154,31 @@ const TERMS = [
     related: ['Home Elevator', 'Stairlift'],
   },
   {
+    term: 'USDA Section 504 Program',
+    definition: 'A federal home repair grant and loan program from the U.S. Department of Agriculture (USDA) for very low-income rural homeowners. Grants of up to $10,000 are available for homeowners 62+ who cannot afford loan repayment; the grant does not need to be repaid. The program covers safety hazards and accessibility modifications including grab bars, ramps, and stairlifts. Applications are submitted through local USDA Rural Development offices.',
+    related: ['SAH Grant', 'HISA Grant'],
+  },
+  {
+    term: 'Occupational Therapist (OT)',
+    definition: 'A licensed healthcare professional who helps patients develop, recover, or maintain the skills needed for daily activities. For aging-in-place, an OT conducts home safety assessments ($100–$300 out of pocket, sometimes covered by Medicare Part B or Medicare Advantage) — evaluating the resident\'s mobility and functional level and recommending prioritized home modifications. OT recommendations are often required documentation for VA grants, Medicaid waivers, and insurance reimbursement.',
+    related: ['CAPS', 'Home Modification', 'Fall Detection'],
+  },
+  {
+    term: 'Rollator',
+    definition: 'A wheeled walking frame with 3 or 4 wheels, hand brakes, and usually a built-in seat. Unlike a standard walker (which is lifted with each step), a rollator rolls continuously, making it easier to use over longer distances. Handle height should match the user\'s wrist crease when standing upright. Wheel size matters: 6-inch wheels for indoor use; 8-inch or larger for outdoor terrain. Medicare Part B covers rollators with a prescription through enrolled DME suppliers.',
+    related: ['Durable Medical Equipment (DME)', 'Universal Design'],
+  },
+  {
+    term: 'Comfort-Height Toilet',
+    definition: 'Also called an ADA-height or chair-height toilet, a comfort-height toilet has a seat 17–19 inches from the floor — roughly the same height as a standard chair. Standard toilets are 14–16 inches, requiring significant knee flexion. For seniors with arthritis, hip replacements, or lower-body weakness, comfort-height toilets reduce fall risk and physical effort when sitting and standing. Replacement typically costs $200–$600 installed.',
+    related: ['ADA', 'Transfer Bench', 'Home Modification'],
+  },
+  {
+    term: 'Zero-Threshold Shower',
+    definition: 'Also called a curbless or roll-in shower. A shower design with no step, lip, or raised edge — the bathroom floor transitions seamlessly into the shower floor. This is the gold standard for wheelchair users and seniors with severe mobility limitations, as there is nothing to step over. The floor must slope gently toward the drain. Zero-threshold showers typically cost $5,000–$15,000 installed depending on size and materials.',
+    related: ['Roll-In Shower', 'Walk-In Shower', 'ADA'],
+  },
+  {
     term: 'Walk-In Shower',
     definition: 'A shower enclosure with a low or zero threshold that can be entered by walking in (as opposed to stepping over a tub rim). Walk-in showers differ from roll-in showers in that they may have a small curb (up to 2 inches). Walk-in shower conversions (replacing a standard tub) typically cost $1,500–$8,000 depending on whether a prefab unit or custom tile is used.',
     related: ['Roll-In Shower', 'Walk-In Tub'],
@@ -179,9 +205,11 @@ TERMS.forEach(t => {
 
 export default function GlossaryPage() {
   const letters = Object.keys(GROUPED).sort();
+  const schemaData = glossarySchema(TERMS.map(t => ({ term: t.term, definition: t.definition })));
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <div className="flex items-center gap-2 mb-3">
         <BookOpen size={16} style={{ color: '#1B4332' }} />
         <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>Reference</span>

@@ -121,6 +121,22 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+export function glossarySchema(terms: { term: string; definition: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: 'Aging-in-Place Glossary',
+    url: 'https://www.safeathomeguides.com/glossary',
+    description: 'Plain-English definitions of aging-in-place, home modification, and home safety terms.',
+    hasDefinedTerm: terms.map(t => ({
+      '@type': 'DefinedTerm',
+      name: t.term,
+      description: t.definition,
+      inDefinedTermSet: 'https://www.safeathomeguides.com/glossary',
+    })),
+  };
+}
+
 export function howToSchema(opts: {
   name: string;
   description: string;

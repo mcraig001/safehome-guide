@@ -232,7 +232,7 @@ export default function ResourcesPage() {
             { href: '/guides/aging-in-place-tax-deductions', label: 'Tax Deduction Guide 2026', desc: 'Which modifications qualify and how to document them' },
             { href: '/assess', label: 'Free Home Assessment', desc: '2-minute quiz → personalized modification priorities' },
             { href: '/contractors', label: 'Find a CAPS Contractor', desc: '150+ certified aging-in-place specialists, all 50 states' },
-            { href: '/glossary', label: 'Aging-in-Place Glossary', desc: '30+ terms explained in plain English' },
+            { href: '/glossary', label: 'Aging-in-Place Glossary', desc: '36 terms explained in plain English' },
           ].map((link) => (
             <Link
               key={link.href}
