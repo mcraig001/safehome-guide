@@ -45,7 +45,7 @@ export function SafeScore({ score, breakdown, size = 'md' }: SafeScoreProps) {
         <div className="text-xs text-gray-600 space-y-0.5 w-full">
           {Object.entries(breakdown).map(([key, val]) => (
             <div key={key} className="flex justify-between">
-              <span className="capitalize">{key}</span>
+              <span className="capitalize">{key.replace(/_/g, ' ')}</span>
               <span className="font-mono font-medium">{val}/25</span>
             </div>
           ))}

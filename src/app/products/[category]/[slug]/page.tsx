@@ -6,7 +6,8 @@ import { productSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { CheckCircle, XCircle } from 'lucide-react';
+import Link from 'next/link';
+import { CheckCircle, XCircle, ChevronRight } from 'lucide-react';
 
 interface Props { params: Promise<{ category: string; slug: string }> }
 
@@ -39,6 +40,19 @@ export default async function ProductPage({ params }: Props) {
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      {/* Breadcrumb */}
+      <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
+        <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
+        <ChevronRight size={14} />
+        <Link href="/products" className="hover:text-gray-600 transition-colors">Products</Link>
+        <ChevronRight size={14} />
+        <Link href={`/products/${category}`} className="hover:text-gray-600 transition-colors capitalize">
+          {category.replace(/-/g, ' ')}
+        </Link>
+        <ChevronRight size={14} />
+        <span className="text-gray-600">{product.name}</span>
+      </nav>
 
       <div className="grid md:grid-cols-3 gap-10">
         <div className="md:col-span-2">
@@ -125,6 +139,17 @@ export default async function ProductPage({ params }: Props) {
               </table>
             </div>
           )}
+
+          {/* Compare link */}
+          <div className="mb-4">
+            <Link
+              href={`/products/${category}`}
+              className="text-sm font-medium hover:underline"
+              style={{ color: '#1B4332' }}
+            >
+              ← See all {category.replace(/-/g, ' ')} reviews
+            </Link>
+          </div>
         </div>
 
         <aside className="space-y-6">

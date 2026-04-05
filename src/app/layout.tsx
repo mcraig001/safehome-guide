@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/products" className="hover:text-green-800 transition-colors">Products</Link>
               <Link href="/contractors" className="hover:text-green-800 transition-colors">Find a Contractor</Link>
               <Link href="/guides" className="hover:text-green-800 transition-colors">Cost Guides</Link>
+              <Link href="/compare" className="hover:text-green-800 transition-colors">Compare</Link>
               <Link href="/assess" className="hover:text-green-800 transition-colors">Home Assessment</Link>
             </nav>
             <Link
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="font-semibold text-gray-700 mb-2">Resources</p>
               <ul className="space-y-1">
                 <li><Link href="/guides" className="hover:underline">Cost Guides</Link></li>
+                <li><Link href="/compare" className="hover:underline">Comparisons</Link></li>
                 <li><Link href="/contractors" className="hover:underline">Find Contractors</Link></li>
                 <li><Link href="/assess" className="hover:underline">Home Assessment</Link></li>
               </ul>
