@@ -1,10 +1,19 @@
 import { supabase } from '@/lib/supabase';
 import { ContractorCard } from '@/components/ContractorCard';
 import { LeadForm } from '@/components/LeadForm';
+import { faqSchema } from '@/lib/schema';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Shield, CheckCircle, ChevronRight, Search } from 'lucide-react';
 import { Suspense } from 'react';
+
+const CONTRACTOR_FAQS = [
+  { question: 'What is a CAPS-certified contractor?', answer: 'CAPS (Certified Aging-in-Place Specialist) is a designation from the National Association of Home Builders (NAHB). Contractors earn it by completing coursework on home modification for seniors, ADA design principles, and fall prevention. It is the gold standard credential for aging-in-place remodeling.' },
+  { question: 'How much does a CAPS contractor charge?', answer: 'CAPS contractors typically charge $75–$150/hour for labor, or quote project totals. A grab bar installation runs $75–$200 per bar. A bathroom safety remodel is $3,000–$15,000. A stairlift installation is $200–$500 on top of the stairlift cost. Request itemized quotes from 2–3 contractors before deciding.' },
+  { question: 'Does Medicare or insurance pay for CAPS contractor services?', answer: 'Standard Medicare Parts A and B do not pay for aging-in-place home modifications. Some Medicare Advantage plans have home safety benefits ($500–$2,500/year). VA grants (SAH, SHA, HISA) cover modifications for qualifying veterans. Medicaid HCBS waivers may cover modifications for low-income seniors. Contact your insurance or VA office to check eligibility.' },
+  { question: 'How do I verify a CAPS certification?', answer: 'You can verify a contractor\'s CAPS certification through the NAHB\'s online directory at nahb.org. Ask the contractor for their CAPS certificate number and the date of certification. Active CAPS professionals are listed in the NAHB database.' },
+  { question: 'Do I need a CAPS contractor for grab bar installation?', answer: 'Grab bars can be installed by any licensed handyman or general contractor who understands proper anchoring techniques (studs or rated toggle anchors). For complex bathroom remodels, stairlift installations, or wheelchair ramp construction, a CAPS-certified contractor is strongly recommended due to their training in accessibility design.' },
+];
 
 export const metadata: Metadata = {
   title: 'Find CAPS-Certified Aging-in-Place Contractors Near You',
@@ -53,9 +62,11 @@ export default async function ContractorsPage({ searchParams }: Props) {
   });
 
   const isFiltered = !!(state || city);
+  const contractorFaqSchema = faqSchema(CONTRACTOR_FAQS);
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contractorFaqSchema) }} />
       {/* Header */}
       <div className="flex items-center gap-2 mb-3">
         <Shield size={16} style={{ color: '#1B4332' }} />
@@ -232,6 +243,23 @@ export default async function ContractorsPage({ searchParams }: Props) {
           </div>
         </aside>
       </div>
+
+      {/* FAQ section */}
+      {!isFiltered && (
+        <section className="mt-16 max-w-3xl">
+          <h2 className="font-serif text-2xl font-semibold mb-6" style={{ color: '#1A1A1A' }}>
+            Common Questions About CAPS Contractors
+          </h2>
+          <div className="space-y-4">
+            {CONTRACTOR_FAQS.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
+                <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }
