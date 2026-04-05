@@ -423,6 +423,24 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'lift-chair-cost-guide',
+    title: 'Lift Chair Cost Guide: Power Recliner Prices & What to Expect (2026)',
+    description: 'Two-position, three-position, and infinite-position lift recliner prices. What Medicare covers, bariatric options, and how to choose the right size.',
+    category: 'Mobility Aids',
+    icon: '🪑',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'aging-in-place-bathroom-checklist',
+    title: 'Aging-in-Place Bathroom Safety Checklist (2026)',
+    description: 'Printable bathroom safety checklist for seniors. What to check, what to add, and cost estimates — in order of fall-prevention impact.',
+    category: 'Bath Safety',
+    icon: '🚿',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {
