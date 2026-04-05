@@ -175,11 +175,11 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-3 gap-5">
             {[
               { slug: 'stairlift-cost-guide', title: 'How Much Does a Stairlift Cost?', icon: '🪜', tag: 'Cost Guide' },
-              { slug: 'does-medicare-cover-stairlifts', title: 'Does Medicare Cover Stairlifts?', icon: '🏥', tag: 'Insurance' },
+              { slug: 'home-safety-checklist-for-elderly', title: 'Home Safety Checklist for Elderly', icon: '📋', tag: 'Planning' },
               { slug: 'home-modification-grants-for-seniors', title: 'Home Modification Grants for Seniors', icon: '💰', tag: 'Grants' },
-              { slug: 'bathroom-safety-modifications-for-seniors', title: 'Bathroom Safety Modifications for Seniors', icon: '🚿', tag: 'Planning' },
-              { slug: 'aging-in-place-home-modifications-checklist', title: 'Complete Aging-in-Place Checklist', icon: '📋', tag: 'Planning' },
-              { slug: 'aging-in-place-tax-deductions', title: 'Tax Deductions for Home Modifications', icon: '🧾', tag: 'Finance' },
+              { slug: 'does-medicare-cover-stairlifts', title: 'Does Medicare Cover Stairlifts?', icon: '🏥', tag: 'Insurance' },
+              { slug: 'aging-in-place-planning-guide', title: 'How to Plan for Aging in Place', icon: '🏠', tag: 'Planning' },
+              { slug: 'free-stairlift-for-seniors', title: 'How to Get a Free Stairlift', icon: '💰', tag: 'Grants' },
             ].map(g => (
               <Link
                 key={g.slug}
