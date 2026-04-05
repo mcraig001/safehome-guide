@@ -84,7 +84,7 @@ export default async function HomePage() {
               <div className="text-sm text-gray-500 mt-1">Products Reviewed</div>
             </div>
             <div>
-              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>138+</div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>150+</div>
               <div className="text-sm text-gray-500 mt-1">CAPS Contractors Listed</div>
             </div>
             <div>
