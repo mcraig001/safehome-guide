@@ -89,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><Link href="/contractors" className="hover:underline">Find Contractors</Link></li>
                 <li><Link href="/assess" className="hover:underline">Home Assessment</Link></li>
                 <li><Link href="/glossary" className="hover:underline">Glossary</Link></li>
+                <li><Link href="/resources" className="hover:underline">Grant Resources</Link></li>
               </ul>
             </div>
             <div>

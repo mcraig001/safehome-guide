@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/advertise`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${BASE}/glossary`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/resources`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/compare`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     // Category pages
     ...['stairlifts','walk-in-tubs','grab-bars','wheelchair-ramps','medical-alerts',
