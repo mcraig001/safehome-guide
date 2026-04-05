@@ -18,11 +18,13 @@ const GUIDE_META: Record<string, {
   intro: string;
   faqs: { question: string; answer: string }[];
   costBreakdown?: { item: string; low: number; high: number }[];
+  compareSlug?: string;
 }> = {
   'stairlift-cost-guide': {
     title: 'How Much Does a Stairlift Cost in 2026?',
     description: 'Complete stairlift cost guide: new vs refurbished, straight vs curved, installation fees, and financing options. Updated March 2026.',
     category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
     intro: 'Stairlifts range from $2,000 for a basic straight-rail model to over $15,000 for a custom curved installation. The biggest cost drivers are the staircase shape, weight capacity, and brand. This guide breaks down every cost factor so you know exactly what to budget.',
     faqs: [
       { question: 'Does Medicare cover stairlifts?', answer: 'Standard Medicare (Parts A and B) does not cover stairlifts because they are not classified as durable medical equipment. Some Medicare Advantage plans and Medicaid programs may offer partial coverage — check with your specific plan.' },
@@ -42,6 +44,7 @@ const GUIDE_META: Record<string, {
     title: 'Walk-In Tub Cost Guide: What to Expect in 2026',
     description: 'Walk-in tub prices, installation costs, and what insurance may cover. Includes brand comparisons and buying tips.',
     category: 'walk-in-tubs',
+    compareSlug: 'best-walk-in-tubs',
     intro: 'Walk-in tubs typically cost $1,500–$5,000 for the unit, plus $1,000–$3,000 for professional installation — a total investment of $2,500–$8,000. Soaking and hydrotherapy models cost more. Here\'s everything that affects the final price.',
     faqs: [
       { question: 'Does insurance cover walk-in tubs?', answer: 'Private health insurance rarely covers walk-in tubs. Medicaid Home and Community-Based Services (HCBS) waivers may cover them for qualifying seniors. Some VA programs cover bathroom modifications for veterans.' },
@@ -60,6 +63,7 @@ const GUIDE_META: Record<string, {
     title: 'Grab Bar Installation Guide: Where to Put Them and How Much It Costs',
     description: 'ADA-compliant grab bar placement, installation costs, and which bars work best for different needs. Written with occupational therapists.',
     category: 'grab-bars',
+    compareSlug: 'best-grab-bars',
     intro: 'Grab bars are one of the most cost-effective home safety investments — a single professionally installed bar costs $75–$200, and they prevent tens of thousands of bathroom falls each year. Correct placement matters as much as the product itself.',
     faqs: [
       { question: 'Can grab bars be installed on any wall?', answer: 'Grab bars must be anchored into wall studs or with toggle bolt anchors rated for 250+ lbs. Drywall alone cannot support a grab bar safely. A professional installer will locate studs or use specialized anchors.' },
@@ -77,6 +81,7 @@ const GUIDE_META: Record<string, {
     title: 'Does Medicare Cover Stairlifts? (2026 Guide)',
     description: 'Medicare Parts A, B, and C coverage for stairlifts explained — plus Medicaid waiver programs, VA benefits, and state grant programs that may help pay.',
     category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
     intro: 'The short answer: standard Medicare (Parts A and B) does not cover stairlifts. However, several alternative programs — including some Medicare Advantage plans, Medicaid HCBS waivers, and VA benefits — may cover part or all of the cost. Here\'s how to find out what you qualify for.',
     faqs: [
       { question: 'Does Medicare Part B cover stairlifts?', answer: 'No. Medicare Part B covers durable medical equipment (DME) such as wheelchairs, walkers, and hospital beds. Stairlifts are classified as home modifications — not DME — so they fall outside Part B coverage. This classification has not changed under recent CMS rulemakings.' },
@@ -98,6 +103,7 @@ const GUIDE_META: Record<string, {
     title: 'Does Medicare Cover Walk-In Tubs? (2026 Guide)',
     description: 'The truth about Medicare, Medicaid, and VA coverage for walk-in tubs — and which programs actually pay for bathroom modifications.',
     category: 'walk-in-tubs',
+    compareSlug: 'best-walk-in-tubs',
     intro: 'Standard Medicare does not cover walk-in tubs. But multiple programs — Medicare Advantage supplemental benefits, Medicaid waivers, and VA grants — may help cover bathroom modifications. Here\'s the complete guide to financial assistance for walk-in tubs.',
     faqs: [
       { question: 'Does Medicare cover walk-in tubs?', answer: 'Standard Medicare (Parts A and B) does not cover walk-in tubs. Like stairlifts, walk-in tubs are classified as home modifications rather than durable medical equipment under CMS guidelines.' },
@@ -139,6 +145,7 @@ const GUIDE_META: Record<string, {
     title: 'Medical Alert System Cost Guide: What to Expect in 2026',
     description: 'Medical alert system costs explained: monthly fees, equipment costs, GPS upgrades, and fall detection. Compare top brands.',
     category: 'medical-alerts',
+    compareSlug: 'best-medical-alerts',
     intro: 'Medical alert systems cost $0–$200 upfront for equipment and $20–$55 per month for monitoring. The right system depends on how active your loved one is, whether they leave the home, and whether fall detection is a priority. Here\'s everything that affects the price.',
     faqs: [
       { question: 'Is there a long-term contract for medical alert systems?', answer: 'Most top providers (Medical Guardian, Bay Alarm, Philips Lifeline) are month-to-month with no long-term contract required. A few offer slight discounts for annual prepayment. Avoid any provider requiring a 2+ year commitment.' },
@@ -341,6 +348,22 @@ export default async function GuidePage({ params }: Props) {
               headline="Get Free Installation Quotes"
             />
           </Suspense>
+
+          {/* Compare link if available */}
+          {meta.compareSlug && (
+            <Link
+              href={`/compare/${meta.compareSlug}`}
+              className="flex items-center justify-between p-5 rounded-xl border-2 group transition-colors"
+              style={{ borderColor: '#1B4332' }}
+            >
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1B4332' }}>Side-by-Side Comparison</p>
+                <p className="font-semibold text-gray-800 group-hover:text-green-800 text-sm leading-tight">
+                  Compare top {meta.category.replace(/-/g, ' ')} products →
+                </p>
+              </div>
+            </Link>
+          )}
 
           {/* Related guides */}
           <div className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
