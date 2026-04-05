@@ -29,7 +29,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'does-medicare-cover-stairlifts','does-medicare-cover-walk-in-tubs',
         'aging-in-place-home-modifications-checklist',
         'medical-alert-cost-guide','wheelchair-ramp-cost-guide','home-elevator-cost-guide',
-        'home-modification-grants-for-seniors','stairlift-vs-home-elevator'].map(slug => ({
+        'home-modification-grants-for-seniors','stairlift-vs-home-elevator',
+        'bathroom-safety-modifications-for-seniors','how-to-choose-a-stairlift',
+        'aging-in-place-tax-deductions','best-medical-alert-for-seniors-living-alone'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

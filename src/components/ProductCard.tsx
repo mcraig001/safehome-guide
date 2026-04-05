@@ -16,10 +16,24 @@ interface Product {
   affiliate_url?: string;
 }
 
+const CATEGORY_ICONS: Record<string, { icon: string; bg: string }> = {
+  stairlifts: { icon: '🪜', bg: '#f0fdf4' },
+  'walk-in-tubs': { icon: '🛁', bg: '#eff6ff' },
+  'grab-bars': { icon: '🔩', bg: '#fefce8' },
+  'wheelchair-ramps': { icon: '♿', bg: '#f0fdf4' },
+  'bath-safety': { icon: '🚿', bg: '#eff6ff' },
+  'home-elevators': { icon: '🛗', bg: '#fdf4ff' },
+  'medical-alerts': { icon: '🚨', bg: '#fff1f2' },
+  'mobility-aids': { icon: '🦽', bg: '#f0fdf4' },
+  'smart-home-safety': { icon: '🏠', bg: '#f0f9ff' },
+  'door-access': { icon: '🔐', bg: '#fefce8' },
+};
+
 export function ProductCard({ product }: { product: Product }) {
+  const categoryMeta = CATEGORY_ICONS[product.category] ?? { icon: '🏠', bg: '#f5f5f0' };
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-      {product.image_url && (
+      {product.image_url ? (
         <div className="relative h-48 bg-gray-50">
           <Image
             src={product.image_url}
@@ -27,6 +41,15 @@ export function ProductCard({ product }: { product: Product }) {
             fill
             className="object-contain p-4"
           />
+          {product.is_featured && (
+            <span className="absolute top-2 left-2 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
+              Top Pick
+            </span>
+          )}
+        </div>
+      ) : (
+        <div className="h-28 flex items-center justify-center relative" style={{ backgroundColor: categoryMeta.bg }}>
+          <span className="text-5xl">{categoryMeta.icon}</span>
           {product.is_featured && (
             <span className="absolute top-2 left-2 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded">
               Top Pick

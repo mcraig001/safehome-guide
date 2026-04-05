@@ -108,6 +108,42 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'bathroom-safety-modifications-for-seniors',
+    title: 'Bathroom Safety Modifications for Seniors: Complete Guide',
+    description: 'The most important bathroom modifications — grab bars, walk-in tubs, shower seats, non-slip surfaces — with costs and installation tips.',
+    category: 'Grab Bars',
+    icon: '🚿',
+    readTime: '6 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'how-to-choose-a-stairlift',
+    title: 'How to Choose a Stairlift: Complete Buyer\'s Guide',
+    description: 'Straight vs. curved, weight limits, key features, top brands compared. Everything to know before you buy.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '6 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'aging-in-place-tax-deductions',
+    title: 'Aging-in-Place Tax Deductions: What Qualifies in 2026',
+    description: 'Which home modifications are tax deductible, how to calculate your deduction, and what documentation the IRS requires.',
+    category: 'Planning',
+    icon: '🧾',
+    readTime: '5 min read',
+    type: 'insurance',
+  },
+  {
+    slug: 'best-medical-alert-for-seniors-living-alone',
+    title: 'Best Medical Alert Systems for Seniors Living Alone',
+    description: 'Fall detection accuracy, GPS range, response time, and battery life — the features that matter most for solo-living seniors.',
+    category: 'Medical Alerts',
+    icon: '🚨',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

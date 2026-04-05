@@ -2,146 +2,218 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ChevronRight, ClipboardList, CheckCircle } from 'lucide-react';
 
 const QUESTIONS = [
   {
     id: 'mobility',
     question: 'Does anyone in your home have difficulty with mobility or balance?',
-    options: ['No issues', 'Mild difficulty', 'Significant difficulty', 'Uses mobility aid'],
+    options: [
+      { label: 'No issues currently', value: 0 },
+      { label: 'Mild difficulty — slower, extra caution', value: 1 },
+      { label: 'Significant difficulty — uses furniture for support', value: 2 },
+      { label: 'Uses a walker, cane, or wheelchair', value: 3 },
+    ],
   },
   {
     id: 'stairs',
     question: 'Are there stairs in your home that must be used daily?',
-    options: ['No stairs', 'One flight', 'Multiple flights', 'Stairs are a major barrier'],
+    options: [
+      { label: 'No stairs', value: 0 },
+      { label: 'One flight — manageable but tiring', value: 1 },
+      { label: 'One flight — stairs are becoming a real problem', value: 2 },
+      { label: 'Multiple flights or stairs are a major barrier', value: 3 },
+    ],
   },
   {
     id: 'bathroom',
     question: 'How accessible is your main bathroom?',
-    options: ['Fully accessible', 'Some difficulty', 'Difficult to enter/exit tub', 'Unsafe currently'],
+    options: [
+      { label: 'Fully accessible — no issues', value: 0 },
+      { label: 'Some difficulty getting in/out of tub or shower', value: 1 },
+      { label: 'Tub is very difficult — shower preferred', value: 2 },
+      { label: 'Bathroom feels unsafe or requires assistance', value: 3 },
+    ],
   },
   {
     id: 'falls',
-    question: 'Have there been any falls in the home in the past year?',
-    options: ['No falls', 'One fall', 'Multiple falls', 'Near-falls frequently'],
+    question: 'Have there been any falls or near-falls in the home in the past year?',
+    options: [
+      { label: 'No falls', value: 0 },
+      { label: 'One fall — no injury', value: 1 },
+      { label: 'One or more falls with an injury', value: 2 },
+      { label: 'Near-falls happen frequently', value: 3 },
+    ],
   },
   {
-    id: 'age',
+    id: 'who',
     question: 'Who are you primarily planning for?',
-    options: ['Myself (65+)', 'A parent or family member', 'Planning ahead', 'Post-surgery recovery'],
+    options: [
+      { label: 'Myself — I\'m 65+', value: 'self' },
+      { label: 'A parent or older family member', value: 'family' },
+      { label: 'Post-surgery recovery', value: 'surgery' },
+      { label: 'Planning ahead — no urgent needs yet', value: 'ahead' },
+    ],
   },
 ];
 
-const RECOMMENDATIONS: Record<string, { label: string; slug: string }[]> = {
-  stairs: [
-    { label: 'Stairlifts', slug: 'stairlifts' },
-    { label: 'Home Elevators', slug: 'home-elevators' },
-  ],
-  bathroom: [
-    { label: 'Walk-In Tubs', slug: 'walk-in-tubs' },
-    { label: 'Grab Bars & Rails', slug: 'grab-bars' },
-    { label: 'Bath Safety', slug: 'bath-safety' },
-  ],
-  mobility: [
-    { label: 'Wheelchair Ramps', slug: 'wheelchair-ramps' },
-    { label: 'Mobility Aids', slug: 'mobility-aids' },
-    { label: 'Door & Access', slug: 'door-access' },
-  ],
-  falls: [
-    { label: 'Medical Alert Systems', slug: 'medical-alerts' },
-    { label: 'Smart Home Safety', slug: 'smart-home-safety' },
-    { label: 'Grab Bars & Rails', slug: 'grab-bars' },
-  ],
-};
+type Rec = { label: string; description: string; href: string; icon: string };
+
+function getRecommendations(answers: Record<string, number | string>): Rec[] {
+  const recs: Rec[] = [];
+
+  if ((answers.stairs as number) >= 2) {
+    recs.push({ label: 'Stairlift Guide', description: 'Costs, brands, and what to look for before buying.', href: '/guides/how-to-choose-a-stairlift', icon: '🪜' });
+    recs.push({ label: 'Browse Stairlifts', description: 'Top-rated straight and curved stairlift models.', href: '/products/stairlifts', icon: '⭐' });
+  } else if ((answers.stairs as number) === 1) {
+    recs.push({ label: 'Stairlift Cost Guide', description: 'Is a stairlift right for your situation?', href: '/guides/stairlift-cost-guide', icon: '🪜' });
+  }
+
+  if ((answers.bathroom as number) >= 2) {
+    recs.push({ label: 'Bathroom Safety Guide', description: 'The most important bathroom modifications, in priority order.', href: '/guides/bathroom-safety-modifications-for-seniors', icon: '🚿' });
+    recs.push({ label: 'Walk-In Tubs', description: 'Compare top walk-in tub models and costs.', href: '/products/walk-in-tubs', icon: '🛁' });
+    recs.push({ label: 'Grab Bars', description: 'Essential for shower and toilet safety.', href: '/products/grab-bars', icon: '🔩' });
+  } else if ((answers.bathroom as number) === 1) {
+    recs.push({ label: 'Bath Safety Products', description: 'Shower chairs, grab bars, and tub transfer benches.', href: '/products/bath-safety', icon: '🚿' });
+    recs.push({ label: 'Grab Bar Guide', description: 'Where to place grab bars and installation costs.', href: '/guides/grab-bar-installation-guide', icon: '🔩' });
+  }
+
+  if ((answers.falls as number) >= 2) {
+    recs.push({ label: 'Medical Alert Systems', description: 'Get help automatically if a fall happens.', href: '/products/medical-alerts', icon: '🚨' });
+    recs.push({ label: 'Medical Alert Guide', description: 'Choosing the right system for a senior living alone.', href: '/guides/best-medical-alert-for-seniors-living-alone', icon: '📋' });
+  } else if ((answers.falls as number) === 1) {
+    recs.push({ label: 'Medical Alert Systems', description: 'Compare fall detection and GPS monitoring options.', href: '/products/medical-alerts', icon: '🚨' });
+  }
+
+  if ((answers.mobility as number) >= 3) {
+    recs.push({ label: 'Wheelchair Ramps', description: 'Portable and permanent ramp options for access.', href: '/products/wheelchair-ramps', icon: '♿' });
+    recs.push({ label: 'Ramp Cost Guide', description: 'Portable vs. permanent — costs and installation.', href: '/guides/wheelchair-ramp-cost-guide', icon: '💲' });
+  }
+
+  if (answers.who === 'ahead' || recs.length < 2) {
+    recs.push({ label: 'Home Modifications Checklist', description: 'Complete room-by-room aging-in-place planning guide.', href: '/guides/aging-in-place-home-modifications-checklist', icon: '📋' });
+    recs.push({ label: 'Grants & Financial Assistance', description: 'Every program that helps pay for modifications.', href: '/guides/home-modification-grants-for-seniors', icon: '💰' });
+  }
+
+  if (answers.who === 'surgery') {
+    recs.unshift({ label: 'Bath Safety for Recovery', description: 'Shower chairs, transfer benches, and grab bars.', href: '/products/bath-safety', icon: '🏥' });
+  }
+
+  // Deduplicate by href, take top 5
+  return [...new Map(recs.map(r => [r.href, r])).values()].slice(0, 5);
+}
 
 export default function AssessPage() {
-  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [answers, setAnswers] = useState<Record<string, number | string>>({});
   const [done, setDone] = useState(false);
+
   const current = QUESTIONS.findIndex(q => answers[q.id] === undefined);
 
-  const handleAnswer = (questionId: string, index: number) => {
-    const next = { ...answers, [questionId]: index };
+  function handleAnswer(questionId: string, value: number | string) {
+    const next = { ...answers, [questionId]: value };
     setAnswers(next);
-    if (Object.keys(next).length === QUESTIONS.length) setDone(true);
-  };
-
-  const getRecommendations = () => {
-    const recs: { label: string; slug: string }[] = [];
-    if ((answers.stairs || 0) >= 1) recs.push(...RECOMMENDATIONS.stairs);
-    if ((answers.bathroom || 0) >= 1) recs.push(...RECOMMENDATIONS.bathroom);
-    if ((answers.mobility || 0) >= 1) recs.push(...RECOMMENDATIONS.mobility);
-    if ((answers.falls || 0) >= 1) recs.push(...RECOMMENDATIONS.falls);
-    return [...new Map(recs.map(r => [r.slug, r])).values()].slice(0, 6);
-  };
+    if (Object.keys(next).length === QUESTIONS.length) {
+      setTimeout(() => setDone(true), 200);
+    }
+  }
 
   if (done) {
-    const recs = getRecommendations();
+    const recs = getRecommendations(answers);
     return (
       <main className="max-w-2xl mx-auto px-4 py-16">
-        <h1 className="font-serif text-3xl font-bold mb-2" style={{ color: '#1B4332' }}>
-          Your Home Safety Plan
-        </h1>
-        <p className="text-gray-500 mb-8">Based on your answers, here are the categories most relevant for you:</p>
-        <div className="grid grid-cols-2 gap-3 mb-10">
-          {recs.map(r => (
+        <div className="text-center mb-10">
+          <CheckCircle size={48} className="mx-auto mb-4" style={{ color: '#1B4332' }} />
+          <h1 className="font-serif text-3xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
+            Your Personalized Plan
+          </h1>
+          <p className="text-gray-500 text-lg">
+            Based on your answers, these are the highest-priority resources for your situation.
+          </p>
+        </div>
+
+        <div className="space-y-3 mb-10">
+          {recs.map(rec => (
             <Link
-              key={r.slug}
-              href={`/products/${r.slug}`}
-              className="p-4 rounded-xl border-2 font-medium hover:border-green-700 transition-colors"
-              style={{ borderColor: '#1B4332', color: '#1B4332' }}
+              key={rec.href}
+              href={rec.href}
+              className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 hover:border-green-700 hover:shadow-sm transition-all group bg-white"
             >
-              {r.label} →
+              <span className="text-3xl shrink-0">{rec.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="font-semibold text-gray-900 group-hover:text-green-800 transition-colors">{rec.label}</div>
+                <div className="text-sm text-gray-500 mt-0.5">{rec.description}</div>
+              </div>
+              <ChevronRight size={18} className="text-gray-300 group-hover:text-green-700 shrink-0 transition-colors" />
             </Link>
           ))}
         </div>
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-          <p className="font-semibold text-amber-900">Want expert guidance?</p>
-          <p className="text-sm text-amber-800 mt-1 mb-3">A CAPS-certified contractor can do a free in-home assessment.</p>
+
+        <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: '#1B4332' }}>
+          <h2 className="font-serif text-2xl font-bold text-white mb-2">
+            Get a Free In-Home Assessment
+          </h2>
+          <p className="text-white opacity-80 mb-6 max-w-md mx-auto text-sm">
+            A CAPS-certified contractor can assess your home in person and give you an exact modification plan with quotes.
+          </p>
           <Link
             href="/contractors"
-            className="inline-block px-5 py-2.5 rounded-lg text-white font-semibold text-sm"
-            style={{ backgroundColor: '#D97706' }}
+            className="inline-block px-8 py-3 rounded-lg font-semibold text-base transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#D97706', color: '#fff' }}
           >
             Find a Contractor Near You
           </Link>
+        </div>
+
+        <div className="text-center mt-8">
+          <button
+            onClick={() => { setAnswers({}); setDone(false); }}
+            className="text-sm text-gray-400 hover:text-gray-600 hover:underline transition-colors"
+          >
+            ← Start over
+          </button>
         </div>
       </main>
     );
   }
 
   const q = QUESTIONS[current >= 0 ? current : 0];
-  const progress = ((Object.keys(answers).length) / QUESTIONS.length) * 100;
+  const progress = (Object.keys(answers).length / QUESTIONS.length) * 100;
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-16">
-      <h1 className="font-serif text-3xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
-        Home Safety Assessment
-      </h1>
-      <p className="text-gray-500 mb-8">Answer {QUESTIONS.length} quick questions to get personalized recommendations.</p>
+      <div className="text-center mb-10">
+        <ClipboardList size={36} className="mx-auto mb-3" style={{ color: '#1B4332' }} />
+        <h1 className="font-serif text-3xl font-bold mb-2" style={{ color: '#1A1A1A' }}>
+          Free Home Safety Assessment
+        </h1>
+        <p className="text-gray-500">
+          {QUESTIONS.length} quick questions — personalized recommendations in under 2 minutes.
+        </p>
+      </div>
 
-      <div className="mb-6">
-        <div className="flex justify-between text-sm text-gray-400 mb-1">
+      <div className="mb-8">
+        <div className="flex justify-between text-xs text-gray-400 mb-2">
           <span>Question {Object.keys(answers).length + 1} of {QUESTIONS.length}</span>
           <span>{Math.round(progress)}% complete</span>
         </div>
-        <div className="h-2 bg-gray-100 rounded-full">
+        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
           <div
-            className="h-2 rounded-full transition-all"
+            className="h-full rounded-full transition-all duration-500"
             style={{ width: `${progress}%`, backgroundColor: '#1B4332' }}
           />
         </div>
       </div>
 
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-        <p className="font-serif text-xl font-semibold mb-5">{q.question}</p>
-        <div className="space-y-2">
-          {q.options.map((opt, i) => (
+        <p className="font-serif text-xl font-semibold mb-6" style={{ color: '#1A1A1A' }}>{q.question}</p>
+        <div className="space-y-2.5">
+          {q.options.map((opt) => (
             <button
-              key={i}
-              onClick={() => handleAnswer(q.id, i)}
-              className="w-full text-left p-3.5 rounded-lg border border-gray-200 hover:border-green-700 hover:bg-green-50 transition-colors text-sm font-medium"
-              style={{ minHeight: 44 }}
+              key={String(opt.value)}
+              onClick={() => handleAnswer(q.id, opt.value)}
+              className="w-full text-left px-4 py-3.5 rounded-lg border border-gray-200 hover:border-green-700 hover:bg-green-50 transition-colors text-sm font-medium text-gray-800"
             >
-              {opt}
+              {opt.label}
             </button>
           ))}
         </div>
