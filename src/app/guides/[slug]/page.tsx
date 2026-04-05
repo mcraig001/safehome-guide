@@ -10,6 +10,14 @@ import { BookOpen, DollarSign, ChevronRight } from 'lucide-react';
 
 interface Props { params: Promise<{ slug: string }> }
 
+function getGuideTypeLabel(slug: string): string {
+  if (slug.includes('cost-guide')) return 'Cost Guide';
+  if (slug.includes('medicare') || slug.includes('grants') || slug.includes('tax-deduction')) return 'Insurance & Grants';
+  if (slug.includes('how-to-choose') || slug.includes('vs-') || slug.includes('best-')) return "Buyer's Guide";
+  if (slug.includes('checklist') || slug.includes('modifications') || slug.includes('safety')) return 'Planning Guide';
+  return 'Guide';
+}
+
 // Map guide slugs → product categories + static guide content
 const GUIDE_META: Record<string, {
   title: string;
@@ -384,7 +392,7 @@ export default async function GuidePage({ params }: Props) {
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-3">
             <BookOpen size={16} style={{ color: '#1B4332' }} />
-            <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>Cost Guide</span>
+            <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>{getGuideTypeLabel(slug)}</span>
           </div>
 
           <h1 className="font-serif text-4xl font-bold mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
