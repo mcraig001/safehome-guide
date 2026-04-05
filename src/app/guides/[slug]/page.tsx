@@ -73,6 +73,68 @@ const GUIDE_META: Record<string, {
       { item: 'Full bathroom package (4–6 bars)', low: 400, high: 900 },
     ],
   },
+  'does-medicare-cover-stairlifts': {
+    title: 'Does Medicare Cover Stairlifts? (2026 Guide)',
+    description: 'Medicare Parts A, B, and C coverage for stairlifts explained — plus Medicaid waiver programs, VA benefits, and state grant programs that may help pay.',
+    category: 'stairlifts',
+    intro: 'The short answer: standard Medicare (Parts A and B) does not cover stairlifts. However, several alternative programs — including some Medicare Advantage plans, Medicaid HCBS waivers, and VA benefits — may cover part or all of the cost. Here\'s how to find out what you qualify for.',
+    faqs: [
+      { question: 'Does Medicare Part B cover stairlifts?', answer: 'No. Medicare Part B covers durable medical equipment (DME) such as wheelchairs, walkers, and hospital beds. Stairlifts are classified as home modifications — not DME — so they fall outside Part B coverage. This classification has not changed under recent CMS rulemakings.' },
+      { question: 'Does Medicare Advantage cover stairlifts?', answer: 'Some Medicare Advantage (Part C) plans include a "Healthy Home" or "Home Safety" supplemental benefit that covers home modifications including stairlifts. Coverage and dollar limits vary by plan. Call your plan\'s member services line and ask specifically about home modification benefits.' },
+      { question: 'Does Medicaid cover stairlifts?', answer: 'Medicaid coverage depends on your state. Many states have Home and Community-Based Services (HCBS) waiver programs that fund home modifications to help seniors stay at home. Common program names include "PACE," "CHOICES," and "Community First Choice." Contact your state Medicaid office or Area Agency on Aging.' },
+      { question: 'Does the VA cover stairlifts for veterans?', answer: 'Yes. The VA offers two home modification grants: the Specially Adapted Housing (SAH) grant (up to $109,986 in 2024) and the Special Housing Adaptation (SHA) grant (up to $22,036). Veterans with service-connected disabilities may qualify. Apply through your VA regional office.' },
+      { question: 'Are there other financial assistance programs for stairlifts?', answer: 'Yes — several. The USDA Section 504 Rural Repair and Rehabilitation Program provides grants up to $10,000 to very low-income homeowners. Many Area Agencies on Aging run local modification programs. Some states have dedicated senior home repair programs. The National Council on Aging\'s BenefitsCheckUp tool can identify programs in your area.' },
+      { question: 'Are stairlifts tax deductible?', answer: 'Stairlifts may be partially deductible as a medical expense if your total medical expenses exceed 7.5% of your adjusted gross income. The deductible amount is the cost minus any increase in home value the lift provides (typically $0 for a stairlift). Consult a tax professional.' },
+    ],
+    costBreakdown: [
+      { item: 'Medicare coverage', low: 0, high: 0 },
+      { item: 'Medicare Advantage (varies by plan)', low: 0, high: 1500 },
+      { item: 'Medicaid HCBS waiver (varies by state)', low: 0, high: 5000 },
+      { item: 'VA SAH/SHA grant', low: 0, high: 109986 },
+      { item: 'Your out-of-pocket cost', low: 2000, high: 5000 },
+    ],
+  },
+  'does-medicare-cover-walk-in-tubs': {
+    title: 'Does Medicare Cover Walk-In Tubs? (2026 Guide)',
+    description: 'The truth about Medicare, Medicaid, and VA coverage for walk-in tubs — and which programs actually pay for bathroom modifications.',
+    category: 'walk-in-tubs',
+    intro: 'Standard Medicare does not cover walk-in tubs. But multiple programs — Medicare Advantage supplemental benefits, Medicaid waivers, and VA grants — may help cover bathroom modifications. Here\'s the complete guide to financial assistance for walk-in tubs.',
+    faqs: [
+      { question: 'Does Medicare cover walk-in tubs?', answer: 'Standard Medicare (Parts A and B) does not cover walk-in tubs. Like stairlifts, walk-in tubs are classified as home modifications rather than durable medical equipment under CMS guidelines.' },
+      { question: 'What about Medicare Advantage?', answer: 'Some Medicare Advantage plans include home modification benefits through "Healthy Home," "Home Safety," or "Supplemental Home Benefit" add-ons. Dollar limits typically range from $500 to $2,500 per year. Call your plan and specifically ask about bathroom modification coverage.' },
+      { question: 'Will Medicaid cover a walk-in tub?', answer: 'Medicaid Home and Community-Based Services (HCBS) waivers in many states fund home modifications to prevent nursing home placement. Walk-in tubs are commonly approved under these programs. Income and functional eligibility requirements apply. Contact your local Area Agency on Aging to apply.' },
+      { question: 'Can the VA pay for a walk-in tub?', answer: 'Yes. Veterans with service-connected disabilities may qualify for VA Specially Adapted Housing (SAH) or SHA grants that cover bathroom modifications. Additionally, the VA\'s Home Improvements and Structural Alterations (HISA) grant provides up to $6,800 for veterans with service-connected conditions and up to $2,000 for non-service-connected conditions.' },
+      { question: 'Are there nonprofit programs that help pay for walk-in tubs?', answer: 'Several national nonprofits fund home modifications: Rebuilding Together (free modifications for low-income homeowners), Habitat for Humanity Home Repair, and local Community Action Agencies. Many states also have specific senior home repair programs — search "[your state] senior home modification grant."' },
+    ],
+    costBreakdown: [
+      { item: 'Medicare Part A/B coverage', low: 0, high: 0 },
+      { item: 'Medicare Advantage benefit', low: 0, high: 2500 },
+      { item: 'Medicaid HCBS waiver', low: 0, high: 8000 },
+      { item: 'VA HISA grant', low: 0, high: 6800 },
+      { item: 'Typical out-of-pocket (after assistance)', low: 1500, high: 6000 },
+    ],
+  },
+  'aging-in-place-home-modifications-checklist': {
+    title: 'Aging-in-Place Home Modifications: Complete Room-by-Room Checklist',
+    description: 'Everything you need to modify in your home to safely age in place — organized by room, priority level, and estimated cost.',
+    category: 'grab-bars',
+    intro: 'A complete aging-in-place home modification covers six key areas: the bathroom, bedroom, kitchen, entrance, stairways, and outdoor spaces. This checklist prioritizes modifications by fall risk reduction — the leading cause of injury hospitalizations for adults 65+.',
+    faqs: [
+      { question: 'What are the most important aging-in-place modifications?', answer: 'By frequency of injury prevention: (1) bathroom grab bars, (2) non-slip surfaces in bathroom and entry, (3) improved lighting throughout, (4) stair handrails on both sides, (5) removal of throw rugs and tripping hazards. These five changes address the majority of fall risks.' },
+      { question: 'What does a full aging-in-place modification cost?', answer: 'A basic package (grab bars, non-slip mats, improved lighting) costs $500–$2,000. A comprehensive modification including a stairlift, walk-in tub, and contractor work runs $10,000–$30,000. Most families implement in phases over 2–3 years.' },
+      { question: 'Do I need a CAPS contractor for modifications?', answer: 'CAPS (Certified Aging-in-Place Specialist) certification means the contractor has NAHB training in aging-in-place design. For complex projects involving structural changes, a CAPS contractor is strongly recommended. For basic modifications like grab bars and ramps, any licensed, insured contractor can handle the work.' },
+      { question: 'How do I prioritize modifications on a budget?', answer: 'Start with fall prevention in the bathroom — grab bars, a non-slip mat, and a shower chair cost under $300 total and address the highest-risk area. Then address entry and stair safety. Save major items like stairlifts and walk-in tubs for when they become necessary or when funding is secured.' },
+      { question: 'Can modifications hurt my home\'s resale value?', answer: 'Most modifications are either invisible (grab bars) or add value to buyers who need them. Stairlifts and walk-in tubs can be removed if needed. Studies show that accessible homes sell faster and at comparable prices in markets with aging populations.' },
+    ],
+    costBreakdown: [
+      { item: 'Bathroom grab bars (4–6 bars + install)', low: 300, high: 800 },
+      { item: 'Non-slip surfaces + lighting', low: 150, high: 400 },
+      { item: 'Entry ramp + handrail', low: 500, high: 2000 },
+      { item: 'Stairlift (straight)', low: 2000, high: 5000 },
+      { item: 'Walk-in tub (installed)', low: 3500, high: 10000 },
+      { item: 'Full home CAPS assessment', low: 200, high: 500 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
