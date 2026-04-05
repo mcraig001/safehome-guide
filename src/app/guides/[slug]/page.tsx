@@ -585,6 +585,48 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'home-safety-checklist-for-elderly': {
+    title: 'Home Safety Checklist for Elderly: Room-by-Room Guide (2026)',
+    description: 'Complete home safety checklist for elderly adults — bathroom, bedroom, kitchen, entryway, and stairs. Printable checklist with costs for each modification.',
+    category: 'grab-bars',
+    compareSlug: 'best-grab-bars',
+    intro: 'Falls are the leading cause of injury-related death for adults 65 and older. Most falls happen at home. This checklist covers every room, organized by risk level, so you can prioritize the most important modifications first. Use it yourself or with an occupational therapist for a full home assessment.',
+    faqs: [
+      { question: 'What are the most important home safety modifications for elderly adults?', answer: 'The five highest-impact modifications — in order of fall-prevention effect per dollar — are: (1) Grab bars in bathroom (shower and toilet), (2) Removal of throw rugs and tripping hazards, (3) Improved lighting including night lights and motion sensors, (4) Handrails on both sides of all staircases, and (5) Non-slip surfaces on floors, stairs, and tub/shower floor. These five changes address the most common fall scenarios.' },
+      { question: 'How much does it cost to make a home safe for elderly parents?', answer: 'A basic safety package — grab bars, handrails, nightlights, non-slip mats, removal of throw rugs — costs $500–$2,500 for most homes. A mid-level renovation adding a walk-in shower, comfort-height toilet, and better stair lighting runs $5,000–$15,000. A comprehensive accessibility remodel (widened doorways, roll-in shower, stairlift) costs $20,000–$50,000 or more.' },
+      { question: 'Should I hire an occupational therapist to assess my parents\' home?', answer: 'Yes — a home safety assessment by a licensed occupational therapist (OT) is one of the most valuable investments you can make. An OT evaluates the specific person\'s mobility, balance, and cognitive level alongside the home\'s layout, and provides prioritized modification recommendations. Assessment typically costs $150–$300 and can prevent thousands in emergency room costs. Ask your doctor for a referral or search OTH.org for certified home modification specialists.' },
+      { question: 'Are there free home safety assessments available?', answer: 'Yes. Many Area Agencies on Aging (AAA) offer free home safety assessments for adults 60+. Some Medicare Advantage plans cover in-home safety assessments. Local fire departments sometimes offer home safety checks. Call the Eldercare Locator at 1-800-677-1116 to find programs in your area.' },
+      { question: 'What is the most dangerous room in the home for elderly adults?', answer: 'The bathroom is by far the most dangerous room — it accounts for approximately 80% of all in-home falls among seniors. The slippery surfaces, awkward positions (stepping over tub edge, rising from toilet), and lack of support structures make it extremely hazardous. Bathroom modifications should always be the first priority in any home safety assessment.' },
+    ],
+    costBreakdown: [
+      { item: 'Grab bars (per bar, installed)', low: 75, high: 200 },
+      { item: 'Non-slip strips, mats, rugs', low: 50, high: 200 },
+      { item: 'Motion-activated nightlights (set of 6)', low: 25, high: 60 },
+      { item: 'Handrail (per staircase, installed)', low: 150, high: 500 },
+      { item: 'Professional OT home assessment', low: 150, high: 300 },
+      { item: 'Tub transfer bench or shower chair', low: 40, high: 150 },
+    ],
+  },
+  'stairlift-installation-guide': {
+    title: 'Stairlift Installation: What to Expect (Step-by-Step Guide)',
+    description: 'What happens during stairlift installation? How long does it take, what does the installer do, and what to prepare. Complete guide to the process.',
+    category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
+    intro: 'Most homeowners don\'t know what to expect when a stairlift gets installed. Understanding the process reduces anxiety, helps you prepare, and lets you ask the right questions. This guide covers the full installation process — from the in-home quote to the final test ride — for straight stairlifts.',
+    faqs: [
+      { question: 'How long does stairlift installation take?', answer: 'A straight stairlift installation typically takes 2–4 hours. The technician must: (1) prepare the rail sections, (2) mount rail brackets to the stair treads (not the wall), (3) assemble and attach the rail, (4) mount the lift unit, (5) wire the power supply, (6) program limits and test the operation. Curved stairlifts with custom rails take a full day.' },
+      { question: 'Do stairlifts require building permits?', answer: 'In most jurisdictions, residential stairlift installation does not require a building permit because the rail attaches to the stair treads rather than the home\'s structure. However, regulations vary by municipality. Your installation technician should know local requirements. Some HOAs may require approval even when permits are not required.' },
+      { question: 'Is stairlift installation noisy or disruptive?', answer: 'Installation is moderately noisy — primarily from drilling into stair treads for rail brackets. Most installations are completed with minimal disruption. The home remains accessible during installation. There is typically no mess beyond some minor stair tread dust, which the installer should clean up.' },
+      { question: 'What should I do to prepare for stairlift installation?', answer: 'Before the installer arrives: clear the staircase of any items (rugs, decorations, any items hanging on the wall beside the stairs), ensure the staircase is well-lit, have an electrical outlet near the bottom or top of the stairs (most lifts plug into a standard 120V outlet), and make sure the installer has clear access to both ends of the staircase.' },
+      { question: 'What warranty and support comes with installation?', answer: 'Reputable installers include: a demonstration of all controls and safety features, basic user training, a safety test with weight, documentation of the installation, and warranty registration. Standard warranties are 1–2 years on parts and labor. Ask specifically about the service response time for breakdowns — a reliable local technician available within 24 hours is important.' },
+    ],
+    costBreakdown: [
+      { item: 'Straight stairlift (unit)', low: 2000, high: 4000 },
+      { item: 'Professional installation', low: 200, high: 500 },
+      { item: 'Electrical outlet (if needed)', low: 0, high: 300 },
+      { item: 'Annual service contract (optional)', low: 150, high: 400 },
+    ],
+  },
   'medicare-advantage-home-modification-benefits': {
     title: 'Medicare Advantage Home Modification Benefits: What\'s Covered in 2026',
     description: 'Which Medicare Advantage plans cover home modifications? What\'s covered, dollar limits, and how to find a plan with home safety benefits in your area.',
@@ -765,6 +807,14 @@ export default async function GuidePage({ params }: Props) {
       { name: 'Raise the toilet seat or replace with comfort-height model', text: 'Install a raised toilet seat attachment ($30–$80, no tools required) or replace the toilet with a comfort-height model (17–19 inches vs. standard 15 inches). This is especially important for anyone with knee pain, hip replacement, or lower-body weakness.' },
       { name: 'Convert or modify the shower/tub', text: 'If shower access is difficult, consider a tub-to-walk-in-shower conversion ($1,500–$5,000) or a walk-in tub ($3,500–$10,000). For wheelchair users, a zero-threshold roll-in shower provides the safest access ($5,000–$15,000).' },
       { name: 'Add night lighting and contrast', text: 'Install motion-activated night lights in the bathroom and hallway leading to it. Add contrasting colors near grab bars, toilet, and shower edges to improve visibility for older adults with reduced visual acuity.' },
+    ],
+    'stairlift-installation-guide': [
+      { name: 'Schedule in-home measurement', text: 'Contact 2–3 authorized dealers for in-home quotes. An accurate rail must be built to your staircase\'s exact dimensions — this requires a physical measurement. Get quotes from multiple installers since pricing varies significantly.' },
+      { name: 'Select model and confirm specifications', text: 'Choose the stairlift model (weight capacity, seat style, rail color). Confirm: folded width leaves 22+ inches clearance, power source location (standard 120V outlet at top or bottom), and installation timeline.' },
+      { name: 'Prepare the staircase', text: 'Clear the staircase of rugs, decorations, and wall hangings within 18 inches of the stairs. Ensure good lighting. If no outlet is near the staircase, arrange for an electrician to install one before the stairlift appointment.' },
+      { name: 'Technician installs rail brackets', text: 'The installer drills mounting holes into the stair treads (not the wall) and secures rail support brackets. The brackets are positioned at the calculated spacing to support the rail. This is the most disruptive part — moderate drilling noise for 30–60 minutes.' },
+      { name: 'Assemble and attach rail sections', text: 'Rail sections are connected and mounted on the brackets. For straight rails this is straightforward; curved rails are custom-bent to match the precise staircase curve. The rail is checked for level and secure attachment at every bracket point.' },
+      { name: 'Install lift unit and test operation', text: 'The lift carriage is mounted on the rail, the seat and arm assembly attached, and the power connected. The technician programs travel limits, tests all safety sensors, performs a loaded weight test, and demonstrates all controls to the household.' },
     ],
   };
 
@@ -983,7 +1033,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 29 guides →
+              View all 31 guides →
             </Link>
           </div>
         </aside>

@@ -42,6 +42,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'american-standard-vs-safe-step-walk-in-tub',
         'senior-bathroom-remodel-cost',
         'aging-in-place-vs-assisted-living-cost',
+        'home-safety-checklist-for-elderly',
+        'stairlift-installation-guide',
         'medicare-advantage-home-modification-benefits',
         'life-alert-vs-medical-guardian',
         'free-stairlift-for-seniors',
