@@ -42,6 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'american-standard-vs-safe-step-walk-in-tub',
         'senior-bathroom-remodel-cost',
         'aging-in-place-vs-assisted-living-cost',
+        'life-alert-vs-medical-guardian',
         'free-stairlift-for-seniors',
         'best-fall-detection-medical-alert',
         'aging-in-place-bathroom-modifications'].map(slug => ({

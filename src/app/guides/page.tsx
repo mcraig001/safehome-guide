@@ -226,6 +226,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'life-alert-vs-medical-guardian',
+    title: 'Life Alert vs. Medical Guardian: Which Is Better in 2026?',
+    description: 'Monthly cost, fall detection, contract terms, and response time — head-to-head comparison of the two most-searched medical alert brands.',
+    category: 'Medical Alerts',
+    icon: '🚨',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
     slug: 'free-stairlift-for-seniors',
     title: 'How to Get a Free Stairlift: Every Program That Can Help',
     description: 'VA grants, Medicaid waivers, USDA programs, and nonprofits that can cover the full cost of a stairlift for qualifying seniors.',

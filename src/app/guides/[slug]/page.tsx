@@ -581,6 +581,27 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'life-alert-vs-medical-guardian': {
+    title: 'Life Alert vs. Medical Guardian: Which Is Better in 2026?',
+    description: 'Life Alert vs Medical Guardian compared — monthly cost, fall detection, GPS coverage, contracts, and which is best for seniors living alone.',
+    category: 'medical-alerts',
+    compareSlug: 'best-medical-alerts',
+    intro: 'Life Alert and Medical Guardian are two of the most-searched medical alert brands — but they serve different needs at different price points. This guide compares them on monthly cost, fall detection accuracy, contract terms, response time, and overall value. No sponsored placement, no affiliate bias.',
+    faqs: [
+      { question: 'Is Life Alert or Medical Guardian better?', answer: 'It depends on your needs. Life Alert has strong brand recognition and a responsive monitoring center but requires a 3-year contract and charges cancellation fees. Medical Guardian offers more hardware options (including GPS mobile), shorter contract options, and comparable response times. For seniors who want month-to-month flexibility, Medical Guardian is typically the better choice.' },
+      { question: 'How much does Life Alert cost per month?', answer: 'Life Alert\'s pricing is not listed publicly — they require an in-home or phone consultation. Based on reported costs, the home system runs approximately $49–$59/month with a 3-year contract. A $198 activation fee is often charged. The mandatory 3-year contract and high cancellation fees are significant downsides vs. competitors.' },
+      { question: 'How much does Medical Guardian cost per month?', answer: 'Medical Guardian\'s home system (MGHome Cellular) starts at $29.95/month. The GPS mobile system (MGMove) is $39.95/month. Fall detection is an add-on at $10/month. No long-term contract is required, and they offer month-to-month billing — a significant advantage over Life Alert.' },
+      { question: 'Does Life Alert have fall detection?', answer: 'Life Alert offers automatic fall detection as an add-on. The technology is comparable to other vendors\' fall detection systems. Fall detection accuracy across all providers ranges from 65–85% — no system catches every fall. The manual help button should always be worn alongside fall detection devices.' },
+      { question: 'Can you cancel Life Alert?', answer: 'Canceling Life Alert before the 3-year contract ends typically requires paying the remaining months or a large cancellation fee. This is the most-cited complaint in Life Alert reviews. If contract flexibility is important (e.g., if needs may change), choose a month-to-month provider like Medical Guardian, Bay Alarm Medical, or Lively instead.' },
+    ],
+    costBreakdown: [
+      { item: 'Life Alert home system (per month)', low: 49, high: 59 },
+      { item: 'Life Alert activation fee', low: 198, high: 198 },
+      { item: 'Medical Guardian home system (per month)', low: 30, high: 40 },
+      { item: 'Medical Guardian GPS mobile (per month)', low: 40, high: 50 },
+      { item: 'Fall detection add-on (per month)', low: 5, high: 10 },
+    ],
+  },
   'free-stairlift-for-seniors': {
     title: 'How to Get a Free Stairlift: Every Program That Can Help',
     description: 'Can you get a free stairlift? Yes — through VA grants, Medicaid waivers, state programs, and nonprofits. Complete guide to every financial assistance program.',
@@ -926,7 +947,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 27 guides →
+              View all 28 guides →
             </Link>
           </div>
         </aside>
