@@ -87,7 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ul className="space-y-1">
                 <li><Link href="/about" className="hover:underline">About</Link></li>
                 <li><Link href="/advertise" className="hover:underline">Advertise</Link></li>
-                <li><a href="mailto:hello@safeatHomeguide.com" className="hover:underline">Contact</a></li>
+                <li><a href="mailto:hello@safeathomeguides.com" className="hover:underline">Contact</a></li>
+                <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:underline">Terms of Use</Link></li>
               </ul>
             </div>
           </div>
