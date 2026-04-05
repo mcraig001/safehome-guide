@@ -451,6 +451,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'stair-handrail-cost-guide',
+    title: 'Stair Handrail Cost Guide: Installation & What to Expect (2026)',
+    description: 'Stair handrail installation costs, ADA height requirements, DIY vs. professional, and how to get funding through grants.',
+    category: 'Grab Bars',
+    icon: '🪜',
+    readTime: '4 min read',
+    type: 'cost',
+  },
+  {
     slug: 'cane-vs-walker-guide',
     title: 'Cane vs. Walker: How to Choose the Right Mobility Aid (2026)',
     description: 'When a cane is enough — and when you need a walker. Physical therapist guidance on fit, correct use, and what Medicare covers.',
