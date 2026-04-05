@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
-import { faqSchema, breadcrumbSchema } from '@/lib/schema';
+import { faqSchema, breadcrumbSchema, articleSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -584,7 +584,14 @@ export default async function GuidePage({ params }: Props) {
     .order('safe_score', { ascending: false })
     .limit(4);
 
-  const schema = faqSchema(meta.faqs);
+  const faqSchemaData = faqSchema(meta.faqs);
+  const articleSchemaData = articleSchema({
+    headline: meta.title,
+    description: meta.description,
+    datePublished: '2026-01-01',
+    dateModified: '2026-03-01',
+    url: `https://www.safeathomeguides.com/guides/${slug}`,
+  });
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', url: 'https://www.safeathomeguides.com' },
     { name: 'Guides', url: 'https://www.safeathomeguides.com/guides' },
@@ -593,7 +600,8 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
       {/* Breadcrumb */}

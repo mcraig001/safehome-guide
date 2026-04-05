@@ -148,7 +148,7 @@ export default async function ContractorsPage({ searchParams }: Props) {
                 {uniqueStates.map(s => (
                   <Link
                     key={s.state_abbr}
-                    href={`/contractors?state=${s.state_abbr}`}
+                    href={`/contractors/${s.state_abbr.toLowerCase()}`}
                     className="flex items-center justify-between px-3 py-2.5 rounded-lg border border-gray-100 hover:border-green-700 text-sm transition-colors group"
                   >
                     <span className="font-medium text-gray-700 group-hover:text-green-800 transition-colors">{s.state}</span>

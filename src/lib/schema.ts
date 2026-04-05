@@ -102,3 +102,59 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
     })),
   };
 }
+
+export function howToSchema(opts: {
+  name: string;
+  description: string;
+  totalTime?: string; // ISO 8601 duration e.g. "PT2H"
+  estimatedCost?: { currency: string; value: string };
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: opts.name,
+    description: opts.description,
+    ...(opts.totalTime && { totalTime: opts.totalTime }),
+    ...(opts.estimatedCost && {
+      estimatedCost: {
+        '@type': 'MonetaryAmount',
+        currency: opts.estimatedCost.currency,
+        value: opts.estimatedCost.value,
+      },
+    }),
+    step: opts.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  datePublished?: string;
+  dateModified?: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: opts.headline,
+    description: opts.description,
+    datePublished: opts.datePublished ?? '2026-01-01',
+    dateModified: opts.dateModified ?? '2026-03-01',
+    url: opts.url,
+    publisher: {
+      '@type': 'Organization',
+      name: 'SafeAtHome Guide',
+      url: 'https://www.safeathomeguides.com',
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'SafeAtHome Guide Editorial Team',
+    },
+  };
+}
