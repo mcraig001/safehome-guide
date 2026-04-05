@@ -235,6 +235,12 @@ const GUIDE_META: Record<string, {
     title: 'Aging-in-Place Home Modifications: Complete Room-by-Room Checklist',
     description: 'Everything you need to modify in your home to safely age in place — organized by room, priority level, and estimated cost.',
     category: 'grab-bars',
+    keyTakeaways: [
+      'Start with the bathroom — it\'s responsible for the most senior falls. Grab bars and non-slip surfaces first.',
+      'A complete home modification typically costs $1,500–$10,000 depending on scope.',
+      'Minor modifications (grab bars, night lights, rug removal) cost under $500 and address the majority of risk.',
+      'An occupational therapist assessment ($100–$300) can prioritize modifications to your specific situation.',
+    ],
     intro: 'A complete aging-in-place home modification covers six key areas: the bathroom, bedroom, kitchen, entrance, stairways, and outdoor spaces. This checklist prioritizes modifications by fall risk reduction — the leading cause of injury hospitalizations for adults 65+.',
     faqs: [
       { question: 'What are the most important aging-in-place modifications?', answer: 'By frequency of injury prevention: (1) bathroom grab bars, (2) non-slip surfaces in bathroom and entry, (3) improved lighting throughout, (4) stair handrails on both sides, (5) removal of throw rugs and tripping hazards. These five changes address the majority of fall risks.' },
@@ -257,6 +263,12 @@ const GUIDE_META: Record<string, {
     description: 'Medical alert system costs explained: monthly fees, equipment costs, GPS upgrades, and fall detection. Compare top brands.',
     category: 'medical-alerts',
     compareSlug: 'best-medical-alerts',
+    keyTakeaways: [
+      'Home-only systems cost $20–$30/month. GPS mobile systems cost $30–$50/month.',
+      'Fall detection adds $5–$10/month and is worth it for seniors living alone or with fall history.',
+      'Choose month-to-month billing — avoid any provider requiring a 12-month contract.',
+      'Equipment is typically free or low-cost; you pay for the monitoring service monthly.',
+    ],
     intro: 'Medical alert systems cost $0–$200 upfront for equipment and $20–$55 per month for monitoring. The right system depends on how active your loved one is, whether they leave the home, and whether fall detection is a priority. Here\'s everything that affects the price.',
     faqs: [
       { question: 'Is there a long-term contract for medical alert systems?', answer: 'Most top providers (Medical Guardian, Bay Alarm, Philips Lifeline) are month-to-month with no long-term contract required. A few offer slight discounts for annual prepayment. Avoid any provider requiring a 2+ year commitment.' },
@@ -277,6 +289,12 @@ const GUIDE_META: Record<string, {
     title: 'Wheelchair Ramp Cost Guide: Portable vs. Permanent (2026)',
     description: 'How much does a wheelchair ramp cost? Portable ramps start at $100. Permanent modular ramps cost $1,200–$4,000 installed. Everything affecting the price explained.',
     category: 'wheelchair-ramps',
+    keyTakeaways: [
+      'ADA slope requirement: 1:12 — 1 inch of rise requires 12 inches (1 foot) of ramp length.',
+      'Threshold ramps (1–3 inches): $30–$90. Portable folding ramps: $100–$400. Permanent modular: $1,200–$4,000.',
+      'Permanent attached ramps require a building permit in most jurisdictions.',
+      'VA SAH/SHA grants and Medicaid HCBS waivers can fund ramp construction for qualifying individuals.',
+    ],
     intro: 'Wheelchair ramp costs range from $100 for a small threshold ramp to $4,000+ for a permanent modular system. The biggest cost factors are the rise height (how many inches or steps must be spanned), material, and whether the ramp is portable or permanent. ADA guidelines recommend a 1:12 slope (one inch of rise per foot of ramp).',
     faqs: [
       { question: 'How long does a wheelchair ramp need to be?', answer: 'ADA guidelines recommend a 1:12 slope: for every 1 inch of rise, you need 12 inches (1 foot) of ramp. A 6-inch threshold needs a 6-foot ramp. A 3-step entry (approximately 21 inches of rise) needs a 21-foot ramp — which is why multi-step entries often use switchback ramp designs.' },
