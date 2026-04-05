@@ -378,6 +378,33 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'stairlift-financing',
+    title: 'How to Finance a Stairlift in 2026: Every Option Explained',
+    description: 'Rental, lease, VA grants, Medicaid, home equity, manufacturer financing, and nonprofit programs. All stairlift funding options explained.',
+    category: 'Stairlifts',
+    icon: '💳',
+    readTime: '5 min read',
+    type: 'insurance',
+  },
+  {
+    slug: 'helping-aging-parents-at-home',
+    title: 'How to Help Aging Parents Stay at Home Safely (2026 Guide)',
+    description: 'A complete guide for adult children: home safety assessments, having the conversation, which modifications to prioritize, and when to get professional help.',
+    category: 'Planning',
+    icon: '👨‍👩‍👧',
+    readTime: '7 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'does-medicaid-cover-home-modifications',
+    title: 'Does Medicaid Cover Home Modifications for Seniors?',
+    description: 'How Medicaid HCBS waiver programs pay for grab bars, ramps, and bathroom modifications. Eligibility, how to apply, and what each state covers.',
+    category: 'Planning',
+    icon: '🏥',
+    readTime: '5 min read',
+    type: 'insurance',
+  },
 ];
 
 const typeColors: Record<string, string> = {

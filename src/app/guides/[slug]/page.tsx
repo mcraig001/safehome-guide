@@ -967,6 +967,56 @@ const GUIDE_META: Record<string, {
       { item: 'Professional installation (per bar)', low: 75, high: 200 },
     ],
   },
+  'stairlift-financing': {
+    title: 'How to Finance a Stairlift in 2026: Every Option Explained',
+    description: 'How to pay for a stairlift when you can\'t afford it upfront. Rental, lease, VA grants, Medicaid, home equity, manufacturer financing, and nonprofit programs.',
+    category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
+    hideTotal: true,
+    intro: 'A stairlift costs $2,000–$15,000 installed — a significant expense that many families struggle to cover out of pocket. The good news: there are multiple ways to finance or partially fund a stairlift purchase, from federal grants to manufacturer payment plans. This guide walks through every option, who qualifies, and which to pursue first.',
+    faqs: [
+      { question: 'Can I get a free stairlift?', answer: 'Completely free stairlifts are rare, but heavily subsidized options exist. Veterans who qualify for VA SAH or SHA grants may receive full coverage. Medicaid HCBS waiver programs in some states cover stairlifts for income-eligible individuals. Some nonprofits (local Easter Seals chapters, United Way affiliates) offer stairlift assistance programs. The Eldercare Locator (1-800-677-1116) can identify local programs not listed nationally.' },
+      { question: 'Does Medicare cover stairlift financing or purchase?', answer: 'Standard Medicare Parts A and B do not cover stairlifts or stairlift financing. Some Medicare Advantage plans include home modification benefits — call your plan\'s member services line and ask specifically about "home safety" or "healthy home" supplemental benefits. Coverage amounts vary widely by plan.' },
+      { question: 'Can I rent a stairlift instead of buying?', answer: 'Yes — stairlift rental is available and makes sense in two scenarios: (1) Temporary need (post-surgery recovery expected to last 3–6 months), or (2) You\'re not sure whether a stairlift is the right solution. Rental typically costs $150–$250/month. After 12–18 months, buying is almost always cheaper. Many dealers offer rent-to-own arrangements.' },
+      { question: 'Is there a payment plan for stairlifts?', answer: 'Yes — most major stairlift manufacturers (Bruno, Acorn, Harmar) and dealers offer financing through third-party lenders. Terms typically range from 12–60 months, with rates from 0% promotional to 15%+ depending on credit. Some dealers work with medical financing programs like CareCredit or Synchrony Medical Financing.' },
+      { question: 'Can I use home equity to pay for a stairlift?', answer: 'Yes. A home equity loan or HELOC (home equity line of credit) provides funds at lower interest rates than personal loans. If the stairlift installation qualifies as a medical expense (requires documented medical necessity), the portion that doesn\'t increase home value may be tax-deductible. Consult a tax professional. For homeowners 62+, a reverse mortgage can fund modifications with no monthly payments.' },
+    ],
+    costBreakdown: [
+      { item: 'Stairlift purchase (straight, new)', low: 2000, high: 5000 },
+      { item: 'Stairlift rental (per month)', low: 150, high: 250 },
+      { item: 'Manufacturer financing (36-month term)', low: 60, high: 160 },
+      { item: 'VA SAH grant coverage (max)', low: 0, high: 109986 },
+      { item: 'Medicaid waiver coverage (varies by state)', low: 0, high: 5000 },
+    ],
+  },
+  'helping-aging-parents-at-home': {
+    title: 'How to Help Aging Parents Stay at Home Safely (2026 Guide)',
+    description: 'A complete guide for adult children helping aging parents age in place. Home safety assessments, having the conversation, modifications, and when to get professional help.',
+    category: 'grab-bars',
+    hideTotal: true,
+    intro: 'For millions of adult children, helping aging parents stay safe at home is one of the most important — and most difficult — responsibilities they\'ll face. There\'s no single right answer, but there are evidence-based steps that reduce fall risk, extend independence, and preserve the parent-child relationship. This guide walks through everything: having the conversation, assessing the home, choosing modifications, and knowing when professional help is needed.',
+    faqs: [
+      { question: 'How do I convince my aging parent to accept home modifications?', answer: 'Frame modifications around independence, not limitation. "This grab bar means you can shower without needing to call me" is more effective than "I\'m worried you\'ll fall." Involve them in the decision — tour a showroom together, let them choose finishes. Some people accept modifications more readily from a medical professional; ask their physician to make a recommendation. Start small: a non-slip mat is easier to accept than a full stairlift.' },
+      { question: 'What home modifications should I start with for aging parents?', answer: 'In order of impact and ease: (1) Remove fall hazards — loose rugs, clutter on floors, dim lighting; (2) Add grab bars in the bathroom — the highest-fall-risk room; (3) Improve lighting, especially bedroom-to-bathroom at night; (4) Install handrails on all stairs; (5) Assess whether stairs between floors are used daily — if so, evaluate a stairlift. An occupational therapist can do a formal home safety assessment for $100–$300.' },
+      { question: 'When should I involve a professional home safety assessment?', answer: 'Consider a professional assessment (by an OT or CAPS contractor) when: (1) There has been a fall or near-fall; (2) You\'re not sure which modifications are most needed; (3) Your parent uses a wheelchair or walker; (4) You want documentation for insurance or VA grant applications. Medicare Part B covers OT home assessments when medically ordered. CAPS contractors offer free or low-cost initial assessments.' },
+      { question: 'How do I pay for my parents\' home modifications?', answer: 'Options include: (1) Out-of-pocket — the most common approach for minor modifications; (2) VA grants if your parent is a veteran; (3) USDA Section 504 grants ($10,000) for rural low-income homeowners; (4) Medicaid HCBS waivers for income-eligible seniors; (5) Home equity loan or reverse mortgage; (6) Local nonprofit programs through Area Agencies on Aging. See our comprehensive grants guide for full details on each program.' },
+      { question: 'At what point should aging parents move out of their home?', answer: 'There\'s no universal threshold. The conversation about moving should happen when: (1) Safety concerns persist despite modifications; (2) Care needs exceed what family and in-home aides can provide; (3) Isolation and cognitive decline are accelerating; (4) The financial cost of aging in place approaches the cost of assisted living. A geriatric care manager ($150–$250/hour) can provide a professional opinion and help families have this conversation constructively.' },
+    ],
+  },
+  'does-medicaid-cover-home-modifications': {
+    title: 'Does Medicaid Cover Home Modifications for Seniors?',
+    description: 'How Medicaid HCBS waiver programs pay for grab bars, ramps, stairlifts, and bathroom modifications. Eligibility, how to apply, and what each state covers.',
+    category: 'grab-bars',
+    hideTotal: true,
+    intro: 'Medicaid can pay for home modifications — but coverage varies dramatically by state and program. This guide explains which Medicaid programs cover home modifications, what types of modifications are covered, how to determine if you qualify, and how to apply in your state.',
+    faqs: [
+      { question: 'Does Medicaid cover grab bars?', answer: 'Yes — grab bar installation is one of the most commonly covered home modifications under Medicaid HCBS waiver programs. In most states with active waiver programs, grab bars are explicitly listed as covered modifications. Coverage is typically limited to income-eligible individuals who have been assessed as needing home modifications to avoid nursing home placement.' },
+      { question: 'Does Medicaid cover stairlifts?', answer: 'Some states\' Medicaid HCBS waiver programs cover stairlifts, but many do not — stairlift coverage varies more by state than grab bar coverage. States that do cover stairlifts often have a per-modification dollar cap. Contact your state Medicaid office or local Area Agency on Aging to find out what your state\'s program covers specifically.' },
+      { question: 'What are Medicaid HCBS waiver programs?', answer: 'Home and Community-Based Services (HCBS) waivers are Medicaid programs that allow states to provide services — including home modifications — to people who would otherwise require nursing home placement. The federal government approves each state\'s waiver, which specifies what services are covered, who is eligible, and how much funding is available. Common waiver names include PACE, CHOICES, Community First Choice, and Home First.' },
+      { question: 'Who qualifies for Medicaid home modification benefits?', answer: 'Eligibility typically requires: (1) Meeting your state\'s Medicaid income and asset limits (varies by state), (2) Being assessed as having a functional need for the modification (e.g., mobility impairment), and (3) Being at risk of nursing home placement without the modification. Age thresholds vary — many programs target adults 65+, but some include adults 18+ with disabilities.' },
+      { question: 'How do I apply for Medicaid home modifications?', answer: 'Start by calling 211 or the Eldercare Locator (1-800-677-1116) to be connected with your local Area Agency on Aging. They will identify the specific Medicaid waiver programs available in your state and assist with the application process. You can also contact your state Medicaid office directly. The process typically involves an in-home functional assessment and a waiting list in states where demand exceeds program capacity.' },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -1254,7 +1304,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 41 guides →
+              View all 44 guides →
             </Link>
           </div>
         </aside>

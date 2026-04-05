@@ -46,6 +46,9 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'vertical-platform-lift-cost': { title: 'Vertical Platform Lift Cost Guide 2026', category: 'Home Elevators' },
   'home-health-aide-cost': { title: 'Home Health Aide Cost Guide 2026', category: 'Planning' },
   'grab-bar-types-guide': { title: 'Types of Grab Bars: Buyer\'s Guide 2026', category: 'Grab Bars' },
+  'stairlift-financing': { title: 'How to Finance a Stairlift 2026', category: 'Stairlifts' },
+  'helping-aging-parents-at-home': { title: 'How to Help Aging Parents Stay at Home (2026)', category: 'Planning' },
+  'does-medicaid-cover-home-modifications': { title: 'Does Medicaid Cover Home Modifications?', category: 'Insurance' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {
