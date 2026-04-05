@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { ChevronRight, BarChart2 } from 'lucide-react';
+import { ShareButtons } from '@/components/ShareButtons';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -133,6 +134,10 @@ export default async function ComparePage({ params }: Props) {
       <h1 className="font-serif text-4xl font-bold mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
         {meta.title}
       </h1>
+
+      <div className="mb-6">
+        <ShareButtons title={meta.title} url={`https://www.safeathomeguides.com/compare/${slug}`} />
+      </div>
 
       <p className="text-lg text-gray-700 leading-relaxed mb-10 max-w-3xl">
         {meta.intro}

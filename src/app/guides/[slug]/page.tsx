@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { BookOpen, DollarSign, ChevronRight, CheckCircle } from 'lucide-react';
+import { ShareButtons } from '@/components/ShareButtons';
 
 const WHAT_TO_LOOK_FOR: Record<string, { tip: string; detail: string }[]> = {
   stairlifts: [
@@ -696,6 +697,10 @@ export default async function GuidePage({ params }: Props) {
           <h1 className="font-serif text-4xl font-bold mb-4 leading-tight" style={{ color: '#1A1A1A' }}>
             {meta.title}
           </h1>
+
+          <div className="mb-6">
+            <ShareButtons title={meta.title} url={`https://www.safeathomeguides.com/guides/${slug}`} />
+          </div>
 
           <p className="text-gray-700 text-lg leading-relaxed mb-10 border-l-4 pl-4" style={{ borderColor: '#1B4332' }}>
             {meta.intro}
