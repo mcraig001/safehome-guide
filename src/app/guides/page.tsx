@@ -424,6 +424,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'bath-lift-cost-guide',
+    title: 'Bath Lift Cost Guide: What to Expect in 2026',
+    description: 'Powered and manual bath lifts compared. What they cost, whether Medicare covers them, and how to choose the right one for your tub.',
+    category: 'Bath Safety',
+    icon: '🛁',
+    readTime: '4 min read',
+    type: 'cost',
+  },
+  {
     slug: 'lift-chair-cost-guide',
     title: 'Lift Chair Cost Guide: Power Recliner Prices & What to Expect (2026)',
     description: 'Two-position, three-position, and infinite-position lift recliner prices. What Medicare covers, bariatric options, and how to choose the right size.',
