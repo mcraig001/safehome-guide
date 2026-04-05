@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
-import { breadcrumbSchema } from '@/lib/schema';
+import { breadcrumbSchema, faqSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -151,6 +151,31 @@ const CATEGORY_META: Record<string, {
   },
 };
 
+// Category-level FAQs for schema markup
+const CATEGORY_FAQS: Record<string, { question: string; answer: string }[]> = {
+  stairlifts: [
+    { question: 'How much does a stairlift cost?', answer: 'A straight stairlift costs $2,000–$5,000 installed. Curved stairlifts for non-straight staircases cost $8,000–$15,000 due to custom rail fabrication. Refurbished straight models start at $1,200.' },
+    { question: 'Does Medicare cover stairlifts?', answer: 'Standard Medicare Parts A and B do not cover stairlifts. Some Medicare Advantage plans include home safety benefits. VA grants and Medicaid HCBS waivers may cover stairlifts for qualifying individuals.' },
+    { question: 'What is the weight limit for a stairlift?', answer: 'Standard stairlifts handle 250–300 lbs. Heavy-duty models (available from Bruno, Harmar, and others) support 350–600 lbs at a higher price.' },
+    { question: 'How long does stairlift installation take?', answer: 'A straight stairlift installs in 2–4 hours. Curved stairlifts with custom rails take a full day.' },
+  ],
+  'walk-in-tubs': [
+    { question: 'How much does a walk-in tub cost?', answer: 'Walk-in tubs cost $1,500–$5,000 for the unit plus $1,000–$3,000 for installation — total $2,500–$8,000. Hydrotherapy models cost more.' },
+    { question: 'How long does a walk-in tub take to drain?', answer: 'Standard models drain in 3–5 minutes. Fast-drain models drain in under 2 minutes. You must remain inside the tub during draining.' },
+    { question: 'Does insurance cover walk-in tubs?', answer: 'Standard health insurance does not cover walk-in tubs. Some Medicare Advantage plans and Medicaid HCBS waivers may cover bathroom modifications for qualifying seniors.' },
+  ],
+  'grab-bars': [
+    { question: 'How much does grab bar installation cost?', answer: 'Grab bar installation costs $75–$200 per bar including labor. A full bathroom safety set (3–4 bars) runs $400–$900 professionally installed.' },
+    { question: 'Where should grab bars be installed?', answer: 'ADA guidelines: horizontal bar inside shower (33–36 inches from floor), vertical bar at shower entry, horizontal bar next to toilet (33 inches from floor, 42 inches long).' },
+    { question: 'How strong do grab bars need to be?', answer: 'ADA requires 250 lb rating minimum. Quality grab bars are rated to 500 lbs. Proper installation into wall studs or with rated anchors is as important as the bar\'s own rating.' },
+  ],
+  'medical-alerts': [
+    { question: 'How much does a medical alert system cost?', answer: 'Medical alert systems cost $20–$55/month for monitoring. GPS mobile systems are $30–$50/month. Fall detection adds $5–$10/month. Most providers offer month-to-month billing.' },
+    { question: 'What is the best medical alert system?', answer: 'For seniors at home, Bay Alarm Medical and Medical Guardian have strong track records on response time and fall detection. For GPS coverage, Medical Guardian MGMove and Lively Mobile Plus are top-rated.' },
+    { question: 'How accurate is automatic fall detection?', answer: 'Medical alert fall detection is accurate for 65–85% of falls. No system catches every fall — always wear the manual help button as well.' },
+  ],
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
   const { data: cat } = await supabase
@@ -192,10 +217,13 @@ export default async function CategoryPage({ params }: Props) {
     { name: 'Products', url: 'https://www.safeathomeguides.com/products' },
     { name: cat.name, url: `https://www.safeathomeguides.com/products/${category}` },
   ]);
+  const categoryFaqs = CATEGORY_FAQS[category];
+  const faqSchemaData = categoryFaqs ? faqSchema(categoryFaqs) : null;
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      {faqSchemaData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />}
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
@@ -277,6 +305,23 @@ export default async function CategoryPage({ params }: Props) {
             </div>
           )}
 
+          {/* FAQ section */}
+          {categoryFaqs && categoryFaqs.length > 0 && (
+            <section className="mb-8">
+              <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {categoryFaqs.map((faq, i) => (
+                  <div key={i} className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
+                    <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Find a contractor CTA */}
           <div className="rounded-xl p-6 border border-amber-200" style={{ backgroundColor: '#fffbeb' }}>
             <h2 className="font-serif text-lg font-semibold mb-2 text-amber-900">
@@ -347,9 +392,9 @@ export default async function CategoryPage({ params }: Props) {
                   <Link
                     key={c}
                     href={`/products/${c}`}
-                    className="block text-sm capitalize text-gray-600 hover:text-green-800 hover:underline transition-colors"
+                    className="block text-sm text-gray-600 hover:text-green-800 hover:underline transition-colors"
                   >
-                    {c.replace(/-/g, ' ')}
+                    {c.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                   </Link>
                 ))}
             </div>
