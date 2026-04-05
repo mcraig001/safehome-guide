@@ -31,7 +31,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'medical-alert-cost-guide','wheelchair-ramp-cost-guide','home-elevator-cost-guide',
         'home-modification-grants-for-seniors','stairlift-vs-home-elevator',
         'bathroom-safety-modifications-for-seniors','how-to-choose-a-stairlift',
-        'aging-in-place-tax-deductions','best-medical-alert-for-seniors-living-alone'].map(slug => ({
+        'aging-in-place-tax-deductions','best-medical-alert-for-seniors-living-alone',
+        'walk-in-shower-conversion-cost','stairlift-for-narrow-stairs',
+        'outdoor-stairlift-cost'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

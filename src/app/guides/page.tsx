@@ -144,6 +144,33 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'walk-in-shower-conversion-cost',
+    title: 'Walk-In Shower Conversion Cost: Tub to Shower',
+    description: 'How much does it cost to convert a tub to a walk-in shower? From $1,500 for a basic kit to $15,000 for a zero-threshold roll-in shower.',
+    category: 'Bath Safety',
+    icon: '🚿',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'stairlift-for-narrow-stairs',
+    title: 'Stairlift for Narrow Stairs: What You Need to Know',
+    description: 'Minimum clearance requirements, which brands fit best in narrow staircases, and alternatives when stairs are too narrow.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '4 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'outdoor-stairlift-cost',
+    title: 'Outdoor Stairlift Cost: What to Expect in 2026',
+    description: 'Outdoor stairlifts cost $3,000–$7,000 installed. What makes them different from indoor models and which brands are most reliable.',
+    category: 'Stairlifts',
+    icon: '🪜',
+    readTime: '4 min read',
+    type: 'cost',
+  },
 ];
 
 const typeColors: Record<string, string> = {
