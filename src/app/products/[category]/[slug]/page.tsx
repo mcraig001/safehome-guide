@@ -2,7 +2,7 @@ import { supabase } from '@/lib/supabase';
 import { SafeScore } from '@/components/SafeScore';
 import { LeadForm } from '@/components/LeadForm';
 import { buildAffiliateUrl } from '@/lib/affiliate';
-import { productSchema, breadcrumbSchema } from '@/lib/schema';
+import { productSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -10,6 +10,55 @@ import Link from 'next/link';
 import { CheckCircle, XCircle, ChevronRight } from 'lucide-react';
 
 interface Props { params: Promise<{ category: string; slug: string }> }
+
+const CATEGORY_FAQS: Record<string, { question: string; answer: string }[]> = {
+  stairlifts: [
+    { question: 'How long does stairlift installation take?', answer: 'A straight stairlift typically installs in 2–4 hours. Curved stairlifts with custom rails may take a full day. Most manufacturers install through authorized dealers who will provide a firm timeline during the in-home quote.' },
+    { question: 'Does a stairlift work during a power outage?', answer: 'Most modern stairlifts run on DC battery power and include battery backup. The lift will continue operating through short power outages. The batteries recharge automatically when the lift parks at either end of the rail.' },
+    { question: 'What is the weight limit for a stairlift?', answer: 'Standard stairlifts handle 250–300 lbs. Heavy-duty models (available from most major brands) support 350–500 lbs. Check the specific model\'s rated weight capacity before purchasing.' },
+  ],
+  'walk-in-tubs': [
+    { question: 'How long does it take for a walk-in tub to drain?', answer: 'Standard walk-in tubs drain in 3–5 minutes. Models with fast-drain technology (like the Safe Step 7100) can drain in under 2 minutes. Faster drain time means less time sitting in cooling water.' },
+    { question: 'Do I have to sit in the tub while it fills and drains?', answer: 'Yes — the door must be closed for the tub to be watertight, which means you enter before filling and remain until fully drained. This is why fast-drain technology is an important feature.' },
+    { question: 'Can a walk-in tub be installed in any bathroom?', answer: 'A standard walk-in tub requires roughly the same floor space as a standard 60-inch tub. Installation involves modifying existing plumbing. Most homes can accommodate a walk-in tub, but an in-home measurement is recommended before purchasing.' },
+  ],
+  'grab-bars': [
+    { question: 'Can I install a grab bar myself?', answer: 'Grab bars can be DIY-installed if you have basic tools and the ability to locate wall studs. The bar must be anchored into studs or with rated wall anchors — drywall alone is not sufficient for safety. For bathrooms with tile walls, professional installation is recommended.' },
+    { question: 'How much weight can a grab bar hold?', answer: 'ADA-compliant grab bars are tested to hold 250 lbs minimum. Many quality bars (like the Moen SecureMount) are rated to 500 lbs. The strength of the installation is as important as the bar\'s own rating.' },
+    { question: 'Where should grab bars be placed in a bathroom?', answer: 'ADA guidelines recommend a horizontal bar 33–36 inches from the floor on the shower long wall, and a vertical or angled bar near the entry for step-in/step-out support. Beside the toilet, a 42-inch horizontal bar at 33 inches from the floor is standard.' },
+  ],
+  'medical-alerts': [
+    { question: 'Does a medical alert system work without Wi-Fi?', answer: 'Yes — most home medical alert systems use cellular networks (not Wi-Fi) for their monitoring connection. The base station connects via cellular even if your home internet is down. Some systems offer Wi-Fi as a backup, not primary, connection.' },
+    { question: 'What happens when you press the medical alert button?', answer: 'Pressing the button connects you to the monitoring center\'s dispatcher via the base station (or through the button itself on mobile systems). The dispatcher will assess the situation and, if needed, contact emergency services and your designated contacts.' },
+    { question: 'Can medical alert systems detect falls automatically?', answer: 'Yes — most major providers offer optional fall detection via accelerometers in the wearable button. Detection accuracy varies by brand, typically 70–85%. Fall detection costs approximately $5–$10/month extra on top of the base monitoring fee.' },
+  ],
+  'wheelchair-ramps': [
+    { question: 'What slope should a wheelchair ramp be?', answer: 'ADA guidelines recommend a maximum 1:12 slope — one inch of rise per 12 inches (1 foot) of ramp length. For example, a 6-inch entry step needs a minimum 6-foot ramp. Gentler slopes are always safer but require more space.' },
+    { question: 'Do wheelchair ramps require permits?', answer: 'Permanent attached ramps typically require a building permit. Freestanding modular aluminum ramps generally do not. Portable folding ramps never require permits. Requirements vary by municipality — check with your local building department.' },
+    { question: 'How much weight can a wheelchair ramp support?', answer: 'Portable aluminum ramps typically support 600–800 lbs. Modular systems and professionally built permanent ramps support 800 lbs or more. Always verify the specific ramp\'s weight rating before use.' },
+  ],
+  'home-elevators': [
+    { question: 'Does a home elevator require a shaft?', answer: 'Traditional cable and hydraulic elevators require a shaft. Pneumatic (vacuum) elevators like the Savaria Vuelift are freestanding and require only a ceiling cutout — no dedicated shaft construction. Vertical platform lifts also require no shaft.' },
+    { question: 'What is the difference between a stairlift and a home elevator?', answer: 'A stairlift travels along the staircase on a rail; a home elevator travels vertically in an enclosed cab or on a platform. Elevators are better for wheelchair users or multi-floor travel. Stairlifts are more affordable and easier to install for users who can walk.' },
+    { question: 'How much does home elevator maintenance cost?', answer: 'Annual professional maintenance for residential elevators typically costs $200–$500. Most states require licensed elevator inspection. Factor this into your total cost of ownership when evaluating home elevator options.' },
+  ],
+  'bath-safety': [
+    { question: 'What is the difference between a shower chair and a transfer bench?', answer: 'A shower chair sits entirely inside the shower for users who need to sit while bathing. A transfer bench straddles the tub wall with half inside and half outside — designed for users who cannot step over the tub edge at all.' },
+    { question: 'Do bath safety products require installation?', answer: 'Most bath safety accessories (shower chairs, transfer benches, bath mats) require no installation — they sit on the floor or hang on the tub edge. Grab bars do require installation into wall studs or with rated anchors.' },
+  ],
+  'smart-home-safety': [
+    { question: 'Can smart home devices help seniors live independently longer?', answer: 'Yes — voice-controlled devices, smart smoke detectors, and monitored security systems each address specific safety needs. Voice control (via Alexa or Google) is particularly valuable for users with limited mobility or vision who can\'t easily use touchscreens.' },
+    { question: 'What smart devices are most useful for aging in place?', answer: 'The highest-impact smart devices are: (1) voice assistant with a screen for video calls and reminders, (2) smart smoke/CO detectors with app notifications, (3) medical alert system or monitored security system, and (4) smart lock for keyless access management.' },
+  ],
+  'mobility-aids': [
+    { question: 'What is the difference between a walker and a rollator?', answer: 'A standard walker is a four-legged frame you lift with each step — providing maximum stability. A rollator has four wheels (often with a seat and brakes) and rolls continuously — easier to push but requires more balance control. A two-wheeled walker is a middle ground.' },
+    { question: 'What wheel size rollator should I choose?', answer: '6-inch wheels work well for smooth indoor surfaces. 8-inch wheels handle outdoor terrain (sidewalk cracks, gravel, grass) much better. If your loved one will use the rollator outdoors regularly, the larger wheels are worth the slightly bulkier size.' },
+  ],
+  'door-access': [
+    { question: 'Does a smart lock work without internet?', answer: 'Most smart locks work offline for basic keypad entry even without internet. The smartphone app features (remote access, activity log, digital keys) require internet connectivity. Physical keypads always work independently of Wi-Fi or Bluetooth.' },
+    { question: 'How secure are keypad locks?', answer: 'ANSI Grade 1 keypad deadbolts (like the Kwikset 991) provide the highest residential security rating. Keypad entry with a numeric PIN is generally as secure as a physical key for everyday use.' },
+  ],
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -35,7 +84,9 @@ export default async function ProductPage({ params }: Props) {
     ? buildAffiliateUrl(product.affiliate_url, product.affiliate_network || 'direct', slug)
     : null;
 
+  const categoryFaqs = CATEGORY_FAQS[category] || [];
   const schema = productSchema(product);
+  const faqSchemaData = categoryFaqs.length > 0 ? faqSchema(categoryFaqs) : null;
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', url: 'https://www.safeathomeguides.com' },
     { name: 'Products', url: 'https://www.safeathomeguides.com/products' },
@@ -47,6 +98,7 @@ export default async function ProductPage({ params }: Props) {
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      {faqSchemaData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />}
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
@@ -157,7 +209,24 @@ export default async function ProductPage({ params }: Props) {
             </div>
           )}
 
-          {/* Compare link */}
+          {/* FAQ section */}
+          {categoryFaqs.length > 0 && (
+            <section className="mb-8">
+              <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {categoryFaqs.map((faq, i) => (
+                  <div key={i} className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
+                    <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Back to category */}
           <div className="mb-4">
             <Link
               href={`/products/${category}`}
