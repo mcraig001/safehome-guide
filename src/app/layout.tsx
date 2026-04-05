@@ -73,6 +73,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li><Link href="/products/walk-in-tubs" className="hover:underline">Walk-In Tubs</Link></li>
                 <li><Link href="/products/grab-bars" className="hover:underline">Grab Bars</Link></li>
                 <li><Link href="/products/wheelchair-ramps" className="hover:underline">Wheelchair Ramps</Link></li>
+                <li><Link href="/products/bath-safety" className="hover:underline">Bath Safety</Link></li>
+                <li><Link href="/products/medical-alerts" className="hover:underline">Medical Alerts</Link></li>
+                <li><Link href="/products/home-elevators" className="hover:underline">Home Elevators</Link></li>
+                <li><Link href="/products/mobility-aids" className="hover:underline">Mobility Aids</Link></li>
+                <li><Link href="/products/smart-home-safety" className="hover:underline">Smart Home Safety</Link></li>
+                <li><Link href="/products/door-access" className="hover:underline">Door & Access</Link></li>
               </ul>
             </div>
             <div>

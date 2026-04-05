@@ -3,8 +3,17 @@ import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
+import { faqSchema } from '@/lib/schema';
 import { Shield, Star, Users, BarChart2, BookOpen, ClipboardList } from 'lucide-react';
 import { Suspense } from 'react';
+
+const HOME_FAQS = [
+  { question: 'What is a CAPS-certified contractor?', answer: 'CAPS stands for Certified Aging-in-Place Specialist. It\'s a credential from the National Association of Home Builders (NAHB) that indicates a contractor has completed training on home modification techniques for seniors. CAPS contractors are trained in ADA-compliant design, fall prevention, and the specific needs of older adults.' },
+  { question: 'How much does a stairlift cost?', answer: 'A straight stairlift costs $2,000–$5,000 installed. Curved stairlifts require custom rails and typically cost $8,000–$15,000. Refurbished straight stairlifts are available for $1,000–$2,500.' },
+  { question: 'Does Medicare cover home safety modifications?', answer: 'Standard Medicare Parts A and B do not cover home modifications like stairlifts or grab bars. Some Medicare Advantage plans include home safety benefits. Medicaid HCBS waivers and VA grants can also cover modifications for qualifying individuals.' },
+  { question: 'What is SafeScore™?', answer: 'SafeScore™ is our independent 0-100 rating system. We score each product on safety features, ease of use, installation quality, and value — based on manufacturer specifications, clinical data, and verified user reviews. Products are never paid to receive higher scores.' },
+  { question: 'Are there grants to pay for home modifications?', answer: 'Yes. Programs include the USDA Section 504 program (grants up to $10,000 for rural homeowners), VA grants (up to $109,986 for qualifying veterans), Medicaid HCBS waivers, and local programs through Area Agencies on Aging.' },
+];
 
 async function getFeaturedProducts() {
   const { data } = await supabase
@@ -27,9 +36,11 @@ async function getCategories() {
 
 export default async function HomePage() {
   const [featured, categories] = await Promise.all([getFeaturedProducts(), getCategories()]);
+  const homeFaqSchema = faqSchema(HOME_FAQS);
 
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
       {/* Hero */}
       <section className="py-20 px-4" style={{ backgroundColor: '#1B4332' }}>
         <div className="max-w-3xl mx-auto text-center text-white">
@@ -246,6 +257,44 @@ export default async function HomePage() {
             >
               Take the Free Assessment →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ section */}
+      <section className="py-16 px-4 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-serif text-3xl font-semibold mb-8 text-center" style={{ color: '#1A1A1A' }}>
+            Common Questions
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'What is a CAPS-certified contractor?',
+                a: 'CAPS stands for Certified Aging-in-Place Specialist. It\'s a credential from the National Association of Home Builders (NAHB) that indicates a contractor has completed training on home modification techniques for seniors and people with disabilities. CAPS contractors are trained in ADA-compliant design, fall prevention, and the specific needs of older adults.',
+              },
+              {
+                q: 'How much does a stairlift cost?',
+                a: 'A straight stairlift costs $2,000–$5,000 installed. Curved stairlifts (for staircases with turns or landings) require custom rails and typically cost $8,000–$15,000. Refurbished straight stairlifts are available for $1,000–$2,500. See our complete stairlift cost guide for a full breakdown.',
+              },
+              {
+                q: 'Does Medicare cover home safety modifications?',
+                a: 'Standard Medicare (Parts A and B) does not cover home modifications like stairlifts or grab bars. However, some Medicare Advantage (Part C) plans include "home safety" supplemental benefits. Medicaid HCBS waivers and VA grants can also cover modifications for qualifying individuals. See our insurance guides for details.',
+              },
+              {
+                q: 'What is SafeScore™?',
+                a: 'SafeScore™ is our independent 0-100 rating system for home safety products. We score each product across four dimensions: safety features, ease of use, installation quality, and value. The scores are based on manufacturer specifications, clinical studies, and thousands of verified user reviews. Products are never paid to receive a higher score.',
+              },
+              {
+                q: 'Are there grants to pay for home modifications?',
+                a: 'Yes. Several programs help fund aging-in-place modifications: the USDA Section 504 program (grants up to $10,000 for rural homeowners), VA grants (up to $109,986 for qualifying veterans), Medicaid HCBS waivers, and local programs through Area Agencies on Aging. See our complete grants guide for every available program.',
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-gray-100 p-6 bg-white">
+                <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
