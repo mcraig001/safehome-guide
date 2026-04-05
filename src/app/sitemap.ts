@@ -80,7 +80,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'raised-toilet-seat-guide',
         'va-home-modification-grants',
         'hospital-bed-rental-cost',
-        'handheld-showerhead-guide'].map(slug => ({
+        'handheld-showerhead-guide',
+        'power-wheelchair-cost-guide',
+        'hoyer-lift-cost-guide',
+        'knee-scooter-guide',
+        'usda-section-504-grants'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
