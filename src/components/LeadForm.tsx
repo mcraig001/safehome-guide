@@ -133,6 +133,7 @@ export function LeadForm({ category, headline = 'Get Free Contractor Quotes' }: 
             <option value="bath-safety">Bath Safety</option>
             <option value="smart-home-safety">Smart Home Safety</option>
             <option value="mobility-aids">Mobility Aids</option>
+            <option value="medical-alerts">Medical Alert Systems</option>
             <option value="door-access">Door & Access</option>
           </select>
         </div>

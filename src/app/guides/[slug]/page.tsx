@@ -375,9 +375,9 @@ export default async function GuidePage({ params }: Props) {
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
         <ChevronRight size={14} />
-        <Link href="/products" className="hover:text-gray-600 transition-colors">Products</Link>
+        <Link href="/guides" className="hover:text-gray-600 transition-colors">Guides</Link>
         <ChevronRight size={14} />
-        <span className="text-gray-600">Guides</span>
+        <span className="text-gray-600 truncate max-w-xs">{meta.title.slice(0, 50)}{meta.title.length > 50 ? '…' : ''}</span>
       </nav>
 
       <div className="grid md:grid-cols-3 gap-10">
