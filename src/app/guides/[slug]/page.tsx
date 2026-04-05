@@ -585,6 +585,25 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'aging-in-place-planning-guide': {
+    title: 'How to Plan for Aging in Place: Complete Beginner\'s Guide (2026)',
+    description: 'Everything you need to know about aging in place — what it costs, what modifications matter most, how to find help, and how to pay for it.',
+    category: 'stairlifts',
+    intro: 'Aging in place means staying in your own home as you get older — rather than moving to assisted living or a nursing facility. For most people, it\'s the preferred option. It\'s also achievable with planning, the right home modifications, and the right support systems. This guide covers everything: from the first conversation to the first contractor.',
+    faqs: [
+      { question: 'What does "aging in place" mean?', answer: 'Aging in place means living in your own home and community safely, independently, and comfortably as you age — regardless of age, income, or ability level. It typically involves a combination of home modifications (grab bars, stairlifts, wider doorways), in-home services (cleaning, meal delivery, personal care), and technology (medical alerts, smart home devices). The goal is to delay or avoid a move to assisted living.' },
+      { question: 'When should I start planning for aging in place?', answer: 'The best time to start is before there is an urgent need — ideally in your early to mid-60s. Early planning allows you to: budget for modifications over time rather than all at once, make modifications while you are physically capable of overseeing them, explore grant and Medicaid programs before they are urgently needed, and have the difficult family conversations in a calm setting.' },
+      { question: 'What are the most important modifications for aging in place?', answer: 'The highest-priority modifications are: (1) Bathroom safety — grab bars, walk-in shower, non-slip surfaces. (2) Staircase safety — handrails, stair lighting, stairlift if needed. (3) Entryway accessibility — ramps or level entries, good lighting, keypad lock. (4) Kitchen modifications — lever faucets, pull-out shelves, good lighting. An occupational therapist home assessment will prioritize modifications for your specific situation.' },
+      { question: 'How much does it cost to modify a home for aging in place?', answer: 'Costs range widely: minor safety improvements (grab bars, nightlights, door handles) run $500–$2,500. A mid-level safety renovation (walk-in shower, comfort-height toilet, stair upgrades) runs $10,000–$25,000. A comprehensive accessibility remodel (widened doorways, roll-in shower, stairlift, elevator) can cost $50,000–$100,000+. Most families start with the basics and add modifications over time as needed.' },
+      { question: 'Can I get help paying for aging-in-place modifications?', answer: 'Yes. Multiple programs help fund modifications: VA Specially Adapted Housing grants (up to $109,986 for qualifying veterans), USDA Section 504 grants (up to $10,000 for rural homeowners), Medicaid HCBS waivers (income-qualified seniors), Medicare Advantage home safety benefits ($500–$2,500/year), and nonprofit programs like Rebuilding Together. Contact your local Area Agency on Aging at 1-800-677-1116 to find programs in your area.' },
+    ],
+    costBreakdown: [
+      { item: 'Basic safety package (grab bars, nightlights)', low: 500, high: 2500 },
+      { item: 'Mid-level renovation', low: 10000, high: 25000 },
+      { item: 'Comprehensive accessibility remodel', low: 50000, high: 100000 },
+      { item: 'Annual in-home care (10 hrs/week)', low: 20000, high: 35000 },
+    ],
+  },
   'walk-in-tub-vs-walk-in-shower': {
     title: 'Walk-In Tub vs. Walk-In Shower: Which Is Safer?',
     description: 'Walk-in tub or walk-in shower — which is better for seniors? Fall risk, cost, installation, and which option occupational therapists recommend.',
@@ -1073,7 +1092,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 33 guides →
+              View all 34 guides →
             </Link>
           </div>
         </aside>

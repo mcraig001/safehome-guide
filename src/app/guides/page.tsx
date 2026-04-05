@@ -226,6 +226,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'aging-in-place-planning-guide',
+    title: 'How to Plan for Aging in Place: Complete Beginner\'s Guide (2026)',
+    description: 'What aging in place costs, which modifications matter most, how to find a CAPS contractor, and how to fund the work with grants and benefits.',
+    category: 'Planning',
+    icon: '🏠',
+    readTime: '7 min read',
+    type: 'planning',
+  },
+  {
     slug: 'walk-in-tub-vs-walk-in-shower',
     title: 'Walk-In Tub vs. Walk-In Shower: Which Is Safer?',
     description: 'Which is better for seniors — a walk-in tub or walk-in shower? OT recommendations, cost comparison, and when each option is the right choice.',
