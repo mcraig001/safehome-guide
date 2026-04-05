@@ -534,6 +534,12 @@ const GUIDE_META: Record<string, {
     description: 'How much does an outdoor stairlift cost? Prices, weatherproofing requirements, installation differences vs. indoor stairlifts, and best brands.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Outdoor straight stairlifts cost $3,000–$7,000 installed — a 20–40% premium over indoor models.',
+      'Never use an indoor stairlift outdoors — the electrical components and upholstery are not weatherproof.',
+      'Outdoor models require lubrication every 6–12 months and an annual service check.',
+      'Bruno CRE-2110, Harmar, and Stannah 260 outdoor are the most reliable outdoor-rated options.',
+    ],
     intro: 'Outdoor stairlifts are designed specifically for exterior steps — front porch, deck access, or entry stairs. They require weather-resistant construction and specific maintenance that indoor models don\'t need. Expect to pay a 20–40% premium over comparable indoor models. Here\'s everything you need to know.',
     faqs: [
       { question: 'How much does an outdoor stairlift cost?', answer: 'Outdoor straight stairlifts typically cost $3,000–$7,000 installed, compared to $2,000–$5,000 for indoor straight models. The premium reflects weatherproof construction, rust-resistant materials, weather covers, and more robust motor sealing. Outdoor curved stairlifts start at $10,000.' },
@@ -554,6 +560,12 @@ const GUIDE_META: Record<string, {
     description: 'Bruno vs Acorn stairlift — side-by-side comparison of price, reliability, warranty, weight capacity, and service network. Which brand is right for you?',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Bruno is American-made with a local dealer service network and a limited lifetime drive warranty — a strong edge for long-term support.',
+      'Acorn prices slightly lower ($2,500–$4,000 vs. $2,800–$4,500 for Bruno) but has a shorter 1-year warranty.',
+      'For users over 265 lbs, Bruno is the better choice — Acorn\'s standard models cap at 265 lbs; Bruno offers up to 400 lbs.',
+      'Get at least 2–3 quotes from different brands before deciding; service network quality matters as much as the brand.',
+    ],
     intro: 'Bruno and Acorn are two of the most popular stairlift brands in North America. Bruno is American-made with a strong dealer service network. Acorn is a UK brand with aggressive marketing and competitive pricing. This guide compares them head-to-head on every factor that matters for a safe, long-term installation.',
     faqs: [
       { question: 'Which is better: Bruno or Acorn?', answer: 'Both are legitimate brands, but they serve different priorities. Bruno (Bruno Independent Living Aids) is American-made with a strong local dealer/service network — better for long-term support and heavy-duty needs. Acorn tends to price more competitively and is widely available, but service is more variable. For most buyers, Bruno\'s warranty and service network edge out Acorn slightly, especially for heavy-duty weight requirements.' },
@@ -576,6 +588,13 @@ const GUIDE_META: Record<string, {
     description: 'Should you rent or buy a stairlift? Cost comparison, when renting makes sense, and what to watch out for in rental agreements.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Renting makes sense only for short-term needs under 6–12 months (post-surgery recovery, rehab).',
+      'Rental costs $150–$400/month. At $300/month vs. $3,500 to buy, you break even in about 12 months.',
+      'Curved stairlift rental is rare — rails are custom-made and can\'t be easily reused.',
+      'A refurbished straight stairlift ($1,500–$2,500) is usually cheaper than 12 months of rental.',
+      'Ask if rental payments apply toward a purchase — some dealers offer this and it\'s a good deal.',
+    ],
     intro: 'Stairlift rental is an option for short-term needs — post-surgery recovery, temporary mobility limitations, or situations where you\'re not sure if a permanent installation is right. Rentals typically cost $150–$400/month. Here\'s when rental makes sense and when buying is the smarter long-term choice.',
     faqs: [
       { question: 'How much does it cost to rent a stairlift?', answer: 'Straight stairlift rentals typically cost $150–$400 per month, often including installation and removal. Some providers charge a one-time installation fee ($200–$400) on top of monthly rental. Most rental agreements are monthly or quarterly with no long-term commitment required.' },
@@ -596,6 +615,13 @@ const GUIDE_META: Record<string, {
     title: 'Senior Bathroom Remodel Cost: Accessible Bathroom Guide (2026)',
     description: 'How much does an accessible senior bathroom remodel cost? From $500 for grab bars to $15,000+ for a full roll-in shower conversion. Every option explained.',
     category: 'bath-safety',
+    keyTakeaways: [
+      'Grab bars + handheld showerhead: $400–$900 installed. Highest fall-prevention ROI of any modification.',
+      'Comfort-height toilet (17–19 inches): $200–$600. Reduces fall risk significantly for anyone with arthritis or hip issues.',
+      'Tub-to-walk-in shower conversion: $1,500–$8,000. Full accessible remodel: $5,000–$20,000.',
+      'Medicare Advantage plans may cover up to $500–$2,500/year in home safety benefits for qualifying seniors.',
+      'VA HISA grants cover up to $6,800 for accessible bathroom modifications for eligible veterans.',
+    ],
     intro: 'A senior-focused bathroom remodel can cost as little as $500 for grab bars and a new showerhead, or as much as $20,000 for a complete accessible bathroom conversion with a roll-in shower, comfort-height toilet, and widened doorway. This guide breaks down costs by scope — from quick wins to full remodels — and helps you prioritize based on your specific needs.',
     faqs: [
       { question: 'What is the most important bathroom modification for fall prevention?', answer: 'Grab bars. The CDC reports that over 235,000 Americans visit emergency rooms annually due to bathroom fall injuries, and most happen in the shower or when using the toilet. A professionally installed grab bar package ($400–$900 total) is the single highest-ROI modification you can make for fall prevention.' },
@@ -646,6 +672,12 @@ const GUIDE_META: Record<string, {
     description: 'American Standard vs. Safe Step walk-in tubs compared side by side: price, drain speed, warranty, features, and customer service. Which is right for you?',
     category: 'walk-in-tubs',
     compareSlug: 'best-walk-in-tubs',
+    keyTakeaways: [
+      'Both brands are in the $4,000–$8,500 range for the unit, plus $1,000–$2,000 installation — get competing quotes.',
+      'Safe Step markets fast drain (~2 min); American Standard standard drain is 3–5 min with an optional fast-drain upgrade.',
+      'Both advertise "lifetime" warranties, but mechanical components (jets, motors) are covered for only 1–5 years.',
+      'Consider Ella\'s Bubbles as an alternative — comparable quality, less aggressive sales tactics, often lower prices.',
+    ],
     intro: 'American Standard and Safe Step are the two most-marketed walk-in tub brands in North America. Both run TV commercials targeting seniors, and both use aggressive sales tactics. This guide cuts through the marketing to give you an honest, side-by-side comparison of price, drain technology, warranty, and what real customers report after purchase.',
     faqs: [
       { question: 'Which is more expensive: American Standard or Safe Step?', answer: 'Both brands are in the premium segment. American Standard walk-in tubs typically run $4,000–$8,000 for the unit plus $1,000–$2,000 installation. Safe Step tubs are comparable in price. Both brands are known for high-pressure in-home sales tactics — always get at least 2 competing quotes before signing.' },
@@ -667,6 +699,12 @@ const GUIDE_META: Record<string, {
     description: 'Stairlift weight limits by brand and model. How to find a heavy-duty stairlift for users over 300 lbs — and what to ask before you buy.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Standard stairlifts handle 250–300 lbs. Exceeding the rated weight limit is a serious safety hazard — do not do it.',
+      'Heavy-duty options (300–400 lbs): Bruno Electra-Ride Elite, Harmar Summit SL600. Very heavy-duty (600 lbs): Harmar Pinnacle.',
+      'Heavy-duty models cost 20–40% more than standard ($4,000–$9,500 vs. $2,000–$5,000).',
+      'Standard stairlifts cannot be modified for higher capacity — you must select the right model from the start.',
+    ],
     intro: 'Standard stairlifts handle 250–300 lbs. If the user weighs more, you need a heavy-duty model — and not all brands offer them. Choosing a stairlift with insufficient weight capacity is a serious safety risk. This guide covers weight limits by brand, what heavy-duty models are available, and what to ask dealers.',
     faqs: [
       { question: 'What is the typical weight limit for a stairlift?', answer: 'Most standard stairlifts are rated for 250–300 lbs. This is total user weight including clothing and any items being carried. Heavy-duty stairlift models are available from most major brands and typically support 350–500 lbs. Exceeding the rated weight limit is a serious safety hazard.' },
@@ -686,6 +724,13 @@ const GUIDE_META: Record<string, {
     title: 'How to Plan for Aging in Place: Complete Beginner\'s Guide (2026)',
     description: 'Everything you need to know about aging in place — what it costs, what modifications matter most, how to find help, and how to pay for it.',
     category: 'stairlifts',
+    keyTakeaways: [
+      'Start planning in your early-to-mid 60s — before there\'s an urgent need. Most people wait too long.',
+      'Prioritize bathroom safety first: grab bars, walk-in shower, non-slip surfaces.',
+      'Minor modifications ($500–$2,500) address the majority of fall risk. Full accessibility remodels cost $50,000–$100,000+.',
+      'Multiple grant programs exist: VA SAH grants (up to $109,986), USDA Section 504 (up to $10,000), Medicare Advantage benefits.',
+      'Call 1-800-677-1116 (Eldercare Locator) to find local programs, Area Agency on Aging resources, and assessments.',
+    ],
     intro: 'Aging in place means staying in your own home as you get older — rather than moving to assisted living or a nursing facility. For most people, it\'s the preferred option. It\'s also achievable with planning, the right home modifications, and the right support systems. This guide covers everything: from the first conversation to the first contractor.',
     faqs: [
       { question: 'What does "aging in place" mean?', answer: 'Aging in place means living in your own home and community safely, independently, and comfortably as you age — regardless of age, income, or ability level. It typically involves a combination of home modifications (grab bars, stairlifts, wider doorways), in-home services (cleaning, meal delivery, personal care), and technology (medical alerts, smart home devices). The goal is to delay or avoid a move to assisted living.' },
@@ -940,6 +985,13 @@ const GUIDE_META: Record<string, {
     title: 'Home Elevator Cost Guide: What to Expect in 2026',
     description: 'How much does a home elevator cost? Vertical platform lifts start at $3,000. Full residential elevators cost $15,000–$35,000 installed. Cost breakdown for every option.',
     category: 'home-elevators',
+    keyTakeaways: [
+      'Vertical platform lifts (VPL): $3,000–$8,000 — most affordable option, no enclosed cab, 1–2 day install.',
+      'Pneumatic (vacuum) elevators: $18,000–$35,000 — freestanding, no shaft needed, installs in 2–3 days.',
+      'Traditional hydraulic elevators: $15,000–$30,000 + $5,000–$20,000 for shaft construction if required.',
+      'Annual maintenance runs $200–$500/year — factor this into total cost of ownership.',
+      'Installation cost may be partially tax-deductible as a medical expense (amount minus home value increase).',
+    ],
     intro: 'Home mobility solutions range from $3,000 for a residential vertical platform lift to $35,000+ for a pneumatic or hydraulic home elevator. The right choice depends on the height you need to travel, the size of the user (including wheelchair use), aesthetics, and whether existing construction can accommodate a shaft. This guide covers every option.',
     faqs: [
       { question: 'What is the difference between a home elevator and a vertical platform lift?', answer: 'A residential elevator is an enclosed cab that travels in a shaft — it resembles a commercial elevator and is typically ADA-compliant for wheelchair users. A vertical platform lift (VPL) is an open or semi-enclosed platform that travels vertically — less expensive, requires less construction, but not enclosed. VPLs are common for 1–2 floor rises; full elevators for multi-story homes.' },
@@ -989,6 +1041,13 @@ const GUIDE_META: Record<string, {
     description: 'How to choose the best shower chair or bench for seniors. Freestanding vs. wall-mounted, transfer benches, weight limits, and what occupational therapists recommend.',
     category: 'bath-safety',
     compareSlug: 'best-bath-safety-products',
+    keyTakeaways: [
+      'If stepping over a bathtub edge is unsafe, you need a transfer bench — not a regular shower chair.',
+      'Basic freestanding shower chairs cost $25–$80. Wall-mounted fold-down seats cost $80–$250 installed.',
+      'Always choose a weight capacity at least 50 lbs over the user\'s actual weight as a safety margin.',
+      'A handheld showerhead is an essential companion to any shower chair — pair them together.',
+      'Wall-mounted benches are more stable long-term; freestanding chairs are more practical for renters or temporary use.',
+    ],
     intro: 'A shower chair or bench is one of the simplest, most effective bath safety upgrades for seniors. But not all are the same — the right choice depends on the type of shower or tub, the user\'s mobility, and whether they can step over the tub edge. This guide covers the main types, what to look for, and what occupational therapists recommend.',
     faqs: [
       { question: 'What is the difference between a shower chair and a shower bench?', answer: 'A shower chair is typically a freestanding 4-legged seat for use inside a shower stall. A shower bench is usually longer (18–24 inches), may be freestanding or wall-mounted, and provides more support area. For smaller shower stalls, a shower chair fits; for larger walk-in showers, a bench offers more stability.' },
@@ -1011,6 +1070,13 @@ const GUIDE_META: Record<string, {
     description: 'How to choose a rollator walker for seniors. Wheel size, height adjustment, weight capacity, and the difference between rollators and standard walkers — from physical therapists.',
     category: 'grab-bars',
     compareSlug: 'best-rollator-walkers',
+    keyTakeaways: [
+      'Handle height should be at your wrist crease when standing upright with arms relaxed.',
+      '6-inch wheels for indoor use; 8-inch wheels for outdoor terrain. Don\'t buy 6-inch if the user goes outside regularly.',
+      'Standard walkers provide more stability for significant balance impairment. A physical therapist can determine the right choice.',
+      'Medicare Part B covers rollator walkers with a doctor\'s prescription through a Medicare-enrolled DME supplier.',
+      'Always verify the rollator fits through your narrowest doorway before buying — standard models are 22–25 inches wide.',
+    ],
     intro: 'Rollator walkers offer independence and mobility for seniors who need more support than a cane but don\'t need the maximum stability of a standard walker. Choosing the wrong rollator — wrong wheel size, height, or weight capacity — can actually increase fall risk. This guide covers everything you need to choose the right rollator, based on physical therapy recommendations.',
     faqs: [
       { question: 'What is a rollator walker?', answer: 'A rollator is a wheeled walking frame with 3 or 4 wheels, hand brakes, and a built-in seat. Unlike a standard walker (which you lift with each step), a rollator rolls continuously, making it easier to use over longer distances. Most rollators fold for transport and storage. They are best for users who need stability support but have adequate hand and wrist strength to operate the brakes.' },
@@ -1032,6 +1098,12 @@ const GUIDE_META: Record<string, {
     description: 'Common stairlift repairs and their costs. Diagnostic fees, motor replacement, rail issues, and whether to repair or replace an aging stairlift.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Diagnostic service call: $75–$200. Battery replacement (the most common repair): $100–$300 parts and labor.',
+      'Motor/gearbox replacement: $700–$1,500 — if repair cost exceeds 50–60% of a new unit, consider replacing.',
+      'Annual service contract ($150–$400/year) prevents most emergency repairs and extends lifespan.',
+      'Always use an authorized dealer or service tech for your brand — third-party repairs may void warranty.',
+    ],
     intro: 'Stairlifts are mechanical devices — motors, rails, batteries, and sensors all eventually need service or replacement. Understanding common repair costs helps you decide whether to repair an existing unit or replace it. This guide covers the most common stairlift repairs, typical costs, and how to find a qualified technician.',
     faqs: [
       { question: 'How much does stairlift repair cost?', answer: 'Minor repairs (sensor adjustment, lubrication): $100–$200. Battery replacement: $150–$300. Motor or gearbox service: $300–$700. Full motor replacement: $800–$1,500. Control board replacement: $500–$1,200. Diagnostic service call: $75–$150. Most repairs fall in the $150–$500 range for units under 10 years old.' },
@@ -1054,6 +1126,12 @@ const GUIDE_META: Record<string, {
     description: 'Vertical platform lift costs explained: purchase price, installation, permit requirements, and how VPLs compare to stairlifts and home elevators.',
     category: 'home-elevators',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'VPLs cost $3,500–$10,000 installed — far less than a full residential elevator ($15,000–$35,000+).',
+      'VPLs install in 1–2 days with no shaft required — ideal for porch rises, sunken rooms, or single floor barriers.',
+      'Most states require a building permit for VPL installation — your installer should handle the application.',
+      'VA SAH/SHA grants cover VPL installation for qualifying veterans. Medicaid HCBS waivers may apply in some states.',
+    ],
     intro: 'A vertical platform lift (VPL) is the most practical way for a wheelchair user to navigate a single floor rise without the construction cost of a full residential elevator. VPLs are open or semi-enclosed platforms that travel straight up — ideal for porch-to-entry rises, sunken living rooms, or single-step barriers. This guide covers every cost factor and how VPLs compare to the alternatives.',
     faqs: [
       { question: 'How much does a vertical platform lift cost?', answer: 'A vertical platform lift (VPL) typically costs $3,500–$8,500 installed for rises up to 8 feet. Outdoor models with weatherproof features run $4,500–$10,000. Indoor commercial-grade models and taller lifts cost more. Total installed cost (including electrical work and permit fees) is typically $4,500–$12,000 for most residential applications.' },
@@ -1076,6 +1154,13 @@ const GUIDE_META: Record<string, {
     description: 'How much does a home health aide cost in 2026? Hourly rates by state, agency vs. private hire, what Medicare covers, and how to find a vetted aide.',
     category: 'grab-bars',
     hideTotal: true,
+    keyTakeaways: [
+      'National median home health aide rate: $27–$30/hour through agencies. Private hire costs $18–$28/hour.',
+      'Agency rates include payroll, taxes, workers\' comp, and backup coverage — the 30% premium is usually worth it.',
+      'Medicare only covers skilled home health aides when tied to a physician-ordered skilled nursing or therapy need — not ongoing custodial care.',
+      'Medicaid HCBS waivers cover custodial home care for income-eligible seniors in most states.',
+      'Break-even for in-home care vs. assisted living: approximately 30–40 hours/week of aide time.',
+    ],
     intro: 'A home health aide is often the difference between aging in place and moving to a care facility. As physical or cognitive needs grow, in-home help allows seniors to remain in their own homes safely. Understanding the real cost — and how to fund it — is essential for family planning. This guide covers hourly rates, agency vs. private hire, Medicare coverage, and what families typically pay.',
     faqs: [
       { question: 'How much does a home health aide cost per hour?', answer: 'The national median home health aide rate is $27–$30/hour as of 2026, per the Genworth Cost of Care Survey. Agency rates run $28–$40/hour (the agency fee covers payroll, taxes, insurance, and backup coverage). Private hire (finding an aide directly) costs $18–$28/hour but requires you to handle taxes, workers\' comp, and backup coverage yourself. Rates vary significantly by state — the Northeast and West Coast run $35–$50/hour through agencies.' },
@@ -1099,6 +1184,13 @@ const GUIDE_META: Record<string, {
     description: 'Every type of grab bar explained: permanent, suction cup, folding, floor-mounted, and decorative. How to choose the right grab bar for each location.',
     category: 'grab-bars',
     compareSlug: 'best-grab-bars',
+    keyTakeaways: [
+      'Permanent wall-mounted bars (anchored to studs) are the only type you should rely on as a primary safety device.',
+      'Suction cup grab bars should NOT be used as a primary safety bar — suction can fail suddenly on textured or stained tile.',
+      'Fold-down bars beside toilets are ideal when the bar would block lateral access for non-mobility-impaired users.',
+      'Grab bars are available in designer finishes (brushed nickel, oil-rubbed bronze, matte black) — safety and aesthetics no longer conflict.',
+      'ADA standard: 42-inch horizontal bar at 33–36 inches height beside the toilet; 24–42 inch bar on the shower long wall.',
+    ],
     intro: 'Not all grab bars are the same. There are permanent wall-mounted bars, suction cup bars, foldable bars, floor-to-ceiling poles, and designer bars that blend with bathroom décor. The right choice depends on the location, the user\'s needs, whether installation into studs is possible, and budget. This guide explains every type of grab bar and when to use each one.',
     faqs: [
       { question: 'What types of grab bars are available?', answer: 'The main types: (1) Permanent wall-mounted bars — the safest option, anchored to studs or with rated anchors; (2) Suction cup grab bars — portable but NOT recommended as a primary safety bar; (3) Fold-down / folding bars — pivot out of the way when not in use, good for shower benches and toilet use; (4) Floor-to-ceiling poles — pressure-mounted, require no drilling, support up to 300 lbs; (5) Clamp-on tub bars — attach to tub edge without drilling, moderate support.' },
@@ -1122,6 +1214,13 @@ const GUIDE_META: Record<string, {
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
     hideTotal: true,
+    keyTakeaways: [
+      'Check VA grants first if the user is a veteran — SAH grants cover up to $109,986, HISA grants up to $6,800.',
+      'Medicaid HCBS waivers fund stairlifts in most states for income-eligible seniors who need them to avoid nursing home placement.',
+      'Manufacturer financing (0%–15%, 12–60 months) is available from most major brands; CareCredit is a common option.',
+      'Rental ($150–$250/month) only makes sense for under 6–12 months — after that, buying is cheaper.',
+      'Home equity loans/HELOCs offer lower interest rates than personal loans for larger projects.',
+    ],
     intro: 'A stairlift costs $2,000–$15,000 installed — a significant expense that many families struggle to cover out of pocket. The good news: there are multiple ways to finance or partially fund a stairlift purchase, from federal grants to manufacturer payment plans. This guide walks through every option, who qualifies, and which to pursue first.',
     faqs: [
       { question: 'Can I get a free stairlift?', answer: 'Completely free stairlifts are rare, but heavily subsidized options exist. Veterans who qualify for VA SAH or SHA grants may receive full coverage. Medicaid HCBS waiver programs in some states cover stairlifts for income-eligible individuals. Some nonprofits (local Easter Seals chapters, United Way affiliates) offer stairlift assistance programs. The Eldercare Locator (1-800-677-1116) can identify local programs not listed nationally.' },
@@ -1143,6 +1242,13 @@ const GUIDE_META: Record<string, {
     description: 'A complete guide for adult children helping aging parents age in place. Home safety assessments, having the conversation, modifications, and when to get professional help.',
     category: 'grab-bars',
     hideTotal: true,
+    keyTakeaways: [
+      'Frame modifications around independence, not limitation — "This lets you shower without needing to call me" lands better.',
+      'Start with bathroom grab bars — highest-risk room, lowest-cost intervention, easiest to accept.',
+      'An OT home safety assessment ($100–$300 out of pocket) identifies the highest-priority modifications for your parent\'s specific situation.',
+      'CAPS-certified contractors specialize in aging-in-place modifications and know how to apply for grant programs.',
+      'When care needs exceed 30–40 hours/week, assisted living often becomes cost-competitive with aging in place.',
+    ],
     intro: 'For millions of adult children, helping aging parents stay safe at home is one of the most important — and most difficult — responsibilities they\'ll face. There\'s no single right answer, but there are evidence-based steps that reduce fall risk, extend independence, and preserve the parent-child relationship. This guide walks through everything: having the conversation, assessing the home, choosing modifications, and knowing when professional help is needed.',
     faqs: [
       { question: 'How do I convince my aging parent to accept home modifications?', answer: 'Frame modifications around independence, not limitation. "This grab bar means you can shower without needing to call me" is more effective than "I\'m worried you\'ll fall." Involve them in the decision — tour a showroom together, let them choose finishes. Some people accept modifications more readily from a medical professional; ask their physician to make a recommendation. Start small: a non-slip mat is easier to accept than a full stairlift.' },
@@ -1157,6 +1263,13 @@ const GUIDE_META: Record<string, {
     description: 'The best smart home devices for seniors aging in place. Voice assistants, smart smoke detectors, video doorbells, fall detection, and caregiver monitoring.',
     category: 'smart-home-safety',
     compareSlug: 'best-smart-home-safety-devices',
+    keyTakeaways: [
+      'Motion-activated night lights are the highest-impact, lowest-cost device — most nighttime falls happen on the bedroom-to-bathroom trip.',
+      'Amazon Echo Show enables hands-free calls by voice — no smartphone skills required.',
+      'Smart smoke/CO detectors (like Nest Protect) alert family members immediately via app, not just the person at home.',
+      'All five core devices (smoke detector, doorbell, Echo Show, smart lock, night lights) can be set up for under $600 total.',
+      'Smart home devices supplement a medical alert system — they don\'t replace it.',
+    ],
     intro: 'Smart home technology has become one of the most practical tools for helping seniors remain independent at home longer. From voice-controlled reminders to automated door locks and caregiver monitoring apps, a well-configured smart home can address real safety gaps at a relatively low cost. This guide covers the most impactful devices, what they cost, and how to set them up for aging in place.',
     faqs: [
       { question: 'What smart home devices are most useful for aging in place?', answer: 'In order of impact: (1) Smart smoke/CO detector (alerts caregivers immediately); (2) Video doorbell (safe visitor screening without getting up); (3) Voice assistant with screen (hands-free calls, reminders, music — reduces isolation); (4) Smart door lock with auto-lock (keyless entry, prevents forgetting to lock); (5) Motion-activated night lights (eliminates dark bedroom-to-bathroom trips). All five can be set up for under $600.' },
@@ -1180,6 +1293,12 @@ const GUIDE_META: Record<string, {
     category: 'medical-alerts',
     compareSlug: 'best-medical-alerts',
     hideTotal: true,
+    keyTakeaways: [
+      'Without professional monitoring, the system calls family or pre-programmed numbers only — if no one answers, no help comes.',
+      'For seniors living alone, professional monitoring is strongly recommended. The $20–$30/month cost is worth it.',
+      'Apple Watch is a legitimate option for active seniors in their 60s-70s — less so for older, more fragile seniors.',
+      'Entry-level monitored systems start at $19–$22/month (Bay Alarm Medical, LifeStation) — far less than most people expect.',
+    ],
     intro: 'The appeal of a medical alert system with no ongoing monthly fee is obvious — traditional systems cost $20–$55/month, which adds up to $240–$660 per year. But there are significant trade-offs when you skip the professional monitoring center. This guide explains exactly what you lose without monitoring, which "no monthly fee" options actually make sense, and when a traditional monitored system is worth the cost.',
     faqs: [
       { question: 'Can you get a medical alert system with no monthly fee?', answer: 'Yes — several options exist without ongoing fees: (1) Basic cellular button devices that call pre-programmed contacts directly, bypassing a monitoring center; (2) Apple Watch or Samsung Galaxy Watch with fall detection and emergency SOS (require cellular service only); (3) Bay Alarm Medical and others sell "self-monitoring" plans without monitoring center fees; (4) Alexa together (Amazon) provides family monitoring with no monthly fee. Each has significant limitations compared to professional monitoring.' },
@@ -1200,6 +1319,13 @@ const GUIDE_META: Record<string, {
     description: 'How Medicaid HCBS waiver programs pay for grab bars, ramps, stairlifts, and bathroom modifications. Eligibility, how to apply, and what each state covers.',
     category: 'grab-bars',
     hideTotal: true,
+    keyTakeaways: [
+      'Medicaid HCBS waivers can pay for grab bars, ramps, stairlifts, and other modifications in most states.',
+      'Eligibility requires meeting state Medicaid income/asset limits and being assessed as at risk of nursing home placement.',
+      'Coverage varies significantly by state — grab bars are widely covered; stairlift coverage is more variable.',
+      'Call 1-800-677-1116 (Eldercare Locator) or 211 to find the specific HCBS waiver programs in your state.',
+      'Many waiver programs have waitlists — apply early, even before modifications are urgently needed.',
+    ],
     intro: 'Medicaid can pay for home modifications — but coverage varies dramatically by state and program. This guide explains which Medicaid programs cover home modifications, what types of modifications are covered, how to determine if you qualify, and how to apply in your state.',
     faqs: [
       { question: 'Does Medicaid cover grab bars?', answer: 'Yes — grab bar installation is one of the most commonly covered home modifications under Medicaid HCBS waiver programs. In most states with active waiver programs, grab bars are explicitly listed as covered modifications. Coverage is typically limited to income-eligible individuals who have been assessed as needing home modifications to avoid nursing home placement.' },
