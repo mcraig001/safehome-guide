@@ -280,6 +280,19 @@ export default async function ProductPage({ params }: Props) {
             </Link>
           )}
 
+          {/* Find a contractor CTA */}
+          <div className="rounded-xl border border-amber-200 p-5" style={{ backgroundColor: '#fffbeb' }}>
+            <p className="font-semibold text-amber-900 mb-1">Need professional installation?</p>
+            <p className="text-sm text-amber-800 mb-3">A CAPS-certified contractor can assess your home and install safely.</p>
+            <Link
+              href="/contractors"
+              className="inline-block px-4 py-2 rounded-lg text-white text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ backgroundColor: '#D97706' }}
+            >
+              Find a Contractor Near You →
+            </Link>
+          </div>
+
           {/* Related products */}
           {related && related.length > 0 && (
             <div className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>

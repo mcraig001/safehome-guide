@@ -61,6 +61,23 @@ export function localBusinessSchema(contractor: {
   };
 }
 
+export function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SafeAtHome Guide',
+    url: 'https://www.safeathomeguides.com',
+    logo: 'https://www.safeathomeguides.com/logo.png',
+    description: 'Independent reviews and ratings of stairlifts, walk-in tubs, grab bars, and home safety products for seniors and aging-in-place.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'hello@safeathomeguides.com',
+    },
+    sameAs: [],
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',
