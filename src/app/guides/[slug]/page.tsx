@@ -86,10 +86,10 @@ const WHAT_TO_LOOK_FOR: Record<string, { tip: string; detail: string }[]> = {
 interface Props { params: Promise<{ slug: string }> }
 
 function getGuideTypeLabel(slug: string): string {
-  if (slug.includes('cost-guide')) return 'Cost Guide';
-  if (slug.includes('medicare') || slug.includes('grants') || slug.includes('tax-deduction')) return 'Insurance & Grants';
-  if (slug.includes('how-to-choose') || slug.includes('vs-') || slug.includes('best-')) return "Buyer's Guide";
-  if (slug.includes('checklist') || slug.includes('modifications') || slug.includes('safety')) return 'Planning Guide';
+  if (slug.includes('cost-guide') || slug.includes('-cost') || slug.includes('repair-cost') || slug.includes('aide-cost') || slug.includes('financing')) return 'Cost Guide';
+  if (slug.includes('medicare') || slug.includes('medicaid') || slug.includes('grants') || slug.includes('tax-deduction') || slug.includes('insurance') || slug.includes('no-monthly-fee')) return 'Insurance & Grants';
+  if (slug.includes('how-to-choose') || slug.includes('-vs-') || slug.includes('best-') || slug.includes('types-guide') || slug.includes('buyer')) return "Buyer's Guide";
+  if (slug.includes('checklist') || slug.includes('modifications') || slug.includes('safety') || slug.includes('prevention') || slug.includes('planning') || slug.includes('setup') || slug.includes('guide')) return 'Planning Guide';
   return 'Guide';
 }
 

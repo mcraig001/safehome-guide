@@ -75,6 +75,7 @@ const COMPARISON_META: Record<string, {
     title: 'Best Rollator Walkers of 2026: Compared and Ranked',
     description: 'Top rollator walkers compared on weight, wheel size, seat comfort, and ease of folding. Find the best rollator for indoor or outdoor use.',
     category: 'mobility-aids',
+    guideSlug: 'rollator-walker-guide',
     intro: 'Rollator walkers vary significantly in weight, wheel size, and stability. We scored the top models on safety, maneuverability, comfort, and value — whether you need it mostly indoors or for outdoor use.',
     verdict: 'For outdoor use, choose a rollator with 8-inch wheels for better terrain handling. For indoor use, a compact lightweight model under 15 lbs is easier to maneuver in tight spaces. Always check weight capacity and seat height before buying.',
     faqs: [
@@ -87,6 +88,7 @@ const COMPARISON_META: Record<string, {
     title: 'Best Bath Safety Products of 2026: Shower Chairs, Benches & More',
     description: 'Top bath safety products compared — shower chairs, transfer benches, grab bars, and handheld showerheads. Rated for safety, stability, and ease of use.',
     category: 'bath-safety',
+    guideSlug: 'best-shower-chair-for-seniors',
     intro: 'Bath safety products range from simple non-slip mats to wall-mounted shower benches and fully equipped transfer systems. We compared the top options on safety, stability, installation complexity, and value.',
     verdict: 'For most seniors, start with a handheld showerhead ($30–$50) and non-slip mat — then add a shower chair or bench if seated bathing is needed. Wall-mounted benches are more stable but require installation.',
     faqs: [
@@ -112,6 +114,7 @@ const COMPARISON_META: Record<string, {
     title: 'Best Smart Home Safety Devices for Seniors (2026)',
     description: 'Top smart home safety products compared — video doorbells, smart smoke detectors, voice assistants, and security systems for aging in place.',
     category: 'smart-home-safety',
+    guideSlug: 'smart-home-for-aging-in-place',
     intro: 'Smart home safety devices help seniors live independently longer by adding automated alerts, remote monitoring, and voice-controlled access to help. We compared the top devices on reliability, ease of use, and safety impact.',
     verdict: 'For most homes, start with a Wi-Fi smoke and CO detector and a video doorbell — these two devices address the most common safety gaps at under $200 combined. A voice assistant (Alexa/Echo Show) is the next most impactful addition for daily safety.',
     faqs: [
