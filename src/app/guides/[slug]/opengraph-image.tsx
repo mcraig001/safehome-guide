@@ -26,6 +26,7 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'bruno-vs-acorn-stairlift': { title: 'Bruno vs. Acorn Stairlift: Full Comparison', category: 'Stairlifts' },
   'stairlift-rental-vs-buy': { title: 'Stairlift Rental vs. Buy: Which Makes Sense?', category: 'Stairlifts' },
   'stairlift-weight-limit': { title: 'Stairlift Weight Limits: Heavy-Duty Options', category: 'Stairlifts' },
+  'medicare-advantage-home-modification-benefits': { title: 'Medicare Advantage Home Modification Benefits', category: 'Insurance' },
   'life-alert-vs-medical-guardian': { title: 'Life Alert vs. Medical Guardian 2026', category: 'Medical Alerts' },
   'free-stairlift-for-seniors': { title: 'How to Get a Free Stairlift for Seniors', category: 'Stairlifts' },
   'best-fall-detection-medical-alert': { title: 'Best Medical Alerts With Fall Detection 2026', category: 'Medical Alerts' },

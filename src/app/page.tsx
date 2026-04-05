@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
-import { faqSchema, organizationSchema } from '@/lib/schema';
+import { faqSchema } from '@/lib/schema';
 import { Shield, Star, Users, BarChart2, BookOpen, ClipboardList } from 'lucide-react';
 import { Suspense } from 'react';
 
@@ -37,12 +37,10 @@ async function getCategories() {
 export default async function HomePage() {
   const [featured, categories] = await Promise.all([getFeaturedProducts(), getCategories()]);
   const homeFaqSchema = faqSchema(HOME_FAQS);
-  const orgSchema = organizationSchema();
 
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       {/* Hero */}
       <section className="py-20 px-4" style={{ backgroundColor: '#1B4332' }}>
         <div className="max-w-3xl mx-auto text-center text-white">
@@ -94,7 +92,7 @@ export default async function HomePage() {
               <div className="text-sm text-gray-500 mt-1">States Covered</div>
             </div>
             <div>
-              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>28</div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>29</div>
               <div className="text-sm text-gray-500 mt-1">Cost & Buyer's Guides</div>
             </div>
           </div>
@@ -171,7 +169,7 @@ export default async function HomePage() {
               <p className="text-gray-500 mt-1">No fluff — just what things cost and how to choose.</p>
             </div>
             <Link href="/guides" className="hidden md:block font-semibold text-sm hover:underline" style={{ color: '#1B4332' }}>
-              View all 28 guides →
+              View all 29 guides →
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-5">

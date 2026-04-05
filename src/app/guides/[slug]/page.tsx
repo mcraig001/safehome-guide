@@ -585,6 +585,27 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'medicare-advantage-home-modification-benefits': {
+    title: 'Medicare Advantage Home Modification Benefits: What\'s Covered in 2026',
+    description: 'Which Medicare Advantage plans cover home modifications? What\'s covered, dollar limits, and how to find a plan with home safety benefits in your area.',
+    category: 'stairlifts',
+    compareSlug: 'best-stairlifts',
+    intro: 'Standard Medicare (Parts A and B) does not cover home modifications. But a growing number of Medicare Advantage (Part C) plans now include supplemental home safety or "Healthy Home" benefits that can pay for stairlifts, grab bars, walk-in tubs, and other modifications. Here\'s what\'s available and how to find plans in your area.',
+    faqs: [
+      { question: 'Do Medicare Advantage plans cover home modifications?', answer: 'Some do. As of 2024, CMS expanded Medicare Advantage flexibility, allowing more plans to offer "supplemental benefits" including home modifications. Not all MA plans offer this — but many now include a Home Safety Benefit, Healthy Home Benefit, or In-Home Safety Assessment that may cover grab bars, ramps, stairlifts, or smart safety devices. Coverage amounts typically range from $500 to $2,500 per year.' },
+      { question: 'How do I find a Medicare Advantage plan that covers home modifications?', answer: 'Use Medicare\'s Plan Finder at medicare.gov/plan-compare. Search for plans in your ZIP code, then filter by "Extra Benefits" and look for "Home Safety" or "Healthy Home" benefits. Plans with these benefits will list the annual dollar limit and covered modifications. Not all plans advertise this clearly — call the plan\'s member services number to ask specifically: "Does my plan have a home modification or home safety benefit?"' },
+      { question: 'What home modifications do Medicare Advantage plans typically cover?', answer: 'Covered modifications vary by plan, but commonly include: grab bars and handrails, wheelchair ramps, bathroom safety equipment (shower chairs, raised toilet seats), stair railings, non-slip flooring, smart smoke/CO detectors, and in some plans, stairlifts. Some plans require a home safety assessment first. Benefit limits are usually $500–$2,500/year.' },
+      { question: 'Does Medicare Advantage cover stairlifts specifically?', answer: 'Some MA plans do cover stairlifts under their home modification benefit — but this is not universal. Plans that cover stairlifts typically require documentation of medical necessity (doctor\'s note recommending a stairlift) and may apply a benefit cap. Call your plan before purchasing to confirm coverage. If your current plan doesn\'t cover it, you can switch plans during the Annual Enrollment Period (October 15 – December 7).' },
+      { question: 'What is the OTC and home modification benefit in Medicare Advantage?', answer: 'Many Medicare Advantage plans offer a combined OTC (over-the-counter) allowance that can be used for health-related purchases. Some plans allow this allowance to be applied to home safety items at approved retailers. The allowance is typically $300–$1,500/year. Check your plan\'s Summary of Benefits or call member services to confirm what\'s covered under OTC and any separate home safety benefit.' },
+    ],
+    hideTotal: true,
+    costBreakdown: [
+      { item: 'Standard Medicare A/B coverage', low: 0, high: 0 },
+      { item: 'Typical MA home safety benefit limit', low: 500, high: 2500 },
+      { item: 'MA OTC allowance (if applicable)', low: 300, high: 1500 },
+      { item: 'Out-of-pocket after MA benefit', low: 500, high: 4500 },
+    ],
+  },
   'life-alert-vs-medical-guardian': {
     title: 'Life Alert vs. Medical Guardian: Which Is Better in 2026?',
     description: 'Life Alert vs Medical Guardian compared — monthly cost, fall detection, GPS coverage, contracts, and which is best for seniors living alone.',
@@ -962,7 +983,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 28 guides →
+              View all 29 guides →
             </Link>
           </div>
         </aside>

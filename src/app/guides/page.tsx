@@ -226,6 +226,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'medicare-advantage-home-modification-benefits',
+    title: 'Medicare Advantage Home Modification Benefits: What\'s Covered in 2026',
+    description: 'Which Medicare Advantage plans cover stairlifts, grab bars, and home safety modifications? Dollar limits, covered items, and how to find eligible plans.',
+    category: 'Planning',
+    icon: '🏥',
+    readTime: '5 min read',
+    type: 'insurance',
+  },
+  {
     slug: 'life-alert-vs-medical-guardian',
     title: 'Life Alert vs. Medical Guardian: Which Is Better in 2026?',
     description: 'Monthly cost, fall detection, contract terms, and response time — head-to-head comparison of the two most-searched medical alert brands.',
