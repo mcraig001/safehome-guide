@@ -107,6 +107,10 @@ export default async function ProductPage({ params }: Props) {
     'grab-bars': 'best-grab-bars',
     'medical-alerts': 'best-medical-alerts',
     'mobility-aids': 'best-rollator-walkers',
+    'bath-safety': 'best-bath-safety-products',
+    'wheelchair-ramps': 'best-wheelchair-ramps',
+    'smart-home-safety': 'best-smart-home-safety-devices',
+    'door-access': 'best-smart-door-locks',
   };
   const compareSlug = COMPARE_SLUGS[category];
 

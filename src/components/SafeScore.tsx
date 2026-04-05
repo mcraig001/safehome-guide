@@ -42,11 +42,19 @@ export function SafeScore({ score, breakdown, size = 'md' }: SafeScoreProps) {
         SafeScore™ {label}
       </span>
       {breakdown && size !== 'sm' && (
-        <div className="text-xs text-gray-600 space-y-0.5 w-full">
+        <div className="text-xs text-gray-600 space-y-2 w-full min-w-[160px]">
           {Object.entries(breakdown).map(([key, val]) => (
-            <div key={key} className="flex justify-between">
-              <span className="capitalize">{key.replace(/_/g, ' ')}</span>
-              <span className="font-mono font-medium">{val}/25</span>
+            <div key={key}>
+              <div className="flex justify-between mb-0.5">
+                <span className="capitalize">{key.replace(/_/g, ' ')}</span>
+                <span className="font-mono font-medium">{val}</span>
+              </div>
+              <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                <div
+                  className="h-full rounded-full"
+                  style={{ width: `${val}%`, backgroundColor: val >= 80 ? '#1B4332' : val >= 60 ? '#D97706' : '#DC2626' }}
+                />
+              </div>
             </div>
           ))}
         </div>
