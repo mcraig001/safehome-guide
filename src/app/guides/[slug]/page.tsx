@@ -585,6 +585,26 @@ const GUIDE_META: Record<string, {
       { item: 'Heavy-duty curved stairlift', low: 10000, high: 18000 },
     ],
   },
+  'walk-in-tub-vs-walk-in-shower': {
+    title: 'Walk-In Tub vs. Walk-In Shower: Which Is Safer?',
+    description: 'Walk-in tub or walk-in shower — which is better for seniors? Fall risk, cost, installation, and which option occupational therapists recommend.',
+    category: 'walk-in-tubs',
+    compareSlug: 'best-walk-in-tubs',
+    intro: 'Walk-in tubs and walk-in showers both eliminate the dangerous step-over of a standard tub — but they work differently, cost differently, and suit different users. This guide helps you choose the right option based on fall history, mobility level, and whether hydrotherapy is a priority.',
+    faqs: [
+      { question: 'Is a walk-in tub or walk-in shower safer?', answer: 'For most seniors, a properly designed walk-in shower is safer than a walk-in tub. Walk-in showers (especially zero-threshold designs) allow you to enter and exit standing up, with grab bars for support, and no waiting inside while the tub drains. Walk-in tubs require sitting inside during both fill and drain phases, which adds time in a wet environment. Occupational therapists typically recommend walk-in showers first.' },
+      { question: 'When is a walk-in tub the better choice?', answer: 'Walk-in tubs are better when: (1) hydrotherapy jets provide meaningful arthritis or chronic pain relief, (2) the user has severe mobility limitations and cannot stand for showering, (3) the user strongly prefers soaking baths for psychological well-being. The key benefit of a walk-in tub is therapeutic soaking — not primarily fall prevention.' },
+      { question: 'How much does a walk-in shower conversion cost?', answer: 'A basic tub-to-shower conversion using a prefab kit costs $1,500–$3,500. A custom tile walk-in shower with zero-threshold access costs $5,000–$15,000. A roll-in shower for wheelchair access with full accessibility features costs $8,000–$20,000. This is typically less than a walk-in tub installation.' },
+      { question: 'Which option do occupational therapists recommend?', answer: 'Most occupational therapists (OTs) recommend a walk-in shower first for fall prevention — particularly a curbless or low-threshold shower with grab bars, a fold-down shower bench, and a handheld showerhead. Walk-in tubs are recommended when the user specifically needs hydrotherapy or cannot safely stand for showering.' },
+      { question: 'Can I convert my tub to a zero-threshold shower?', answer: 'Yes — tub-to-shower conversions are a common bathroom renovation. The most important feature for safety is a low or zero threshold (no step-in required). This requires waterproofing the shower floor and proper slope toward the drain. A licensed plumber and tile contractor can complete a basic conversion in 3–5 days.' },
+    ],
+    costBreakdown: [
+      { item: 'Walk-in tub (installed)', low: 3500, high: 10000 },
+      { item: 'Basic tub-to-shower conversion', low: 1500, high: 3500 },
+      { item: 'Custom walk-in shower', low: 5000, high: 15000 },
+      { item: 'Zero-threshold roll-in shower', low: 8000, high: 20000 },
+    ],
+  },
   'stairlift-brands-to-avoid': {
     title: 'Stairlift Brands to Avoid — And What to Buy Instead',
     description: 'Which stairlift brands have the most complaints? What warning signs to look for, and which brands consistently deliver reliable, well-supported products.',
@@ -1053,7 +1073,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 32 guides →
+              View all 33 guides →
             </Link>
           </div>
         </aside>

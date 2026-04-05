@@ -226,6 +226,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'walk-in-tub-vs-walk-in-shower',
+    title: 'Walk-In Tub vs. Walk-In Shower: Which Is Safer?',
+    description: 'Which is better for seniors — a walk-in tub or walk-in shower? OT recommendations, cost comparison, and when each option is the right choice.',
+    category: 'Walk-In Tubs',
+    icon: '🛁',
+    readTime: '5 min read',
+    type: 'planning',
+  },
+  {
     slug: 'stairlift-brands-to-avoid',
     title: 'Stairlift Brands to Avoid — And What to Buy Instead',
     description: 'Warning signs of bad stairlift companies, brands with high complaint volumes, and how to find a trustworthy dealer near you.',

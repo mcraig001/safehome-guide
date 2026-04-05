@@ -26,6 +26,7 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'bruno-vs-acorn-stairlift': { title: 'Bruno vs. Acorn Stairlift: Full Comparison', category: 'Stairlifts' },
   'stairlift-rental-vs-buy': { title: 'Stairlift Rental vs. Buy: Which Makes Sense?', category: 'Stairlifts' },
   'stairlift-weight-limit': { title: 'Stairlift Weight Limits: Heavy-Duty Options', category: 'Stairlifts' },
+  'walk-in-tub-vs-walk-in-shower': { title: 'Walk-In Tub vs. Walk-In Shower: Which Is Safer?', category: 'Walk-In Tubs' },
   'stairlift-brands-to-avoid': { title: 'Stairlift Brands to Avoid', category: 'Stairlifts' },
   'home-safety-checklist-for-elderly': { title: 'Home Safety Checklist for Elderly 2026', category: 'Planning' },
   'stairlift-installation-guide': { title: 'Stairlift Installation: What to Expect', category: 'Stairlifts' },
