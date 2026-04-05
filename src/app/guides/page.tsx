@@ -558,6 +558,24 @@ const guides = [
     readTime: '5 min read',
     type: 'planning',
   },
+  {
+    slug: 'hospital-bed-rental-cost',
+    title: 'Hospital Bed Rental Cost for Home: What to Expect in 2026',
+    description: 'Home hospital bed rental cost, Medicare coverage, semi-electric vs full-electric, and rental vs purchase comparison.',
+    category: 'Mobility Aids',
+    icon: '🛏️',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
+    slug: 'handheld-showerhead-guide',
+    title: 'Handheld Showerhead Guide for Seniors: What to Look For (2026)',
+    description: 'Best handheld showerhead for aging in place. Hose length, slide bars, pause function, and DIY installation guide.',
+    category: 'Bath Safety',
+    icon: '🚿',
+    readTime: '4 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {
