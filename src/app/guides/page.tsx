@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BookOpen, DollarSign, HelpCircle, ChevronRight } from 'lucide-react';
+import { NewsletterSignup } from '@/components/NewsletterSignup';
 
 export const metadata: Metadata = {
   title: 'Home Safety Cost Guides & Buyer\'s Guides',
@@ -175,6 +176,15 @@ export default function GuidesPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="mb-12">
+        <NewsletterSignup
+          headline="Free: Complete Home Safety Checklist"
+          subtext="Room-by-room guide to the most impactful modifications, in priority order. Get it free."
+          source="guides-page"
+        />
       </section>
 
       {/* CTA */}

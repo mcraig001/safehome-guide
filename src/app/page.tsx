@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
+import { NewsletterSignup } from '@/components/NewsletterSignup';
 import { Shield, Star, Users } from 'lucide-react';
 import { Suspense } from 'react';
 
@@ -117,6 +118,17 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Newsletter signup */}
+      <section className="py-12 px-4">
+        <div className="max-w-2xl mx-auto">
+          <NewsletterSignup
+            headline="Free: The Aging-in-Place Home Safety Checklist"
+            subtext="A room-by-room checklist of the most important modifications, in priority order. Trusted by 1,000+ families."
+            source="homepage"
+          />
+        </div>
+      </section>
 
       {/* Lead Form CTA */}
       <section className="py-16 px-4">
