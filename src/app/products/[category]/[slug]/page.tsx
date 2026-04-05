@@ -85,6 +85,27 @@ export default async function ProductPage({ params }: Props) {
     : null;
 
   const categoryFaqs = CATEGORY_FAQS[category] || [];
+
+  // Fetch related products from same category
+  const { data: related } = await supabase
+    .from('sh_products')
+    .select('slug, name, brand, safe_score, price_min, price_max, description')
+    .eq('category', category)
+    .eq('is_published', true)
+    .neq('slug', slug)
+    .order('safe_score', { ascending: false })
+    .limit(3);
+
+  // Determine compare slug
+  const COMPARE_SLUGS: Record<string, string> = {
+    stairlifts: 'best-stairlifts',
+    'walk-in-tubs': 'best-walk-in-tubs',
+    'grab-bars': 'best-grab-bars',
+    'medical-alerts': 'best-medical-alerts',
+    'mobility-aids': 'best-rollator-walkers',
+  };
+  const compareSlug = COMPARE_SLUGS[category];
+
   const schema = productSchema(product);
   const faqSchemaData = categoryFaqs.length > 0 ? faqSchema(categoryFaqs) : null;
   const breadcrumbs = breadcrumbSchema([
@@ -242,6 +263,44 @@ export default async function ProductPage({ params }: Props) {
           <Suspense>
             <LeadForm category={category} headline="Get Installation Quotes" />
           </Suspense>
+
+          {/* Compare link */}
+          {compareSlug && (
+            <Link
+              href={`/compare/${compareSlug}`}
+              className="flex items-center justify-between p-5 rounded-xl border-2 group transition-colors"
+              style={{ borderColor: '#1B4332' }}
+            >
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1B4332' }}>Compare</p>
+                <p className="text-sm font-semibold text-gray-800 group-hover:text-green-800 transition-colors leading-tight">
+                  Compare top {category.replace(/-/g, ' ')} products side by side →
+                </p>
+              </div>
+            </Link>
+          )}
+
+          {/* Related products */}
+          {related && related.length > 0 && (
+            <div className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#FAFAF7' }}>
+              <h3 className="font-semibold text-gray-800 mb-3">Also Consider</h3>
+              <div className="space-y-3">
+                {related.map((r: { slug: string; name: string; brand: string; safe_score?: number; price_min?: number; price_max?: number }) => (
+                  <Link
+                    key={r.slug}
+                    href={`/products/${category}/${r.slug}`}
+                    className="block p-3 rounded-lg bg-white border border-gray-100 hover:border-green-700 hover:shadow-sm transition-all group"
+                  >
+                    <p className="text-xs text-gray-400 mb-0.5">{r.brand}</p>
+                    <p className="text-sm font-semibold text-gray-800 group-hover:text-green-800 leading-tight">{r.name}</p>
+                    {r.safe_score && (
+                      <p className="text-xs font-mono mt-1" style={{ color: '#1B4332' }}>SafeScore™ {r.safe_score}/100</p>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </aside>
       </div>
     </main>
