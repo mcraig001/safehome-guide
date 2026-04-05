@@ -1,3 +1,21 @@
+export function webSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SafeAtHome Guide',
+    url: 'https://www.safeathomeguides.com',
+    description: 'Independent reviews and ratings of stairlifts, walk-in tubs, grab bars, and home safety products for seniors and aging-in-place.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.safeathomeguides.com/products?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
 export function productSchema(product: {
   name: string;
   description: string;

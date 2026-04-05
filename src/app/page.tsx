@@ -92,7 +92,7 @@ export default async function HomePage() {
               <div className="text-sm text-gray-500 mt-1">States Covered</div>
             </div>
             <div>
-              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>34</div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>38</div>
               <div className="text-sm text-gray-500 mt-1">Cost & Buyer's Guides</div>
             </div>
           </div>

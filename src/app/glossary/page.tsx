@@ -4,7 +4,7 @@ import { BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Aging-in-Place Glossary: Terms & Definitions',
-  description: 'Plain-English definitions of aging-in-place, home modification, and home safety terms. CAPS, ADA, HCBS, SafeScore, and more.',
+  description: 'Plain-English definitions of 30+ aging-in-place, home modification, and home safety terms. CAPS, ADA, HCBS, SafeScore, stairlift, walk-in tub, and more.',
   openGraph: {
     title: 'Aging-in-Place Glossary: Terms & Definitions',
     description: 'Plain-English definitions of aging-in-place and home modification terms.',
