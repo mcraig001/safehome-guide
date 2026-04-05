@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight, ClipboardList, CheckCircle } from 'lucide-react';
+import { LeadForm } from '@/components/LeadForm';
 
 const QUESTIONS = [
   {
@@ -148,20 +149,16 @@ export default function AssessPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: '#1B4332' }}>
-          <h2 className="font-serif text-2xl font-bold text-white mb-2">
-            Get a Free In-Home Assessment
-          </h2>
-          <p className="text-white opacity-80 mb-6 max-w-md mx-auto text-sm">
-            A CAPS-certified contractor can assess your home in person and give you an exact modification plan with quotes.
-          </p>
-          <Link
-            href="/contractors"
-            className="inline-block px-8 py-3 rounded-lg font-semibold text-base transition-opacity hover:opacity-90"
-            style={{ backgroundColor: '#D97706', color: '#fff' }}
-          >
-            Find a Contractor Near You
-          </Link>
+        <div className="mb-8">
+          <LeadForm
+            headline="Get Free Quotes from a CAPS Contractor"
+            category={
+              (answers.stairs as number) >= 2 ? 'stairlifts' :
+              (answers.bathroom as number) >= 2 ? 'walk-in-tubs' :
+              (answers.mobility as number) >= 3 ? 'wheelchair-ramps' :
+              (answers.falls as number) >= 1 ? 'medical-alerts' : undefined
+            }
+          />
         </div>
 
         <div className="text-center mt-8">
