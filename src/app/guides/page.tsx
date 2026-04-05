@@ -451,6 +451,15 @@ const guides = [
     type: 'planning',
   },
   {
+    slug: 'doorway-widening-cost-guide',
+    title: 'Doorway Widening Cost Guide: Wheelchair Access Modifications (2026)',
+    description: 'How much does doorway widening cost? Offset hinges vs. full widening, ADA requirements, and what insurance programs cover the work.',
+    category: 'Planning',
+    icon: '🚪',
+    readTime: '5 min read',
+    type: 'cost',
+  },
+  {
     slug: 'stair-handrail-cost-guide',
     title: 'Stair Handrail Cost Guide: Installation & What to Expect (2026)',
     description: 'Stair handrail installation costs, ADA height requirements, DIY vs. professional, and how to get funding through grants.',
