@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
 import { NewsletterSignup } from '@/components/NewsletterSignup';
-import { Shield, Star, Users } from 'lucide-react';
+import { Shield, Star, Users, BarChart2, BookOpen, ClipboardList } from 'lucide-react';
 import { Suspense } from 'react';
 
 async function getFeaturedProducts() {
@@ -42,9 +42,15 @@ export default async function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/products"
+              href="/assess"
               className="px-6 py-3 rounded-lg font-semibold text-base transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#D97706', color: '#fff' }}
+            >
+              Free Home Assessment
+            </Link>
+            <Link
+              href="/products"
+              className="px-6 py-3 rounded-lg font-semibold text-base border-2 border-white text-white hover:bg-white hover:text-green-900 transition-colors"
             >
               Browse Products
             </Link>
@@ -58,20 +64,40 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Trust signals */}
+      {/* Stats bar */}
       <section className="py-10 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-center">
-          <div className="flex items-center gap-2 text-gray-700">
-            <Shield size={20} style={{ color: '#1B4332' }} />
-            <span className="text-sm font-medium">CAPS-Certified Contractors Only</span>
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>56</div>
+              <div className="text-sm text-gray-500 mt-1">Products Reviewed</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>114+</div>
+              <div className="text-sm text-gray-500 mt-1">CAPS Contractors Listed</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>50</div>
+              <div className="text-sm text-gray-500 mt-1">States Covered</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl font-bold" style={{ color: '#1B4332' }}>15</div>
+              <div className="text-sm text-gray-500 mt-1">Cost & Buyer's Guides</div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-gray-700">
-            <Star size={20} style={{ color: '#D97706' }} />
-            <span className="text-sm font-medium">Independent SafeScore™ Ratings</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-700">
-            <Users size={20} style={{ color: '#1B4332' }} />
-            <span className="text-sm font-medium">No Ads, No Sponsored Rankings</span>
+          <div className="mt-8 flex flex-wrap justify-center gap-6">
+            <div className="flex items-center gap-2 text-gray-600">
+              <Shield size={16} style={{ color: '#1B4332' }} />
+              <span className="text-sm">CAPS-Certified Contractors Only</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Star size={16} style={{ color: '#D97706' }} />
+              <span className="text-sm">Independent SafeScore™ Ratings</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Users size={16} style={{ color: '#1B4332' }} />
+              <span className="text-sm">No Paid Rankings or Sponsored Content</span>
+            </div>
           </div>
         </div>
       </section>
@@ -124,18 +150,25 @@ export default async function HomePage() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div>
+              <div className="flex items-center gap-2 mb-2">
+                <BookOpen size={16} style={{ color: '#1B4332' }} />
+                <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>Guides</span>
+              </div>
               <h2 className="font-serif text-3xl font-semibold" style={{ color: '#1A1A1A' }}>Cost Guides & Buyer&apos;s Guides</h2>
               <p className="text-gray-500 mt-1">No fluff — just what things cost and how to choose.</p>
             </div>
             <Link href="/guides" className="hidden md:block font-semibold text-sm hover:underline" style={{ color: '#1B4332' }}>
-              View all guides →
+              View all 15 guides →
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
               { slug: 'stairlift-cost-guide', title: 'How Much Does a Stairlift Cost?', icon: '🪜', tag: 'Cost Guide' },
               { slug: 'does-medicare-cover-stairlifts', title: 'Does Medicare Cover Stairlifts?', icon: '🏥', tag: 'Insurance' },
-              { slug: 'home-modification-grants-for-seniors', title: 'Home Modification Grants for Seniors', icon: '💰', tag: 'Insurance' },
+              { slug: 'home-modification-grants-for-seniors', title: 'Home Modification Grants for Seniors', icon: '💰', tag: 'Grants' },
+              { slug: 'bathroom-safety-modifications-for-seniors', title: 'Bathroom Safety Modifications for Seniors', icon: '🚿', tag: 'Planning' },
+              { slug: 'aging-in-place-home-modifications-checklist', title: 'Complete Aging-in-Place Checklist', icon: '📋', tag: 'Planning' },
+              { slug: 'aging-in-place-tax-deductions', title: 'Tax Deductions for Home Modifications', icon: '🧾', tag: 'Finance' },
             ].map(g => (
               <Link
                 key={g.slug}
@@ -146,10 +179,73 @@ export default async function HomePage() {
                   <span className="text-xl">{g.icon}</span>
                   <span className="text-xs font-semibold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: '#D97706' }}>{g.tag}</span>
                 </div>
-                <h3 className="font-serif font-semibold text-gray-900 group-hover:text-green-800 transition-colors">{g.title}</h3>
+                <h3 className="font-serif font-semibold text-gray-900 group-hover:text-green-800 transition-colors leading-tight">{g.title}</h3>
                 <p className="text-xs text-green-800 mt-2 font-medium">Read guide →</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compare section */}
+      <section className="py-16 px-4" style={{ backgroundColor: '#F5F5F0' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <BarChart2 size={16} style={{ color: '#1B4332' }} />
+                <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>Comparisons</span>
+              </div>
+              <h2 className="font-serif text-3xl font-semibold" style={{ color: '#1A1A1A' }}>Side-by-Side Comparisons</h2>
+              <p className="text-gray-500 mt-1">Top products ranked by SafeScore™ so you can choose with confidence.</p>
+            </div>
+            <Link href="/compare" className="hidden md:block font-semibold text-sm hover:underline" style={{ color: '#1B4332' }}>
+              View all comparisons →
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { slug: 'best-stairlifts', title: 'Best Stairlifts of 2026', icon: '🪜', count: 6 },
+              { slug: 'best-walk-in-tubs', title: 'Best Walk-In Tubs of 2026', icon: '🛁', count: 5 },
+              { slug: 'best-grab-bars', title: 'Best Grab Bars of 2026', icon: '🔩', count: 6 },
+              { slug: 'best-medical-alerts', title: 'Best Medical Alert Systems', icon: '🚨', count: 5 },
+              { slug: 'best-rollator-walkers', title: 'Best Rollator Walkers', icon: '🦽', count: 5 },
+              { slug: 'best-wheelchair-ramps', title: 'Best Wheelchair Ramps', icon: '♿', count: 6 },
+            ].map(c => (
+              <Link
+                key={c.slug}
+                href={`/compare/${c.slug}`}
+                className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-100 hover:border-green-700 hover:shadow-sm transition-all group"
+              >
+                <span className="text-2xl shrink-0">{c.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-sm text-gray-800 group-hover:text-green-800 transition-colors leading-tight">{c.title}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{c.count} products compared</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Assessment CTA */}
+      <section className="py-16 px-4 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl p-10 text-center" style={{ backgroundColor: '#1B4332' }}>
+            <ClipboardList size={40} className="mx-auto mb-4 opacity-80 text-white" />
+            <h2 className="font-serif text-3xl font-bold text-white mb-3">
+              Not Sure Where to Start?
+            </h2>
+            <p className="text-white opacity-80 max-w-xl mx-auto mb-8 text-lg">
+              Take our free 5-question home safety assessment and get personalized recommendations in under 2 minutes.
+            </p>
+            <Link
+              href="/assess"
+              className="inline-block px-10 py-4 rounded-lg font-semibold text-base transition-opacity hover:opacity-90"
+              style={{ backgroundColor: '#D97706', color: '#fff' }}
+            >
+              Take the Free Assessment →
+            </Link>
           </div>
         </div>
       </section>

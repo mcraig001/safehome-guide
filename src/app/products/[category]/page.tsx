@@ -60,9 +60,9 @@ const CATEGORY_META: Record<string, {
   },
   'wheelchair-ramps': {
     guideSlug: 'wheelchair-ramp-cost-guide',
-    compareSlug: undefined,
+    compareSlug: 'best-wheelchair-ramps',
     guideName: 'Wheelchair Ramp Cost Guide',
-    compareName: undefined,
+    compareName: 'Best Wheelchair Ramps',
     intro: 'Wheelchair ramps range from $100 for a small threshold ramp to $3,500+ for a permanent modular system. ADA guidelines recommend 1:12 slope — one foot of ramp per inch of rise. The right choice depends on whether the need is temporary or permanent.',
     buyingTips: [
       'Use the 1:12 rule: a 6-inch step needs a 6-foot ramp minimum',
@@ -99,9 +99,9 @@ const CATEGORY_META: Record<string, {
   },
   'bath-safety': {
     guideSlug: 'bathroom-safety-modifications-for-seniors',
-    compareSlug: undefined,
+    compareSlug: 'best-bath-safety-products',
     guideName: 'Bathroom Safety Guide',
-    compareName: undefined,
+    compareName: 'Best Bath Safety Products',
     intro: 'The bathroom is the highest-risk room in the home for older adults — 80% of senior falls happen there. Bath safety products like shower chairs, transfer benches, and non-slip mats address the most common hazards at low cost.',
     buyingTips: [
       'A shower chair + grab bar combination addresses most bathroom fall risks',
@@ -125,9 +125,9 @@ const CATEGORY_META: Record<string, {
   },
   'smart-home-safety': {
     guideSlug: undefined,
-    compareSlug: undefined,
+    compareSlug: 'best-smart-home-safety-devices',
     guideName: undefined,
-    compareName: undefined,
+    compareName: 'Best Smart Home Safety Devices',
     intro: 'Smart home safety devices — smoke detectors, carbon monoxide alarms, smart locks, and monitoring systems — provide an additional layer of protection. Many connect to smartphones so family caregivers can monitor safety remotely.',
     buyingTips: [
       'Interconnected smoke and CO detectors are safer than standalone units',
@@ -138,9 +138,9 @@ const CATEGORY_META: Record<string, {
   },
   'door-access': {
     guideSlug: undefined,
-    compareSlug: undefined,
+    compareSlug: 'best-smart-door-locks',
     guideName: undefined,
-    compareName: undefined,
+    compareName: 'Best Smart Door Locks',
     intro: 'Door access and keyless entry products eliminate the struggle with keys and locks — important for people with arthritis, cognitive decline, or reduced hand strength. Smart deadbolts, keypad locks, and garage door openers are the most common solutions.',
     buyingTips: [
       'Keypad locks eliminate the need to fumble with keys — critical for arthritis',
