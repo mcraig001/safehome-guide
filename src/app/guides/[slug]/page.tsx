@@ -1,7 +1,8 @@
 import { supabase } from '@/lib/supabase';
 import { ProductCard } from '@/components/ProductCard';
 import { LeadForm } from '@/components/LeadForm';
-import { faqSchema, breadcrumbSchema, articleSchema } from '@/lib/schema';
+import { NewsletterSignup } from '@/components/NewsletterSignup';
+import { faqSchema, breadcrumbSchema, articleSchema, howToSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -585,6 +586,32 @@ export default async function GuidePage({ params }: Props) {
     .limit(4);
 
   const faqSchemaData = faqSchema(meta.faqs);
+
+  // HowTo schema for installation/checklist guides
+  const HOW_TO_STEPS: Record<string, { name: string; text: string }[]> = {
+    'grab-bar-installation-guide': [
+      { name: 'Choose grab bar locations', text: 'Identify the three key bathroom locations: inside shower (horizontal bar 33–36 inches from floor), shower entry (vertical bar for stepping in/out), and beside toilet (horizontal bar 33 inches from floor).' },
+      { name: 'Locate wall studs', text: 'Use a stud finder to locate studs behind the wall. Mark stud locations with tape. Grab bars must anchor into studs or use rated toggle anchors — drywall alone will not hold.' },
+      { name: 'Mark hole positions', text: 'Position the grab bar mounting flange over a stud location. Mark the screw holes with a pencil. Verify the bar height matches ADA guidelines before drilling.' },
+      { name: 'Pre-drill holes and anchor', text: 'Drill pilot holes at marked positions. For stud anchoring, drive screws directly. For tile walls, use a tile drill bit and appropriate wall anchors rated for 250+ lbs.' },
+      { name: 'Attach mounting flanges', text: 'Secure the mounting flanges to the wall. Ensure each flange is level before tightening. Test each flange individually before attaching the bar.' },
+      { name: 'Install and test the bar', text: 'Attach the grab bar to the mounted flanges. Tighten all screws completely. Apply 300 lbs of force to verify the installation — the bar should not flex or move.' },
+    ],
+    'wheelchair-ramp-cost-guide': [
+      { name: 'Measure the rise height', text: 'Measure the vertical height from the bottom landing to the top of the threshold or step. This measurement determines the minimum ramp length.' },
+      { name: 'Calculate required ramp length', text: 'Using the ADA 1:12 slope ratio, multiply the rise height (in inches) by 12 to get the minimum ramp length in inches. Example: 6-inch rise requires 72 inches (6 feet) minimum.' },
+      { name: 'Select ramp type', text: 'For rises under 3 inches: threshold ramp ($50–$150). For 4–24 inch rises with portability need: suitcase-style aluminum ramp ($150–$400). For permanent entry steps: modular aluminum system ($1,200–$3,500).' },
+      { name: 'Check permit requirements', text: 'Permanent attached ramps typically require a building permit. Freestanding modular ramps generally do not. Contact your local building department before beginning permanent construction.' },
+      { name: 'Install or hire contractor', text: 'Portable ramps require no installation. Modular systems come with detailed instructions and can be DIY assembled. Permanent ramps should be built by a licensed contractor, ideally CAPS-certified.' },
+    ],
+  };
+
+  const howToSchemaData = HOW_TO_STEPS[slug] ? howToSchema({
+    name: meta.title,
+    description: meta.intro,
+    steps: HOW_TO_STEPS[slug],
+  }) : null;
+
   const articleSchemaData = articleSchema({
     headline: meta.title,
     description: meta.description,
@@ -603,6 +630,7 @@ export default async function GuidePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchemaData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      {howToSchemaData && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchemaData) }} />}
 
       {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
@@ -689,6 +717,15 @@ export default async function GuidePage({ params }: Props) {
               </div>
             </section>
           )}
+
+          {/* Newsletter mid-guide */}
+          <div className="mb-10">
+            <NewsletterSignup
+              headline="Free: Complete Aging-in-Place Checklist"
+              subtext="Room-by-room priorities, cost estimates, and what to do first. Get it free."
+              source={`guide-${slug}`}
+            />
+          </div>
 
           {/* FAQ */}
           <section className="mb-10">
