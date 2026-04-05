@@ -103,12 +103,19 @@ const GUIDE_META: Record<string, {
   costBreakdown?: { item: string; low: number; high: number }[];
   hideTotal?: boolean;
   compareSlug?: string;
+  keyTakeaways?: string[];
 }> = {
   'stairlift-cost-guide': {
     title: 'How Much Does a Stairlift Cost in 2026?',
     description: 'Complete stairlift cost guide: new vs refurbished, straight vs curved, installation fees, and financing options. Updated March 2026.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Straight stairlifts cost $2,000–$5,000 installed. Curved stairlifts cost $8,000–$15,000.',
+      'Medicare does not cover stairlifts — VA grants and Medicaid waivers may for qualifying individuals.',
+      'Refurbished straight stairlifts from reputable dealers start around $1,000–$2,500.',
+      'Get at least 3 quotes — prices vary significantly by dealer even for the same brand.',
+    ],
     intro: 'Stairlifts range from $2,000 for a basic straight-rail model to over $15,000 for a custom curved installation. The biggest cost drivers are the staircase shape, weight capacity, and brand. This guide breaks down every cost factor so you know exactly what to budget.',
     faqs: [
       { question: 'Does Medicare cover stairlifts?', answer: 'Standard Medicare (Parts A and B) does not cover stairlifts because they are not classified as durable medical equipment. Some Medicare Advantage plans and Medicaid programs may offer partial coverage — check with your specific plan.' },
@@ -129,6 +136,12 @@ const GUIDE_META: Record<string, {
     description: 'Walk-in tub prices, installation costs, and what insurance may cover. Includes brand comparisons and buying tips.',
     category: 'walk-in-tubs',
     compareSlug: 'best-walk-in-tubs',
+    keyTakeaways: [
+      'Walk-in tubs cost $2,500–$8,000 total installed (unit + installation + plumbing).',
+      'Prioritize fast-drain technology — you must wait inside while the tub drains.',
+      'Look for a door threshold under 3 inches — lower means safer entry.',
+      'Both American Standard and Safe Step use aggressive in-home sales tactics — always get 2+ competing quotes.',
+    ],
     intro: 'Walk-in tubs typically cost $1,500–$5,000 for the unit, plus $1,000–$3,000 for professional installation — a total investment of $2,500–$8,000. Soaking and hydrotherapy models cost more. Here\'s everything that affects the final price.',
     faqs: [
       { question: 'Does insurance cover walk-in tubs?', answer: 'Private health insurance rarely covers walk-in tubs. Medicaid Home and Community-Based Services (HCBS) waivers may cover them for qualifying seniors. Some VA programs cover bathroom modifications for veterans.' },
@@ -148,6 +161,12 @@ const GUIDE_META: Record<string, {
     description: 'ADA-compliant grab bar placement, installation costs, and which bars work best for different needs. Written with occupational therapists.',
     category: 'grab-bars',
     compareSlug: 'best-grab-bars',
+    keyTakeaways: [
+      'A full bathroom set of 3 grab bars costs $400–$900 professionally installed.',
+      'Bars must anchor into wall studs or rated anchors — never into drywall alone.',
+      'ADA toilet bar: 42 inches long, horizontal, 33 inches from the floor on the side wall.',
+      'Shower horizontal bar: 33–36 inches high on the long wall; vertical bar at the entry point.',
+    ],
     intro: 'Grab bars are one of the most cost-effective home safety investments — a single professionally installed bar costs $75–$200, and they prevent tens of thousands of bathroom falls each year. Correct placement matters as much as the product itself.',
     faqs: [
       { question: 'Can grab bars be installed on any wall?', answer: 'Grab bars must be anchored into wall studs or with toggle bolt anchors rated for 250+ lbs. Drywall alone cannot support a grab bar safely. A professional installer will locate studs or use specialized anchors.' },
@@ -166,6 +185,12 @@ const GUIDE_META: Record<string, {
     description: 'Medicare Parts A, B, and C coverage for stairlifts explained — plus Medicaid waiver programs, VA benefits, and state grant programs that may help pay.',
     category: 'stairlifts',
     compareSlug: 'best-stairlifts',
+    keyTakeaways: [
+      'Standard Medicare Parts A and B do NOT cover stairlifts (they\'re not classified as durable medical equipment).',
+      'Some Medicare Advantage plans include home safety benefits — call your plan and ask specifically.',
+      'Veterans may qualify for VA SAH or SHA grants covering up to $109,986 for home modifications.',
+      'Medicaid HCBS waiver programs in many states cover stairlifts for income-eligible seniors.',
+    ],
     intro: 'The short answer: standard Medicare (Parts A and B) does not cover stairlifts. However, several alternative programs — including some Medicare Advantage plans, Medicaid HCBS waivers, and VA benefits — may cover part or all of the cost. Here\'s how to find out what you qualify for.',
     faqs: [
       { question: 'Does Medicare Part B cover stairlifts?', answer: 'No. Medicare Part B covers durable medical equipment (DME) such as wheelchairs, walkers, and hospital beds. Stairlifts are classified as home modifications — not DME — so they fall outside Part B coverage. This classification has not changed under recent CMS rulemakings.' },
@@ -272,6 +297,12 @@ const GUIDE_META: Record<string, {
     title: 'Home Modification Grants for Seniors: Every Program Explained (2026)',
     description: 'Complete guide to grants, loans, and benefits for senior home modifications — USDA, Area Agency on Aging, Medicaid waivers, VA grants, and state programs.',
     category: 'grab-bars',
+    keyTakeaways: [
+      'USDA Section 504 grants: up to $10,000 for rural low-income homeowners. No repayment required.',
+      'VA SAH/SHA grants: up to $109,986 for veterans with qualifying service-connected disabilities.',
+      'Medicaid HCBS waivers: cover modifications in many states for income-eligible seniors. Ask your Area Agency on Aging.',
+      'Call 1-800-677-1116 (Eldercare Locator) to find local programs — many operate without a national web presence.',
+    ],
     intro: 'Multiple government and nonprofit programs offer free or low-cost funding for aging-in-place home modifications. Most families don\'t know these programs exist. This guide covers every major program — federal, state, and nonprofit — and explains how to apply.',
     faqs: [
       { question: 'What is the USDA Section 504 program?', answer: 'The USDA Section 504 Rural Repair and Rehabilitation Program provides grants up to $10,000 (or loans up to $40,000) to very-low-income homeowners in rural areas to repair, improve, or modernize their homes. Income must be below 50% of area median income. Apply through your local USDA Rural Development office.' },
@@ -818,6 +849,12 @@ const GUIDE_META: Record<string, {
     description: 'How to prevent falls at home for seniors. Room-by-room checklist, fall risk factors, home modification costs, and when to call an occupational therapist.',
     category: 'grab-bars',
     compareSlug: 'best-bath-safety-products',
+    keyTakeaways: [
+      'The bathroom is the highest-risk room — grab bars and non-slip surfaces prevent most bathroom falls.',
+      'Remove loose throw rugs — they cause more senior falls than any other single hazard.',
+      'Motion-activated night lights from bedroom to bathroom address the most common nighttime fall scenario.',
+      'Tai Chi has the strongest evidence for reducing fall risk through exercise — ask about senior programs.',
+    ],
     intro: 'Falls are the leading cause of injury death among adults 65 and older — over 36,000 Americans die from falls each year, and millions more visit emergency rooms. Most home falls are preventable with the right modifications and habits. This guide covers every evidence-based step you can take to reduce fall risk at home.',
     faqs: [
       { question: 'What are the most common causes of falls in seniors?', answer: 'The top causes: (1) Environmental hazards (loose rugs, poor lighting, cluttered pathways), (2) Muscle weakness and balance decline, (3) Medication side effects (particularly blood pressure, sleep, and anti-anxiety medications), (4) Vision impairment, (5) Rushing — many falls happen when hurrying to the bathroom at night. A geriatric physician can conduct a formal fall risk assessment.' },
@@ -1185,9 +1222,26 @@ export default async function GuidePage({ params }: Props) {
             <ShareButtons title={meta.title} url={`https://www.safeathomeguides.com/guides/${slug}`} />
           </div>
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-10 border-l-4 pl-4" style={{ borderColor: '#1B4332' }}>
+          <p className="text-gray-700 text-lg leading-relaxed mb-8 border-l-4 pl-4" style={{ borderColor: '#1B4332' }}>
             {meta.intro}
           </p>
+
+          {/* Key Takeaways */}
+          {meta.keyTakeaways && meta.keyTakeaways.length > 0 && (
+            <section className="mb-10 rounded-xl border border-green-200 p-5" style={{ backgroundColor: '#f0fdf4' }}>
+              <h2 className="font-semibold text-sm uppercase tracking-wide mb-3" style={{ color: '#1B4332' }}>
+                Key Takeaways
+              </h2>
+              <ul className="space-y-2">
+                {meta.keyTakeaways.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed">
+                    <CheckCircle size={16} className="shrink-0 mt-0.5" style={{ color: '#1B4332' }} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* Cost breakdown */}
           {meta.costBreakdown && (
