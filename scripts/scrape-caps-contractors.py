@@ -39,7 +39,7 @@ supabase = create_client(
 # Current approach: scrape via the credentials search page when logged in,
 # or use the seed data script (scripts/seed-caps-contractors.py) for initial data.
 CAPS_BASE_URL = "https://www.nahb.org/nahb-community/nahb-directories"
-SLACK_API_URL = "http://localhost:3002/api/post-to-slack"
+SLACK_API_URL = "http://localhost:3001/slack/ops"
 
 ALL_STATES = [
     ('Alabama', 'AL'), ('Alaska', 'AK'), ('Arizona', 'AZ'), ('Arkansas', 'AR'),

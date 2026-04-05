@@ -39,7 +39,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     // Compare pages
     ...['best-stairlifts','best-walk-in-tubs','best-grab-bars','best-medical-alerts',
-        'best-rollator-walkers'].map(slug => ({
+        'best-rollator-walkers','best-bath-safety-products','best-wheelchair-ramps',
+        'best-smart-home-safety-devices','best-smart-door-locks'].map(slug => ({
       url: `${BASE}/compare/${slug}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="white"/>
+
+  <!-- ── House body ── -->
+  <!-- Roof -->
+  <polygon points="200,70 295,155 105,155" fill="#1a3c6e"/>
+  <!-- Chimney -->
+  <rect x="240" y="88" width="22" height="40" rx="3" fill="#1a3c6e"/>
+  <!-- Walls -->
+  <rect x="118" y="152" width="164" height="118" rx="4" fill="#1a3c6e"/>
+  <!-- Door -->
+  <rect x="178" y="210" width="44" height="60" rx="6" fill="white" opacity="0.15"/>
+
+  <!-- ── Shield inside house (centered in wall area) ── -->
+  <path d="M200,168 L227,180 L227,208 Q227,228 200,240 Q173,228 173,208 L173,180 Z"
+        fill="#4a9e6b"/>
+
+  <!-- Heart inside shield -->
+  <path d="M200,196
+           C200,196 188,186 188,179
+           C188,174 192,171 196,173
+           C198,174 200,177 200,177
+           C200,177 202,174 204,173
+           C208,171 212,174 212,179
+           C212,186 200,196 200,196 Z"
+        fill="white"/>
+
+  <!-- ── Text ── -->
+  <text x="200" y="290"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="38"
+        font-weight="bold"
+        fill="#1a3c6e"
+        text-anchor="middle"
+        letter-spacing="0.5">SafeAtHome</text>
+
+  <text x="200" y="330"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="26"
+        fill="#4a9e6b"
+        text-anchor="middle"
+        letter-spacing="3">GUIDE</text>
+
+  <!-- Subtle underline accent -->
+  <line x1="148" y1="340" x2="252" y2="340" stroke="#4a9e6b" stroke-width="2" stroke-linecap="round"/>
+
+</svg>

@@ -52,6 +52,34 @@ const COMPARISON_META: Record<string, {
     intro: 'Rollator walkers vary significantly in weight, wheel size, and stability. We scored the top models on safety, maneuverability, comfort, and value — whether you need it mostly indoors or for outdoor use.',
     verdict: 'For outdoor use, choose a rollator with 8-inch wheels for better terrain handling. For indoor use, a compact lightweight model under 15 lbs is easier to maneuver in tight spaces. Always check weight capacity and seat height before buying.',
   },
+  'best-bath-safety-products': {
+    title: 'Best Bath Safety Products of 2026: Shower Chairs, Benches & More',
+    description: 'Top bath safety products compared — shower chairs, transfer benches, grab bars, and handheld showerheads. Rated for safety, stability, and ease of use.',
+    category: 'bath-safety',
+    intro: 'Bath safety products range from simple non-slip mats to wall-mounted shower benches and fully equipped transfer systems. We compared the top options on safety, stability, installation complexity, and value.',
+    verdict: 'For most seniors, start with a handheld showerhead ($30–$50) and non-slip mat — then add a shower chair or bench if seated bathing is needed. Wall-mounted benches are more stable but require installation.',
+  },
+  'best-wheelchair-ramps': {
+    title: 'Best Wheelchair Ramps of 2026: Portable vs. Permanent',
+    description: 'Top wheelchair ramps compared — portable folding, modular aluminum, and threshold ramps. Rated on weight capacity, portability, and value.',
+    category: 'wheelchair-ramps',
+    intro: 'Wheelchair ramp options range from $50 threshold ramps to $4,000 permanent modular systems. The right choice depends on rise height, whether the need is temporary or permanent, and whether the ramp needs to be portable. We compared the top options.',
+    verdict: 'For small threshold rises (under 3 inches), a rubber threshold ramp is sufficient. For step entries up to 24 inches, a suitcase-style portable ramp works. For permanent step entries of any height, a modular aluminum system is the most durable solution.',
+  },
+  'best-smart-home-safety-devices': {
+    title: 'Best Smart Home Safety Devices for Seniors (2026)',
+    description: 'Top smart home safety products compared — video doorbells, smart smoke detectors, voice assistants, and security systems for aging in place.',
+    category: 'smart-home-safety',
+    intro: 'Smart home safety devices help seniors live independently longer by adding automated alerts, remote monitoring, and voice-controlled access to help. We compared the top devices on reliability, ease of use, and safety impact.',
+    verdict: 'For most homes, start with a Wi-Fi smoke and CO detector and a video doorbell — these two devices address the most common safety gaps at under $200 combined. A voice assistant (Alexa/Echo Show) is the next most impactful addition for daily safety.',
+  },
+  'best-smart-door-locks': {
+    title: 'Best Smart Door Locks for Seniors & Aging in Place (2026)',
+    description: 'Top smart locks and keypad deadbolts compared — keyless entry, auto-lock, and caregiver access features. Ideal for seniors and aging-in-place homes.',
+    category: 'door-access',
+    intro: 'Smart locks and keypad deadbolts eliminate the need to fumble with keys — particularly valuable for seniors with arthritis or cognitive decline. We compared the top models on ease of use, security, and caregiver-friendly features.',
+    verdict: 'For most seniors, a Grade 1 keypad deadbolt with auto-lock is the right choice — it eliminates keys while maintaining security. Add a smart lock with an app if a family caregiver needs remote monitoring or access management.',
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
