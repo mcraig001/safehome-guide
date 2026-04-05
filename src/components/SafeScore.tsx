@@ -47,12 +47,12 @@ export function SafeScore({ score, breakdown, size = 'md' }: SafeScoreProps) {
             <div key={key}>
               <div className="flex justify-between mb-0.5">
                 <span className="capitalize">{key.replace(/_/g, ' ')}</span>
-                <span className="font-mono font-medium">{val}</span>
+                <span className="font-mono font-medium">{val}<span className="text-gray-400 font-normal">/25</span></span>
               </div>
               <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
                 <div
                   className="h-full rounded-full"
-                  style={{ width: `${val}%`, backgroundColor: val >= 80 ? '#1B4332' : val >= 60 ? '#D97706' : '#DC2626' }}
+                  style={{ width: `${Math.round((val / 25) * 100)}%`, backgroundColor: val >= 20 ? '#1B4332' : val >= 15 ? '#D97706' : '#DC2626' }}
                 />
               </div>
             </div>
