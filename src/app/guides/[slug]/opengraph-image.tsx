@@ -49,6 +49,8 @@ const GUIDE_META: Record<string, { title: string; category: string }> = {
   'stairlift-financing': { title: 'How to Finance a Stairlift 2026', category: 'Stairlifts' },
   'helping-aging-parents-at-home': { title: 'How to Help Aging Parents Stay at Home (2026)', category: 'Planning' },
   'does-medicaid-cover-home-modifications': { title: 'Does Medicaid Cover Home Modifications?', category: 'Insurance' },
+  'smart-home-for-aging-in-place': { title: 'Smart Home Devices for Aging in Place (2026)', category: 'Smart Home' },
+  'no-monthly-fee-medical-alert': { title: 'Medical Alert Systems Without Monthly Fees (2026)', category: 'Medical Alerts' },
 };
 
 export default function OGImage({ params }: { params: { slug: string } }) {

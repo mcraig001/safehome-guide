@@ -61,7 +61,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'grab-bar-types-guide',
         'stairlift-financing',
         'helping-aging-parents-at-home',
-        'does-medicaid-cover-home-modifications'].map(slug => ({
+        'does-medicaid-cover-home-modifications',
+        'smart-home-for-aging-in-place',
+        'no-monthly-fee-medical-alert'].map(slug => ({
       url: `${BASE}/guides/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

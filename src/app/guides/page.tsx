@@ -405,6 +405,24 @@ const guides = [
     readTime: '5 min read',
     type: 'insurance',
   },
+  {
+    slug: 'smart-home-for-aging-in-place',
+    title: 'Smart Home Devices for Aging in Place: A Complete Setup Guide (2026)',
+    description: 'The best smart home devices for seniors — voice assistants, smart smoke detectors, video doorbells, and caregiver monitoring systems.',
+    category: 'Smart Home Safety',
+    icon: '🏠',
+    readTime: '6 min read',
+    type: 'planning',
+  },
+  {
+    slug: 'no-monthly-fee-medical-alert',
+    title: 'Medical Alert Systems Without Monthly Fees: Are They Worth It?',
+    description: 'No-fee medical alert options vs. monitored systems compared. What you lose without monitoring, and when going fee-free actually makes sense.',
+    category: 'Medical Alerts',
+    icon: '🚨',
+    readTime: '5 min read',
+    type: 'planning',
+  },
 ];
 
 const typeColors: Record<string, string> = {

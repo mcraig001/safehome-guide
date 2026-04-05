@@ -1003,6 +1003,49 @@ const GUIDE_META: Record<string, {
       { question: 'At what point should aging parents move out of their home?', answer: 'There\'s no universal threshold. The conversation about moving should happen when: (1) Safety concerns persist despite modifications; (2) Care needs exceed what family and in-home aides can provide; (3) Isolation and cognitive decline are accelerating; (4) The financial cost of aging in place approaches the cost of assisted living. A geriatric care manager ($150–$250/hour) can provide a professional opinion and help families have this conversation constructively.' },
     ],
   },
+  'smart-home-for-aging-in-place': {
+    title: 'Smart Home Devices for Aging in Place: A Complete Setup Guide (2026)',
+    description: 'The best smart home devices for seniors aging in place. Voice assistants, smart smoke detectors, video doorbells, fall detection, and caregiver monitoring.',
+    category: 'smart-home-safety',
+    compareSlug: 'best-smart-home-safety-devices',
+    intro: 'Smart home technology has become one of the most practical tools for helping seniors remain independent at home longer. From voice-controlled reminders to automated door locks and caregiver monitoring apps, a well-configured smart home can address real safety gaps at a relatively low cost. This guide covers the most impactful devices, what they cost, and how to set them up for aging in place.',
+    faqs: [
+      { question: 'What smart home devices are most useful for aging in place?', answer: 'In order of impact: (1) Smart smoke/CO detector (alerts caregivers immediately); (2) Video doorbell (safe visitor screening without getting up); (3) Voice assistant with screen (hands-free calls, reminders, music — reduces isolation); (4) Smart door lock with auto-lock (keyless entry, prevents forgetting to lock); (5) Motion-activated night lights (eliminates dark bedroom-to-bathroom trips). All five can be set up for under $600.' },
+      { question: 'Do seniors need to be tech-savvy to use smart home devices?', answer: 'No — most modern devices are designed to be used without a smartphone. Amazon Echo Show operates entirely by voice: "Alexa, call my daughter" requires no app or touchscreen skill. Smart smoke detectors and door locks can be configured once by a family member and then require no ongoing management by the senior. Start with a single device (Echo Show or smart smoke detector) to build comfort before adding more.' },
+      { question: 'Can family caregivers monitor elderly parents remotely with smart home technology?', answer: 'Yes — activity monitoring systems (like Amazon Alexa Together, or dedicated systems like GrandPad or Alarm.com) alert family when motion patterns change. A caregiver can see "Mom hasn\'t opened the kitchen yet this morning" and check in proactively. Video doorbells allow caregivers to see who is at the door remotely. Smart locks allow caregivers to let in aides or emergency services remotely. This monitoring capability extends safe independent living significantly.' },
+      { question: 'What is the most important smart home device for fall prevention?', answer: 'Motion-activated night lights are the highest-impact, lowest-cost fall prevention device. Most nighttime falls happen on the trip to the bathroom — automated lighting eliminates the dangerous dark walk. A voice assistant (Amazon Echo) can also be used to call for help after a fall without reaching for a phone. A dedicated medical alert system (with fall detection) provides more reliable emergency response than any smart home device.' },
+      { question: 'How do smart home devices work with a medical alert system?', answer: 'Smart home devices and medical alert systems serve complementary but different functions. A medical alert system is the primary emergency response tool — it should always be worn. Smart home devices add layers of daily safety: automated locks prevent wandering, smoke detectors alert caregivers, and voice assistants allow easy calls. Amazon Alexa together, Bay Alarm Medical, and Medical Guardian all have partnerships or integrations that combine monitoring and smart home features.' },
+    ],
+    costBreakdown: [
+      { item: 'Smart smoke/CO detector (Nest Protect)', low: 100, high: 150 },
+      { item: 'Video doorbell (Ring or Nest)', low: 60, high: 200 },
+      { item: 'Voice assistant (Echo Show)', low: 100, high: 250 },
+      { item: 'Smart door lock (keypad)', low: 80, high: 200 },
+      { item: 'Motion night lights (set of 4)', low: 25, high: 60 },
+      { item: 'Smart home hub / caregiver monitoring', low: 50, high: 200 },
+    ],
+  },
+  'no-monthly-fee-medical-alert': {
+    title: 'Medical Alert Systems Without Monthly Fees: Are They Worth It? (2026)',
+    description: 'Medical alert systems with no monthly fee compared to traditional monitored systems. What you give up, what you get, and the honest recommendation.',
+    category: 'medical-alerts',
+    compareSlug: 'best-medical-alerts',
+    hideTotal: true,
+    intro: 'The appeal of a medical alert system with no ongoing monthly fee is obvious — traditional systems cost $20–$55/month, which adds up to $240–$660 per year. But there are significant trade-offs when you skip the professional monitoring center. This guide explains exactly what you lose without monitoring, which "no monthly fee" options actually make sense, and when a traditional monitored system is worth the cost.',
+    faqs: [
+      { question: 'Can you get a medical alert system with no monthly fee?', answer: 'Yes — several options exist without ongoing fees: (1) Basic cellular button devices that call pre-programmed contacts directly, bypassing a monitoring center; (2) Apple Watch or Samsung Galaxy Watch with fall detection and emergency SOS (require cellular service only); (3) Bay Alarm Medical and others sell "self-monitoring" plans without monitoring center fees; (4) Alexa together (Amazon) provides family monitoring with no monthly fee. Each has significant limitations compared to professional monitoring.' },
+      { question: 'What do you lose without professional medical alert monitoring?', answer: 'With professional monitoring, a trained dispatcher calls within 30–45 seconds, verifies the situation, and dispatches emergency services if needed — even if the user is unconscious or can\'t speak. Without monitoring, the system calls family or pre-programmed numbers. If family doesn\'t answer, no help comes. For seniors who live alone, professional monitoring is strongly recommended — the risk of an undetected emergency is too high.' },
+      { question: 'Is Apple Watch a good substitute for a medical alert system?', answer: 'Apple Watch Series 4 and later include fall detection and Emergency SOS (calls 911 directly). This is genuinely useful and better than no system at all. Limitations: it must be worn and charged daily (medical alert pendants have 5-day battery life), the fall detection is designed for exercise contexts and may miss stationary falls, and there is no monitoring center for situations where the user cannot respond. For active seniors in their 60s-70s, it\'s a good option. For older, more fragile seniors or those living alone, a dedicated medical alert system is still the better choice.' },
+      { question: 'What is the cheapest monitored medical alert system?', answer: 'Bay Alarm Medical and LifeStation start at $19–$22/month for basic in-home monitoring — below average for the category. Medical Guardian starts at $29/month. GreatCall (Lively) starts at $24/month. All offer month-to-month billing with no contract. For context: at $20/month, that\'s $240/year — comparable to one emergency room copay or one month of assisted living.' },
+      { question: 'Should I buy or rent a medical alert system?', answer: 'All major medical alert providers are subscription-based — there is no "buy once, no fee" option for a traditional monitored system. You rent the equipment (usually free or low-cost) and pay for the monitoring service monthly. If you stop paying, the monitoring service stops. For a true one-time-purchase option, look at Apple Watch, a pre-programmed cell phone, or a standalone GPS button that calls contacts directly (not a monitoring center).' },
+    ],
+    costBreakdown: [
+      { item: 'Basic home medical alert (annual)', low: 240, high: 360 },
+      { item: 'GPS mobile medical alert (annual)', low: 360, high: 600 },
+      { item: 'Apple Watch with fall detection (one-time)', low: 250, high: 450 },
+      { item: 'Self-monitoring button (no monthly fee)', low: 40, high: 150 },
+    ],
+  },
   'does-medicaid-cover-home-modifications': {
     title: 'Does Medicaid Cover Home Modifications for Seniors?',
     description: 'How Medicaid HCBS waiver programs pay for grab bars, ramps, stairlifts, and bathroom modifications. Eligibility, how to apply, and what each state covers.',
@@ -1304,7 +1347,7 @@ export default async function GuidePage({ params }: Props) {
               ))}
             </div>
             <Link href="/guides" className="block text-xs text-gray-400 hover:text-gray-600 mt-3">
-              View all 44 guides →
+              View all 46 guides →
             </Link>
           </div>
         </aside>
