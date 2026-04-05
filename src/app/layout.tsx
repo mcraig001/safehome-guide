@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
 import { organizationSchema } from '@/lib/schema';
+import { MobileNav } from '@/components/MobileNav';
 
 export const metadata: Metadata = {
   title: {
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               Get Free Quotes
             </Link>
+            <MobileNav />
           </div>
         </header>
         {children}
