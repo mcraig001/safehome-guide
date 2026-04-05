@@ -76,9 +76,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq('is_published', true);
 
   const cityMap = new Map<string, string>();
+  const stateSet = new Set<string>();
   (contractors || []).forEach(c => {
-    const key = `${c.state_abbr.toLowerCase()}/${c.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
+    const stateSlug = c.state_abbr.toLowerCase();
+    const key = `${stateSlug}/${c.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
     cityMap.set(key, key);
+    stateSet.add(stateSlug);
   });
 
   const cityPages: MetadataRoute.Sitemap = Array.from(cityMap.keys()).map(key => ({
@@ -88,5 +91,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.65,
   }));
 
-  return [...staticPages, ...productPages, ...cityPages];
+  const statePages: MetadataRoute.Sitemap = Array.from(stateSet).map(state => ({
+    url: `${BASE}/contractors/${state}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...productPages, ...statePages, ...cityPages];
 }
