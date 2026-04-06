@@ -147,33 +147,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75,
   }));
 
-  // Dynamic contractor city pages
+  // Static contractor state pages (all 50 states — pages render without DB data)
+  const ALL_STATE_ABBRS = [
+    'al','ak','az','ar','ca','co','ct','de','fl','ga','hi','id','il','in','ia',
+    'ks','ky','la','me','md','ma','mi','mn','ms','mo','mt','ne','nv','nh','nj',
+    'nm','ny','nc','nd','oh','ok','or','pa','ri','sc','sd','tn','tx','ut','vt',
+    'va','wa','wv','wi','wy',
+  ];
+  const statePages: MetadataRoute.Sitemap = ALL_STATE_ABBRS.map(state => ({
+    url: `${BASE}/contractors/${state}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Dynamic contractor city pages (only include cities with real published listings)
   const { data: contractors } = await supabase
     .from('sh_contractors')
     .select('city, state_abbr')
     .eq('is_published', true);
 
   const cityMap = new Map<string, string>();
-  const stateSet = new Set<string>();
   (contractors || []).forEach(c => {
     const stateSlug = c.state_abbr.toLowerCase();
     const key = `${stateSlug}/${c.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
     cityMap.set(key, key);
-    stateSet.add(stateSlug);
   });
-
   const cityPages: MetadataRoute.Sitemap = Array.from(cityMap.keys()).map(key => ({
     url: `${BASE}/contractors/${key}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.65,
-  }));
-
-  const statePages: MetadataRoute.Sitemap = Array.from(stateSet).map(state => ({
-    url: `${BASE}/contractors/${state}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
   }));
 
   return [...staticPages, ...productPages, ...statePages, ...cityPages];

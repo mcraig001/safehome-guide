@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
-import { ChevronRight, Shield, MapPin, CheckCircle } from 'lucide-react';
+import { ChevronRight, Shield, MapPin, CheckCircle, ExternalLink } from 'lucide-react';
 
 interface Props { params: Promise<{ state: string }> }
 
@@ -27,12 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const stateName = STATE_NAMES[state.toLowerCase()] ?? state.toUpperCase();
   const title = `CAPS Contractors in ${stateName} — Aging-in-Place Specialists`;
-  const description = `Find CAPS-certified aging-in-place contractors across ${stateName}. Browse by city to get free quotes for stairlifts, grab bars, walk-in tubs, and home safety modifications.`;
-  return {
-    title,
-    description,
-    openGraph: { title, description },
-  };
+  const description = `Find CAPS-certified aging-in-place contractors in ${stateName}. Get free quotes for stairlifts, grab bars, walk-in tubs, and home safety modifications.`;
+  return { title, description, openGraph: { title, description } };
 }
 
 export default async function StateContractorPage({ params }: Props) {
@@ -42,7 +38,7 @@ export default async function StateContractorPage({ params }: Props) {
 
   const stateUpper = state.toUpperCase();
 
-  // Fetch all published contractors in this state
+  // Fetch any published contractors in this state (may be empty)
   const { data: contractors } = await supabase
     .from('sh_contractors')
     .select('business_name, city, state_abbr, caps_certified, specialties, listing_tier')
@@ -50,20 +46,13 @@ export default async function StateContractorPage({ params }: Props) {
     .eq('is_published', true)
     .order('listing_tier', { ascending: false });
 
-  if (!contractors || contractors.length === 0) notFound();
-
-  // Group by city with counts
+  // Group by city if there are any listings
   const cityMap = new Map<string, { count: number; slug: string }>();
-  contractors.forEach(c => {
+  (contractors || []).forEach(c => {
     const citySlug = c.city.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     const existing = cityMap.get(c.city);
-    if (existing) {
-      existing.count++;
-    } else {
-      cityMap.set(c.city, { count: 1, slug: citySlug });
-    }
+    if (existing) { existing.count++; } else { cityMap.set(c.city, { count: 1, slug: citySlug }); }
   });
-
   const cities = Array.from(cityMap.entries())
     .map(([city, { count, slug }]) => ({ city, count, slug }))
     .sort((a, b) => b.count - a.count || a.city.localeCompare(b.city));
@@ -74,16 +63,10 @@ export default async function StateContractorPage({ params }: Props) {
     { name: stateName, url: `https://www.safeathomeguides.com/contractors/${state}` },
   ]);
 
-  // Get specialties across state for intro content
-  const specialtySet = new Set<string>();
-  contractors.forEach(c => (c.specialties as string[] | null)?.forEach(s => specialtySet.add(s)));
-  const topSpecialties = Array.from(specialtySet).slice(0, 5);
-
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
-      {/* Breadcrumb */}
       <nav className="flex items-center gap-1.5 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-gray-600 transition-colors">Home</Link>
         <ChevronRight size={14} />
@@ -94,81 +77,111 @@ export default async function StateContractorPage({ params }: Props) {
 
       <div className="flex items-center gap-2 mb-3">
         <Shield size={16} style={{ color: '#1B4332' }} />
-        <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>CAPS-Certified Directory</span>
+        <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#1B4332' }}>CAPS-Certified Contractors</span>
       </div>
 
       <h1 className="font-serif text-4xl font-bold mb-3" style={{ color: '#1A1A1A' }}>
-        CAPS Contractors in {stateName}
+        Find a CAPS Contractor in {stateName}
       </h1>
-      <p className="text-gray-500 mb-8 text-lg">
-        {contractors.length} certified aging-in-place specialist{contractors.length !== 1 ? 's' : ''} across {cities.length} {cities.length === 1 ? 'city' : 'cities'} in {stateName}.
+      <p className="text-gray-500 mb-8 text-lg max-w-2xl">
+        CAPS-certified contractors are trained by the National Association of Home Builders to plan and install aging-in-place modifications — stairlifts, grab bars, accessible bathrooms, ramps, and more.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
-          {/* City grid */}
-          <section className="mb-10">
-            <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
-              Browse by City
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {cities.map(({ city, count, slug }) => (
-                <Link
-                  key={city}
-                  href={`/contractors/${state}/${slug}`}
-                  className="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-white hover:border-green-700 hover:shadow-sm transition-all group"
-                >
-                  <div className="flex items-center gap-2">
-                    <MapPin size={15} style={{ color: '#1B4332' }} className="shrink-0" />
-                    <span className="font-semibold text-gray-800 group-hover:text-green-800 transition-colors">{city}</span>
-                  </div>
-                  <span className="text-xs text-gray-400 font-mono">
-                    {count} contractor{count !== 1 ? 's' : ''}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
 
-          {/* About CAPS in this state */}
-          <section className="rounded-xl p-6 mb-8" style={{ backgroundColor: '#F5F5F0' }}>
-            <h2 className="font-serif text-xl font-semibold mb-3" style={{ color: '#1A1A1A' }}>
-              About CAPS Certification in {stateName}
-            </h2>
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-              CAPS (Certified Aging-in-Place Specialist) is a credential from the National Association
-              of Home Builders (NAHB). Contractors earn it by completing a multi-day training program
-              covering ADA design principles, fall prevention, and the specific physical needs of older adults.
-            </p>
-            {topSpecialties.length > 0 && (
-              <div>
-                <p className="text-sm font-semibold text-gray-700 mb-2">Common specialties among {stateName} contractors:</p>
-                <div className="flex flex-wrap gap-2">
-                  {topSpecialties.map(s => (
-                    <span key={s} className="text-xs bg-white border border-gray-200 text-gray-600 px-2 py-1 rounded-full capitalize">
-                      {s.replace(/-/g, ' ')}
+          {cities.length > 0 ? (
+            <section className="mb-10">
+              <h2 className="font-serif text-2xl font-semibold mb-5" style={{ color: '#1A1A1A' }}>
+                Browse by City
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {cities.map(({ city, count, slug }) => (
+                  <Link
+                    key={city}
+                    href={`/contractors/${state}/${slug}`}
+                    className="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-white hover:border-green-700 hover:shadow-sm transition-all group"
+                  >
+                    <div className="flex items-center gap-2">
+                      <MapPin size={15} style={{ color: '#1B4332' }} className="shrink-0" />
+                      <span className="font-semibold text-gray-800 group-hover:text-green-800 transition-colors">{city}</span>
+                    </div>
+                    <span className="text-xs text-gray-400 font-mono">
+                      {count} listing{count !== 1 ? 's' : ''}
                     </span>
-                  ))}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ) : (
+            /* No listings yet — show NAHB referral prominently */
+            <div className="rounded-xl border border-gray-100 p-7 mb-8" style={{ backgroundColor: '#FAFAF7' }}>
+              <h2 className="font-serif text-xl font-semibold mb-2" style={{ color: '#1A1A1A' }}>
+                No paid listings in {stateName} yet
+              </h2>
+              <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                We don&apos;t currently have verified contractor listings for {stateName}. Here&apos;s how to find a qualified contractor:
+              </p>
+              <div className="space-y-4">
+                <div className="bg-white rounded-lg border border-gray-200 p-5">
+                  <p className="font-semibold text-gray-800 mb-1">Submit a quote request</p>
+                  <p className="text-sm text-gray-600 mb-0">Use the form on this page and we&apos;ll work to connect you with contractors serving your area.</p>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5">
+                  <p className="font-semibold text-gray-800 mb-1">Search NAHB&apos;s official CAPS directory</p>
+                  <p className="text-sm text-gray-600 mb-3">
+                    The National Association of Home Builders maintains a searchable database of all active CAPS-certified contractors, searchable by state and city.
+                  </p>
+                  <a
+                    href="https://www.nahb.org/education-and-events/education/designations/certified-aging-in-place-specialist-caps/find-a-caps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+                    style={{ color: '#1B4332' }}
+                  >
+                    Search NAHB&apos;s CAPS Directory
+                    <ExternalLink size={13} />
+                  </a>
                 </div>
               </div>
-            )}
+            </div>
+          )}
+
+          {/* What is CAPS */}
+          <section className="rounded-xl p-6 mb-8" style={{ backgroundColor: '#F5F5F0' }}>
+            <h2 className="font-serif text-xl font-semibold mb-3" style={{ color: '#1A1A1A' }}>
+              About CAPS Certification
+            </h2>
+            <p className="text-gray-700 text-sm leading-relaxed mb-4">
+              CAPS (Certified Aging-in-Place Specialist) is a credential from the National Association of Home Builders (NAHB).
+              Contractors earn it by completing a multi-day training program covering ADA design, fall prevention, and the specific physical needs of older adults and people with disabilities.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-2 mb-4">
+              {[
+                'Trained in ADA-compliant modifications',
+                'Understands fall prevention design',
+                'Familiar with grants and insurance programs',
+                'Credential verifiable at nahb.org',
+              ].map(item => (
+                <div key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                  <CheckCircle size={14} style={{ color: '#1B4332' }} className="shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://www.nahb.org/education-and-events/education/designations/certified-aging-in-place-specialist-caps/find-a-caps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+              style={{ color: '#1B4332' }}
+            >
+              Find a CAPS contractor at nahb.org
+              <ExternalLink size={13} />
+            </a>
           </section>
 
-          {/* Trust signals */}
-          <section className="grid sm:grid-cols-3 gap-4 mb-8">
-            {[
-              { icon: <CheckCircle size={18} style={{ color: '#1B4332' }} />, text: 'CAPS certification verified' },
-              { icon: <CheckCircle size={18} style={{ color: '#1B4332' }} />, text: 'Free quotes, no obligation' },
-              { icon: <CheckCircle size={18} style={{ color: '#1B4332' }} />, text: 'Aging-in-place trained' },
-            ].map(({ icon, text }) => (
-              <div key={text} className="flex items-center gap-2 bg-white rounded-xl border border-gray-100 p-4 text-sm text-gray-700">
-                {icon}
-                {text}
-              </div>
-            ))}
-          </section>
-
-          {/* Related links */}
+          {/* Planning resources */}
           <section>
             <h2 className="font-serif text-xl font-semibold mb-4" style={{ color: '#1A1A1A' }}>
               Planning Resources
@@ -178,7 +191,7 @@ export default async function StateContractorPage({ params }: Props) {
                 { href: '/guides/aging-in-place-planning-guide', label: 'How to Plan for Aging in Place' },
                 { href: '/guides/home-modification-grants-for-seniors', label: 'Grants for Home Modifications' },
                 { href: '/guides/fall-prevention-for-seniors', label: 'Fall Prevention Guide' },
-                { href: '/guides/aging-in-place-vs-assisted-living-cost', label: 'Aging in Place vs. Assisted Living' },
+                { href: '/guides/aging-in-place-budget-guide', label: 'How Much Does Aging in Place Cost?' },
               ].map(link => (
                 <Link
                   key={link.href}
@@ -194,22 +207,34 @@ export default async function StateContractorPage({ params }: Props) {
 
         <aside className="space-y-6">
           <Suspense>
-            <LeadForm
-              headline={`Get Quotes in ${stateName}`}
-            />
+            <LeadForm headline={`Get Quotes in ${stateName}`} />
           </Suspense>
 
           <div className="rounded-xl border border-gray-100 p-5" style={{ backgroundColor: '#F5F5F0' }}>
-            <p className="text-sm font-semibold text-gray-800 mb-3">Not sure what you need?</p>
-            <p className="text-xs text-gray-600 mb-3">
-              Take our free 5-question home assessment to get a personalized recommendation before contacting a contractor.
+            <p className="text-sm font-semibold text-gray-800 mb-2">Are you a contractor in {stateName}?</p>
+            <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+              Get listed and receive quote requests from seniors and families in your area.
+            </p>
+            <Link
+              href="/advertise"
+              className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm text-white"
+              style={{ backgroundColor: '#1B4332' }}
+            >
+              Get Listed →
+            </Link>
+          </div>
+
+          <div className="rounded-xl border border-amber-200 p-5" style={{ backgroundColor: '#fffbeb' }}>
+            <p className="text-sm font-semibold text-amber-900 mb-2">Not sure what you need?</p>
+            <p className="text-xs text-amber-800 mb-3 leading-relaxed">
+              Take our free home assessment to get personalized recommendations before contacting a contractor.
             </p>
             <Link
               href="/assess"
-              className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#1B4332' }}
+              className="block text-center py-2 px-4 rounded-lg font-semibold text-sm text-white"
+              style={{ backgroundColor: '#D97706' }}
             >
-              Free Home Assessment →
+              Free Assessment →
             </Link>
           </div>
         </aside>
