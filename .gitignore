@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Platform brain lives at ~/ventures/_platform (separate repo)
+_platform/
