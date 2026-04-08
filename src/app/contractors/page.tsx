@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ContractorsPage() {
-  // Load any featured/premium listings that are published
+  // Load featured/premium listings first, then fill with free-tier published contractors
   const { data: featuredContractors } = await supabase
     .from('sh_contractors')
     .select('*')
@@ -54,8 +54,17 @@ export default async function ContractorsPage() {
     .order('listing_tier', { ascending: false })
     .limit(6);
 
+  const { data: freeContractors } = await supabase
+    .from('sh_contractors')
+    .select('*')
+    .eq('is_published', true)
+    .eq('listing_tier', 'free')
+    .order('state_abbr', { ascending: true })
+    .limit(24);
+
   const contractorFaqSchema = faqSchema(CONTRACTOR_FAQS);
   const hasFeatured = featuredContractors && featuredContractors.length > 0;
+  const hasFree = freeContractors && freeContractors.length > 0;
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
@@ -97,7 +106,7 @@ export default async function ContractorsPage() {
                   The National Association of Home Builders maintains a searchable directory of all active, verified CAPS-certified contractors nationwide — searchable by ZIP code, city, or state.
                 </p>
                 <a
-                  href="https://www.nahb.org/education-and-events/education/designations/certified-aging-in-place-specialist-caps/find-a-caps"
+                  href="https://admin.nahb.org/reference_list.aspx?sectionID=1391"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
@@ -118,6 +127,23 @@ export default async function ContractorsPage() {
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {featuredContractors.map((c: Parameters<typeof ContractorCard>[0]['contractor']) => (
+                  <ContractorCard key={c.id} contractor={c} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Verified CAPS contractors from our database */}
+          {hasFree && (
+            <section className="mb-10">
+              <h2 className="font-serif text-2xl font-semibold mb-2" style={{ color: '#1A1A1A' }}>
+                Verified CAPS Contractors
+              </h2>
+              <p className="text-sm text-gray-500 mb-5">
+                CAPS-certified contractors verified through NAHB. Sorted by state.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {freeContractors.map((c: Parameters<typeof ContractorCard>[0]['contractor']) => (
                   <ContractorCard key={c.id} contractor={c} />
                 ))}
               </div>
