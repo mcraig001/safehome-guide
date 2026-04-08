@@ -85,7 +85,7 @@ INQUIR_API_KEY=
 N8N_WEBHOOK_URL=           # http://localhost:5678
 
 # Amazon Associates
-AMAZON_TRACKING_ID=        # your-safehome-20
+AMAZON_TRACKING_ID=        # safehome00c-20
 ```
 
 ---

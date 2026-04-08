@@ -1,4 +1,4 @@
-const AMAZON_TRACKING_ID = process.env.AMAZON_TRACKING_ID || 'safehome-20';
+const AMAZON_TRACKING_ID = process.env.AMAZON_TRACKING_ID || 'safehome00c-20';
 
 export function buildAffiliateUrl(url: string, network: string, productSlug?: string): string {
   if (network === 'amazon') {
