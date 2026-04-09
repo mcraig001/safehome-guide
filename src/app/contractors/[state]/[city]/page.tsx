@@ -83,6 +83,9 @@ export default async function CityContractorPage({ params }: Props) {
       <p className="text-gray-500 mb-8 text-lg max-w-2xl">
         CAPS-certified contractors are trained by the National Association of Home Builders to design and install aging-in-place modifications — stairlifts, grab bars, accessible bathrooms, and more.
       </p>
+      <p className="text-xs text-gray-400 mb-6">
+        Contractor listings are sourced from the NAHB CAPS public directory. SafeAtHome does not endorse or guarantee the work of any listed contractor. Always verify licensing and insurance before hiring.
+      </p>
 
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">

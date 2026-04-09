@@ -107,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
           <div className="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-gray-100 text-xs text-gray-400">
-            <p>© {new Date().getFullYear()} SafeAtHome Guide. Some links are affiliate links — we earn a commission at no extra cost to you.</p>
+            <p>© {new Date().getFullYear()} SafeAtHome Guide. As an Amazon Associate we earn from qualifying purchases. Some links are affiliate links — we earn a small commission at no extra cost to you. SafeScore™ ratings are editorial assessments and are not safety certifications from any regulatory or government body.</p>
           </div>
         </footer>
       </body>
