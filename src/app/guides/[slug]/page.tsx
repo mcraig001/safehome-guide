@@ -3083,6 +3083,69 @@ const GUIDE_META: Record<string, {
       { item: 'Rollator (4-wheel with seat)', low: 80, high: 250 },
     ],
   },
+
+  'how-to-choose-home-health-aide': {
+    title: 'How to Choose a Home Health Aide: Complete Guide (2026)',
+    description: 'What is a home health aide, how much do they cost, and how do you find and hire a good one? Everything families need to know before hiring.',
+    category: 'planning',
+    keyTakeaways: [
+      'Home health aides (HHAs) provide personal care and assistance with daily activities — not skilled medical care.',
+      'Skilled nursing and therapy at home is provided by nurses and therapists, not HHAs.',
+      'Agency aides cost $25–$40/hour; independent aides cost $15–$25/hour but require more management.',
+      'Medicare only covers skilled home health care (nursing, PT, OT), not custodial personal care.',
+      'Always verify background checks, references, and that any agency is Medicare-certified or state-licensed.',
+    ],
+    intro: 'Choosing a home health aide is one of the most important — and emotionally charged — decisions a family faces when a parent or loved one needs help at home. This guide explains what home health aides actually do, how much they cost, how Medicare and Medicaid cover home care, and what to look for when hiring an agency or independent aide.',
+    faqs: [
+      { question: 'What does a home health aide do?', answer: 'A home health aide (HHA) provides personal care and assistance with activities of daily living (ADLs): bathing, dressing, grooming, toileting, mobility assistance, light housekeeping, and meal preparation. They do not provide skilled medical care — they cannot administer injections, manage wound care, or prescribe medications. Skilled medical services (nursing, physical therapy, occupational therapy) are provided by licensed clinicians, often through a Medicare-certified home health agency.' },
+      { question: 'What is the difference between a home health aide and a personal care aide?', answer: "A home health aide (HHA) has completed a state-approved training program (minimum 75 hours under federal law) and can provide personal care under the supervision of a registered nurse or therapist. A personal care aide (PCA) or homemaker provides similar services but typically has fewer formal training requirements. The distinction matters for insurance coverage: Medicare-covered home health services require care by a Medicare-certified HHA working under a physician's plan of care." },
+      { question: 'How much does a home health aide cost in 2026?', answer: 'Agency-provided HHAs cost $25–$40 per hour depending on location, with a typical minimum of 3–4 hours per visit. Independent aides hired directly cost $15–$25/hour but come without the agency\'s management infrastructure, backup coverage, and employer tax handling. Part-time care (10 hours/week) runs $15,000–$20,000/year from an agency. Full-time live-in care from an agency typically costs $250–$350/day ($90,000–$130,000/year).' },
+      { question: 'Does Medicare cover home health aide services?', answer: 'Medicare covers home health aide services only when they are part of a skilled care plan — meaning a doctor has ordered skilled nursing, physical therapy, or speech therapy, and the patient is homebound. In that context, Medicare may also cover personal care from an HHA as part of the same visit. Medicare does not cover "custodial" care (personal care only, with no skilled services ordered). For non-skilled personal care, Medicaid HCBS waiver programs are the primary public coverage source.' },
+      { question: 'What is a Medicare-certified home health agency?', answer: 'A Medicare-certified home health agency (HHA) has passed a CMS inspection and agreed to meet federal conditions of participation. This certification allows the agency to bill Medicare and Medicaid for covered services. You can verify an agency\'s Medicare certification status using the CMS Certification Number (CCN) — every certified agency has one, and they can be searched on HHAdata.com.' },
+      { question: 'Agency vs. independent home health aide — which is better?', answer: 'Agencies provide: background-checked aides, backup coverage when the primary aide is sick, worker\'s compensation insurance, payroll tax handling, and supervision. Independent aides are typically less expensive but require the family to handle hiring, taxes, insurance, and backup coverage. For most families, the agency model is worth the premium — especially for initial care and for seniors with complex needs. Independent aides work well for long-term, stable situations where you\'ve already vetted the individual.' },
+      { question: 'What should I ask when interviewing a home health agency?', answer: 'Key questions: (1) Are you Medicare-certified or state-licensed? (2) How do you screen aides — background check, reference checks? (3) Who is my contact if I have a complaint or need to change aides? (4) What happens if my regular aide calls in sick? (5) Are your aides employees or independent contractors? (employees means the agency handles taxes and workers\' comp) (6) What does your minimum visit requirement look like? (7) Do you provide a written service plan and care notes? An agency that deflects or gives vague answers on any of these is a red flag.' },
+      { question: 'How do I find a home health aide near me?', answer: 'Options: (1) Ask your hospital discharge planner or case manager for agency referrals — they know local quality. (2) Use Medicare\'s Care Compare tool at medicare.gov. (3) Search HHAdata.com for Medicare-certified agencies in your area and filter by star rating. (4) Contact your local Area Agency on Aging (AAA) for community referrals. (5) Ask your physician — PCPs and geriatricians often have working relationships with reliable local agencies.' },
+    ],
+    costBreakdown: [
+      { item: 'Agency HHA (per hour)', low: 25, high: 40 },
+      { item: 'Independent HHA (per hour)', low: 15, high: 25 },
+      { item: 'Part-time care, 10 hrs/week (annual, agency)', low: 15000, high: 20000 },
+      { item: 'Full-time live-in care (annual, agency)', low: 90000, high: 130000 },
+      { item: 'Geriatric care manager assessment', low: 300, high: 500 },
+    ],
+  },
+
+  'home-safety-checklist-seniors': {
+    title: 'Complete Home Safety Checklist for Adults Over 65 (2026)',
+    description: 'Printable home safety checklist for seniors. Room-by-room guide: bathroom, bedroom, kitchen, stairs, and entryways — what to check and what modifications to prioritize.',
+    category: 'planning',
+    keyTakeaways: [
+      'Falls are the leading cause of injury-related death in adults 65+ — most occur at home.',
+      'Bathroom is the highest-risk room: grab bars, non-slip mats, and accessible shower entry are the three most impactful modifications.',
+      'Good lighting throughout the home — especially hallways and stairways — is a low-cost, high-impact change.',
+      'A CAPS-certified contractor (Certified Aging-in-Place Specialist) is trained specifically for these modifications.',
+      'Most modifications cost $50–$500 each; a full home assessment by an OT runs $250–$500 and identifies the highest-priority items.',
+    ],
+    intro: "Falls kill more adults over 65 than any other type of injury — and the CDC reports that most falls happen at home. This room-by-room checklist helps families and individuals identify the highest-risk hazards in a home and prioritize which modifications to address first. It's designed to be used as a self-assessment or as preparation for a professional home safety assessment.",
+    faqs: [
+      { question: 'What are the most important home safety modifications for seniors?', answer: 'In order of impact: (1) Grab bars in the bathroom — next to the toilet and in the shower/tub. (2) Non-slip surfaces in the tub/shower and on bathroom floor. (3) Improved lighting throughout the home, especially hallways and stairways. (4) Removal of trip hazards — loose rugs, cords across walkways. (5) Handrails on both sides of stairways. These five interventions address the majority of fall risk at home. A $250–$500 assessment by a licensed occupational therapist (OT) or CAPS contractor will give you a personalized priority list.' },
+      { question: 'Bathroom safety checklist: what should I check?', answer: 'Bathroom checklist: ✓ Grab bar next to toilet (18–42 inches above floor) ✓ Grab bar in shower or tub ✓ Non-slip mat in shower/tub ✓ Non-slip mat on bathroom floor outside tub ✓ Adequate lighting (nightlight minimum, bright overhead ideal) ✓ Temperature set to 120°F or below to prevent scalding ✓ Accessible shower entry (roll-in shower or walk-in shower preferred over tub) ✓ Shower seat or transfer bench ✓ Handheld shower head ✓ Lever-style faucet handles (easier with limited grip strength)' },
+      { question: 'Stairway safety checklist: what should I check?', answer: 'Stairway checklist: ✓ Handrail on both sides ✓ Handrails extend beyond top and bottom step ✓ Handrails are secure and do not wobble ✓ Adequate lighting — no dark spots ✓ Light switches at both top and bottom ✓ No loose or worn carpet on stairs ✓ Step edges are clearly visible (contrast tape if needed) ✓ No storage items left on stairs ✓ If stairs cannot be safely navigated, evaluate stairlift options' },
+      { question: 'Bedroom safety checklist: what should I check?', answer: 'Bedroom checklist: ✓ Clear path from bed to bathroom — no trip hazards ✓ Nightlight or motion-activated lighting on path to bathroom ✓ Phone or medical alert device within reach from bed ✓ Bed at appropriate height (person can sit with feet flat on floor) ✓ Bed rail or transfer handle if getting in/out of bed is difficult ✓ No loose rugs ✓ Adequate lighting when getting up at night ✓ Medications stored safely and organized clearly' },
+      { question: 'Kitchen safety checklist: what should I check?', answer: 'Kitchen checklist: ✓ Frequently used items within reach (no need to use step stool) ✓ Non-slip mat in front of sink ✓ Good lighting over work surfaces ✓ Step stool with handle if reaching is unavoidable ✓ Automatic stove shut-off device if forgetting the stove is a concern ✓ Easy-to-grip utensils and appliances ✓ Clear path — no rugs or items on floor ✓ Fire extinguisher accessible and not expired' },
+      { question: 'Entryway and exterior safety checklist: what should I check?', answer: 'Entryway checklist: ✓ Handrail on all exterior steps ✓ Good exterior lighting — motion-activated recommended ✓ Non-slip surface on exterior steps ✓ Level entry (no threshold) or low-profile threshold ✓ Door hardware is lever-style, not round knobs ✓ Doorways at least 32 inches wide (36 inches preferred for mobility aids) ✓ Clear path to parking area ✓ Doorbell or entry accessible from wheelchair height if needed' },
+      { question: 'When should I get a professional home safety assessment?', answer: 'A professional assessment is worthwhile when: (1) A family member has had a fall, even minor. (2) A person is being discharged from hospital or rehab facility. (3) There are diagnosed balance, vision, or mobility issues. (4) The home has not been evaluated and the person is over 75. The assessment is typically done by a licensed occupational therapist (OT) and costs $250–$500. It produces a written report with prioritized recommendations. Some Area Agencies on Aging offer free or reduced-cost assessments — call 211 to find your local AAA.' },
+      { question: 'What does a CAPS contractor do?', answer: "A Certified Aging-in-Place Specialist (CAPS) is a contractor who has completed NAHB training in aging-in-place modifications. They understand ADA guidelines, common age-related mobility limitations, and which modifications have the highest safety impact. They are not occupational therapists and cannot assess medical needs — for that, use an OT. For the construction work itself, a CAPS contractor is the right hire. Find CAPS contractors near you on SafeAtHome.com." },
+    ],
+    costBreakdown: [
+      { item: 'Grab bar installation (per bar)', low: 100, high: 300 },
+      { item: 'Non-slip bath mat/surface', low: 20, high: 100 },
+      { item: 'Nightlights (whole home)', low: 30, high: 80 },
+      { item: 'Handrail addition (per stairway)', low: 150, high: 500 },
+      { item: 'OT home safety assessment', low: 250, high: 500 },
+      { item: 'Full home modification (moderate scope)', low: 2000, high: 10000 },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
