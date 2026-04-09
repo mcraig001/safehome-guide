@@ -34,8 +34,16 @@ async function getCategories() {
   return data || [];
 }
 
+async function getSiteCounts() {
+  const [{ count: contractors }, { count: products }] = await Promise.all([
+    supabase.from('sh_contractors').select('*', { count: 'exact', head: true }).eq('is_published', true),
+    supabase.from('sh_products').select('*', { count: 'exact', head: true }).eq('is_published', true),
+  ]);
+  return { contractors: contractors ?? 150, products: products ?? 56 };
+}
+
 export default async function HomePage() {
-  const [featured, categories] = await Promise.all([getFeaturedProducts(), getCategories()]);
+  const [featured, categories, siteCounts] = await Promise.all([getFeaturedProducts(), getCategories(), getSiteCounts()]);
   const homeFaqSchema = faqSchema(HOME_FAQS);
 
   return (
@@ -296,6 +304,46 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Data sources trust section */}
+      <section className="py-14 px-4 border-t border-gray-100 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">Our Data Sources</p>
+          <div className="grid sm:grid-cols-3 gap-6 mb-8">
+            {[
+              {
+                value: `${siteCounts.contractors}`,
+                label: 'CAPS-Certified Contractors',
+                source: 'NAHB Public Directory',
+                href: 'https://www.nahb.org/education-and-events/education/designations/certified-aging-in-place-specialist-caps',
+              },
+              {
+                value: `${siteCounts.products}`,
+                label: 'Products Reviewed',
+                source: 'Amazon + Manufacturer Specs',
+                href: '/products',
+              },
+              {
+                value: '15+',
+                label: 'Expert Guides Published',
+                source: 'Editorial Research',
+                href: '/guides',
+              },
+            ].map((stat) => (
+              <a key={stat.label} href={stat.href} target={stat.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer"
+                className="block rounded-xl border border-gray-100 p-5 hover:border-gray-200 transition-colors text-left">
+                <div className="text-2xl font-bold mb-1" style={{ color: '#1B4332' }}>{stat.value}</div>
+                <div className="text-sm font-medium text-gray-900 mb-1">{stat.label}</div>
+                <div className="text-xs text-gray-500">Source: {stat.source}</div>
+              </a>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 max-w-xl mx-auto">
+            Contractor data from the NAHB CAPS public directory. Product data from manufacturer specifications and Amazon listings.
+            SafeScore™ ratings are editorial assessments — not certified safety ratings. Updated monthly.
+          </p>
         </div>
       </section>
 
