@@ -1,0 +1,81 @@
+============================================================
+CONTRACTOR OUTREACH — Step 1 [DRY RUN]
+Run date: 2026-04-22
+============================================================
+
+Eligible contractors (email IS NOT NULL AND is_published=true): 4
+NOTE: outreach_status filter active after migration is applied
+Batch cap: 20/run
+
+NOTE: All 4 emails are placeholder example.com addresses.
+      Email enrichment needed for the remaining 141 contractors.
+      See BLOCKER note at bottom.
+
+[1/4] Maui Home Safety Specialists
+  ID:        6a66a453-faf7-4762-ad24-2780769ad1ed
+  TO:        lisa@mauisafety.example.com
+  CITY:      Kahului, Hawaii
+  EMAIL 1 SUBJECT: Featured on SafeAtHome Guide for Kahului, Hawaii?
+  EMAIL 1 PREVIEW: Hi Lisa Akana, I run SafeAtHome Guide — an aging-in-place directory
+                   that ranks CAPS-certified contractors when families search for
+                   "home modifications Kahului" and "aging in place Hawaii."
+  EMAIL 2 SUBJECT: Re: Featured listing — Kahului, Hawaii
+  EMAIL 3 SUBJECT: Closing out — Maui Home Safety Specialists
+  STATUS:    [DRY RUN — not sent]
+
+[2/4] Alaska Safe Home Solutions
+  ID:        298b5c61-d9de-4aba-9e0f-abaaed59a243
+  TO:        info@aksafehome.example.com
+  CITY:      Anchorage, Alaska
+  EMAIL 1 SUBJECT: Featured on SafeAtHome Guide for Anchorage, Alaska?
+  EMAIL 1 PREVIEW: Hi Mark Treadwell, I run SafeAtHome Guide — an aging-in-place directory
+                   that ranks CAPS-certified contractors when families search for
+                   "home modifications Anchorage" and "aging in place Alaska."
+  EMAIL 2 SUBJECT: Re: Featured listing — Anchorage, Alaska
+  EMAIL 3 SUBJECT: Closing out — Alaska Safe Home Solutions
+  STATUS:    [DRY RUN — not sent]
+
+[3/4] Northern Access Home Modifications
+  ID:        99294c67-f7b8-4256-ba61-614db7d8d2b8
+  TO:        susan@northernaccess.example.com
+  CITY:      Fairbanks, Alaska
+  EMAIL 1 SUBJECT: Featured on SafeAtHome Guide for Fairbanks, Alaska?
+  EMAIL 1 PREVIEW: Hi Susan Nakamura, I run SafeAtHome Guide — an aging-in-place directory
+                   that ranks CAPS-certified contractors when families search for
+                   "home modifications Fairbanks" and "aging in place Alaska."
+  EMAIL 2 SUBJECT: Re: Featured listing — Fairbanks, Alaska
+  EMAIL 3 SUBJECT: Closing out — Northern Access Home Modifications
+  STATUS:    [DRY RUN — not sent]
+
+[4/4] Aloha Aging in Place
+  ID:        50d90f61-5933-4adb-a5cb-8bc7c0ef77e4
+  TO:        david@alohaaging.example.com
+  CITY:      Honolulu, Hawaii
+  EMAIL 1 SUBJECT: Featured on SafeAtHome Guide for Honolulu, Hawaii?
+  EMAIL 1 PREVIEW: Hi David Kalani, I run SafeAtHome Guide — an aging-in-place directory
+                   that ranks CAPS-certified contractors when families search for
+                   "home modifications Honolulu" and "aging in place Hawaii."
+  EMAIL 2 SUBJECT: Re: Featured listing — Honolulu, Hawaii
+  EMAIL 3 SUBJECT: Closing out — Aloha Aging in Place
+  STATUS:    [DRY RUN — not sent]
+
+------------------------------------------------------------
+DRY RUN COMPLETE — 4 emails previewed, 0 sent.
+KILL_SWITCH: disarmed (ARMED required to send live)
+MERGE FIELDS: all 5 samples populated correctly (business_name, contact_name, city, state)
+
+------------------------------------------------------------
+BLOCKER: 141 of 145 published contractors have no email address.
+         4 emails on file are example.com placeholders (test data).
+
+         Root cause: NAHB contractor scrape succeeded for name/city/state/phone
+         but emails require authenticated access to NAHB member portal.
+
+         REQUIRED BEFORE LIVE RUN:
+         1. Enrich 145 contractors via Hunter.io domain search or Apollo.io
+            — estimated cost: ~$50-100 one-time (Apollo free tier may cover this)
+            — or manually look up contractor websites and harvest contact emails
+         2. Apply migration 20260422000000_contractor_outreach.sql via Supabase
+            dashboard SQL editor (adds outreach_status column + sh_outreach_log table)
+         3. Set KILL_SWITCH=ARMED in Vercel env / .env.local
+         4. Run: npx tsx scripts/contractor-outreach.ts --step=1
